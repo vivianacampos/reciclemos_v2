@@ -1773,6 +1773,7 @@
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="Vistas\index.html" />
+    <Content Include="Vistas\Nosotros.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
