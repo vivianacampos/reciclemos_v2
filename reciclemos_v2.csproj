@@ -1721,6 +1721,7 @@
     <Content Include="Font-awesome\webfonts\fa-brands-400.svg" />
     <Content Include="Font-awesome\webfonts\fa-regular-400.svg" />
     <Content Include="Font-awesome\webfonts\fa-solid-900.svg" />
+    <Content Include="Formularios\Login.aspx" />
     <Content Include="Imagenes\00aluminio.png" />
     <Content Include="Imagenes\00bolsa.png" />
     <Content Include="Imagenes\00botella.png" />
@@ -1781,6 +1782,16 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\TipoUsuario.cs" />
+    <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Controladores\UsuarioControlador.cs" />
+    <Compile Include="Formularios\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1856,10 +1867,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Clases\" />
-    <Folder Include="Controller\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

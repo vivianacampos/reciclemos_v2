@@ -16,11 +16,11 @@ namespace reciclemos_v2.Clases
 
         public TipoUsuario(int id, string descripcion)
         {
-            this.id = id;
+            this.idTipoUsu = id;
             this.descripcion = descripcion;
         }
 
-        public int Id { get => id; set => id = value; }
+        public int Id { get => idTipoUsu; set => idTipoUsu = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
     }
 }

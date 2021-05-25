@@ -11,22 +11,48 @@ namespace reciclemos_v2.Controladores
         private static List<Usuario> listaUsuarios = new List<Usuario>();
 
         //Métodos de clase
-        public static void agregarUsuario(string rut, string nombre, string apellido, string telefono, string correo, string contrasena, string direccion, string comuna)
-        {
-            Usuario usuario = new Usuario()
+
+        //Método para agregar a un usuario a la lista
+        public static string agregarUsuario(string rut, string nombre, string apellido, string telefono, string correo, string contrasena, string direccion, string comuna)
+        {           
+            try
             {
-                Rut = rut,
-                Nombre = nombre,
-                Apellido = apellido,
-                Telefono = telefono,
-                Correo = correo,
-                Contrasena = contrasena,
-                Direccion = direccion,
-                Comuna = comuna
-            };
+                Usuario usuario = new Usuario()
+                {
+                    Rut = rut,
+                    Nombre = nombre,
+                    Apellido = apellido,
+                    Telefono = telefono,
+                    Correo = correo,
+                    Contrasena = contrasena,
+                    Direccion = direccion,
+                    Comuna = comuna
+                };
 
-            listaUsuarios.Add(usuario);
+                listaUsuarios.Add(usuario);
+                return "Usuario agregado";
 
+            }
+            catch (Exception e)
+            {
+                return "No se pudo agregar al usuario" + e.Message;
+            }
+        }
+
+        //Método para buscar un usuario
+        public static Usuario buscarUsuario(string rut)
+        {
+            foreach(Usuario u in listaUsuarios)
+            {
+                if (u.Rut == rut)
+                {
+
+                }
+            }
+
+
+
+            return null;
         }
     }
 
