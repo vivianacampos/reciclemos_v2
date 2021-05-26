@@ -5,53 +5,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"/>
-    <link href="../Font-awesome/css/all.min.css" rel="stylesheet"/>
+    <link href="../resources/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../resources/Font-awesome/css/all.min.css" rel="stylesheet"/>
+    <link href="../resources/css/estilos.css"  rel="stylesheet"/>
     <title>Login</title>
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
+
+</head>
+
+<body>
+    <style>
+        .padd{
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            border: none;
         }
-        .auto-style2 {
-            text-align: center;
-        }
-        .auto-style3 {
-            width: 187px;
+        .largo{
+            height: auto;
+            
         }
     </style>
-</head>
-<body style="width: 566px; height: 154px;">
-    <form id="form1" runat="server">
-        <div>
-            <table class="auto-style1">
-                <tr>
-                    <td class="auto-style2" colspan="2">Usuarios Registrados</td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">Cuenta:</td>
-                    <td>
-                        <asp:TextBox ID="TxtCuenta" runat="server" Width="282px "></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">Contraseña:</td>
-                    <td>
-                        <asp:TextBox ID="TxtContrasena" runat="server" Width="279px"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>
-                        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Ingresar" Width="149px" />
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" class="auto-style2">
-                        <asp:Label ID="LblMensaje" runat="server" Text=""></asp:Label>
-                    </td>
-                </tr>
-            </table>
+   <div class="container well contenedor">
+      <div class="row">
+        <div class="col-xs-12">
+            <h2>Inicio de Sesión</h2>
+        </div>
+     </div>
+    <form id="form1" runat="server" class="form-horizontal">
+        
+<%--Cuenta--%>
+        <div class="form-floating padd" >
+            <asp:Label ID="LblCorreo" runat="server" Text="Correo: " CssClass="control-label col-sm-2"></asp:Label>
+            <div class="col-sm-12">
+                 <asp:TextBox ID="TxtCuenta" runat="server" CssClass="form-control" placeholder="correo@dominio.cl" ></asp:TextBox>
+            </div>
+        </div>
+<%--Contraseña--%>
+        <div class="form-floating padd">
+            <asp:Label ID="LblContrasena" runat="server" Text="Contraseña:  " CssClass="control-label col-sm-2"></asp:Label>
+            <div class="col-sm-12" >
+                 <asp:TextBox ID="TxtContrasena" runat="server" CssClass="form-control" placeholder="********"></asp:TextBox>
+            </div>
+        </div>
+<%--Boton--%>
+        <div class="form-floating padd">
+            <div class="col padd largo">
+                <asp:Button ID="BtnIngresar" runat="server" Text="Ingresar" Cssclass="form-control btn btn-primary"/>
+            </div>
+        </div>
+        <div class="text-center">
+            <asp:Label ID="LblCamposOb" runat="server" Text=""></asp:Label>
+            <asp:HyperLink ID="HlRegistrar" runat="server" href="#">Registrarse</asp:HyperLink>
         </div>
     </form>
+   </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" ></script>
+
 </body>
 </html>
