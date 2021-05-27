@@ -9,6 +9,8 @@ namespace reciclemos_v2.Controladores
     public class UsuarioControlador
     {
         private static List<Usuario> listaUsuarios = new List<Usuario>();
+    
+        
 
         //Métodos de clase
 
@@ -39,20 +41,31 @@ namespace reciclemos_v2.Controladores
             }
         }
 
-        //Método para buscar un usuario
-        public static Usuario buscarUsuario(string rut)
+        
+
+        //Método para buscar al usuario dentro de una lista
+        public static Usuario buscarUsuario(string correo, string contrasena)
         {
             foreach(Usuario u in listaUsuarios)
             {
-                if (u.Rut == rut)
+                if(u.Correo == correo && u.Contrasena == contrasena)
                 {
-
+                    return u;
                 }
             }
 
-
-
             return null;
+        }
+
+        public static string loginUsuario(string correo, string contrasena)
+        {
+            if(correo == "m@m.cl" && contrasena == "11111111")
+            {
+                return "Ingresando a panel de usuario";
+            } else
+            {
+                return "Usuario no registrado";
+            }
         }
     }
 

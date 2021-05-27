@@ -15,10 +15,16 @@ namespace reciclemos_v2.Clases
         private string contrasena;
         private string direccion;
         private string comuna;
+       
 
         public Usuario()
         {
 
+        }
+        public Usuario (string correo, string contrasena)
+        {
+            this.correo = correo;
+            this.contrasena = contrasena;
         }
 
         public Usuario(string rut, string nombre, string apellido, string telefono, string correo, string contrasena, string direccion, string comuna)
@@ -32,6 +38,7 @@ namespace reciclemos_v2.Clases
             this.direccion = direccion;
             this.comuna = comuna;
         }
+
 
         public string Rut { get => rut; set => rut = value; }
         public string Nombre { get => nombre; set => nombre = value; }

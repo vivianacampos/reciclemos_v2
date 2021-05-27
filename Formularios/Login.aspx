@@ -24,7 +24,7 @@
             
         }
     </style>
-   <div class="container well contenedor">
+   <div class="container well contenedor align-content-center">
       <div class="row">
         <div class="col-xs-12">
             <h2>Inicio de Sesión</h2>
@@ -49,11 +49,14 @@
 <%--Boton--%>
         <div class="form-floating padd">
             <div class="col padd largo">
-                <asp:Button ID="BtnIngresar" runat="server" Text="Ingresar" Cssclass="form-control btn btn-primary"/>
+                <asp:Button ID="BtnIngresar" runat="server" Text="Ingresar" Cssclass="form-control btn btn-primary" OnClick="Button1_Click"/>
             </div>
         </div>
         <div class="text-center">
+            <asp:Label ID="LblMensaje" runat="server" Text=""></asp:Label>
+            <br />
             <asp:Label ID="LblCamposOb" runat="server" Text=""></asp:Label>
+            <br />
             <asp:HyperLink ID="HlRegistrar" runat="server" href="#">Registrarse</asp:HyperLink>
         </div>
     </form>

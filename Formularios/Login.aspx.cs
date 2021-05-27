@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using reciclemos_v2.Controladores;
 
 namespace reciclemos_v2.Formularios
 {
@@ -16,6 +17,7 @@ namespace reciclemos_v2.Formularios
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+            LblMensaje.Text = UsuarioControlador.loginUsuario(TxtCuenta.Text, TxtContrasena.Text);
 
         }
     }
