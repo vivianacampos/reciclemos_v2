@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Formularios\ContactoProspecto.aspx" />
     <Content Include="Formularios\RegistroUsuarios.aspx" />
     <Content Include="resources\css\bootstrap-grid.css" />
     <Content Include="resources\css\bootstrap-grid.min.css" />
@@ -1787,6 +1788,13 @@
     <Compile Include="Clases\TipoUsuario.cs" />
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Controladores\UsuarioControlador.cs" />
+    <Compile Include="Formularios\ContactoProspecto.aspx.cs">
+      <DependentUpon>ContactoProspecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\ContactoProspecto.aspx.designer.cs">
+      <DependentUpon>ContactoProspecto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
