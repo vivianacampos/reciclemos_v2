@@ -123,13 +123,13 @@ namespace reciclemos_v2.Formularios
         protected global::System.Web.UI.WebControls.Label LblDireccion;
 
         /// <summary>
-        /// Control TextBox1.
+        /// Control TxtDirección.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox TxtDirección;
 
         /// <summary>
         /// Control LblComuna.
@@ -159,13 +159,31 @@ namespace reciclemos_v2.Formularios
         protected global::System.Web.UI.WebControls.Label LblContrasena;
 
         /// <summary>
-        /// Control TextBox2.
+        /// Control TxtContrasena.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox TxtContrasena;
+
+        /// <summary>
+        /// Control Label1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
+        /// Control TxtConfirma.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtConfirma;
 
         /// <summary>
         /// Control BtnRegistrar.

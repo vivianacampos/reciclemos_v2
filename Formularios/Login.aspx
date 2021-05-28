@@ -20,10 +20,49 @@
             border: none;
         }
         .largo{
-            height: auto;
-            
+            height: auto;  
         }
     </style>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../Vistas/index.html">
+                    <img src="../Imagenes/reciclemos_sin_bordes.png" width="180" height="41"/>
+                </a>
+                <div class="navbar-collapse">
+                    <ul class="navbar-nav me-auto mb-lg-0 d-flex justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../Vistas/index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../Vistas/Nosotros.html">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../Vistas/Enlaces.html">Enlaces</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../Vistas/Materiales.html">Materiales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../Vistas/Talleres.html">Talleres</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav d-flex justify-content-end align-content-end">
+                        <li>
+                            <a class="nav-link active" href="#"><i class="fas fa-user"></i></a>
+                        </li>
+                        <li>
+                            <a class="nav-link active" href="#">Ingresar</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
    <div class="container well contenedor align-content-center">
       <div class="row">
         <div class="col-xs-12">
@@ -57,7 +96,7 @@
             <br />
             <asp:Label ID="LblCamposOb" runat="server" Text=""></asp:Label>
             <br />
-            <asp:HyperLink ID="HlRegistrar" runat="server" href="#">Registrarse</asp:HyperLink>
+            <asp:HyperLink ID="HlRegistrar" runat="server" href="RegistroUsuarios.aspx">Registrarse</asp:HyperLink>
         </div>
     </form>
    </div>
