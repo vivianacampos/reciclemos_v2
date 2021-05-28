@@ -42,7 +42,7 @@
                             <a class="nav-link active" href="../Vistas/Talleres.html">Talleres</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Contacto</a>
+                            <a class="nav-link active" href="ContactoProspecto.aspx">Contacto</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav d-flex justify-content-end align-content-end">
