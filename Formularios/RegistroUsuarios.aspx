@@ -11,56 +11,69 @@
     <title>Formulario de Registro</title>
 </head>
 <body>
+<!--Estilos-->
     <style>
     .padd{
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
     border: none;
     }
-</style>
-    <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="../Vistas/index.html">
-                    <img src="../Imagenes/reciclemos_sin_bordes.png" width="180" height="41"/>
-                </a>
-                <div class="navbar-collapse">
-                    <ul class="navbar-nav me-auto mb-lg-0 d-flex justify-content-center">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="../Vistas/index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="../Vistas/Nosotros.html">Nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="../Vistas/Enlaces.html">Enlaces</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="../Vistas/Materiales.html">Materiales</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="../Vistas/Talleres.html">Talleres</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="ContactoProspecto.aspx">Contacto</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav d-flex justify-content-end align-content-end">
-                        <li>
-                            <a class="nav-link active" href="#"><i class="fas fa-user"></i></a>
-                        </li>
-                        <li>
-                            <a class="nav-link active" href="#">Ingresar</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
+    .colorNav {
+        background-color: #4b778d;
+    }
 
-    <div class="container">
+    .colorFooter {
+        background-color: #8fd9a8;
+    }
+
+    .alignParr {
+        align-items: center;
+        font-weight: bold;
+        letter-spacing: 4px;
+    }
+</style>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="d-flex justify-content-start">
+            <a class="navbar-brand" href="index.html"><img src="../Imagenes/reciclemos sin bordes.png" width="180" height="41" /></a>
+        </div>
+        <div class="navbar-collapse d-flex justify-content-start">
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link active" href="../Vistas/index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="../Vistas/Nosotros.html">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="../Vistas/Enlaces.html">Enlaces</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="../Vistas/Materiales.html">Materiales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="../Vistas/Talleres.html">Talleres</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="ContactoProspecto.aspx">Contacto</a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-collapse d-flex justify-content-end">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="../Formularios/Login.aspx"><i class="fas fa-user"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="../Formularios/Login.aspx">Ingresar</a>
+                </li>
+            </ul>
+        </div> 
+    </nav>
+
+    <div class="container pb-5">
         <div class="text-center padd">
-            <h2 class="padd">Formulario de Registro</h2>
+            <h3 class="padd">Formulario de Registro</h3>
         </div>
         <form id="form2" runat="server" class="form">
 
@@ -121,11 +134,18 @@
                 <div class="col-sm-8 py-1">
                     <asp:TextBox ID="TxtConfirma" runat="server" CssClass="form-control" placeholder="" type="password"></asp:TextBox>
                 </div>
+                <div class="col-sm-8 py-1">
+                    <asp:CheckBox ID="ChbCondiciones" runat="server"/>
+                    <asp:HyperLink ID="HlCondiciones" runat="server" href="../Vistas/Condiciones.html" target="_blank">Aceptar términos y condiciones</asp:HyperLink>
+                </div>
                 <div class="col-8 form-control padd text-center pt-5 pb-5">
                     <asp:Button ID="BtnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-success" Width="300"/>
                 </div>
            </div>
         </form>
     </div>
+    <footer class="colorFooter p-2">
+        <p class="text-center alignParr"><img src="../Imagenes/RE2.png" width="50" height="50" />  Re-Ciclemos  &copy;</p>
+    </footer>
 </body>
 </html>

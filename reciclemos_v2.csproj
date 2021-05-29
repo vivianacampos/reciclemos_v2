@@ -69,6 +69,10 @@
   <ItemGroup>
     <Content Include="Formularios\ContactoProspecto.aspx" />
     <Content Include="Formularios\RegistroUsuarios.aspx" />
+    <Content Include="Imagenes\concurso.png" />
+    <Content Include="Imagenes\educacionambiental.jpg" />
+    <Content Include="Imagenes\estadoverde.png" />
+    <Content Include="Imagenes\logo-airechile2x.png" />
     <Content Include="resources\css\bootstrap-grid.css" />
     <Content Include="resources\css\bootstrap-grid.min.css" />
     <Content Include="resources\css\bootstrap-reboot.css" />
@@ -1776,6 +1780,7 @@
     <Content Include="resources\js\bootstrap.bundle.min.js" />
     <Content Include="resources\js\bootstrap.js" />
     <Content Include="resources\js\bootstrap.min.js" />
+    <Content Include="Vistas\Condiciones.html" />
     <Content Include="Vistas\Contacto.html" />
     <Content Include="Vistas\Enlaces.html" />
     <Content Include="Vistas\index.html" />

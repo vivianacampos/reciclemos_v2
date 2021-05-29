@@ -186,6 +186,24 @@ namespace reciclemos_v2.Formularios
         protected global::System.Web.UI.WebControls.TextBox TxtConfirma;
 
         /// <summary>
+        /// Control ChbCondiciones.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox ChbCondiciones;
+
+        /// <summary>
+        /// Control HlCondiciones.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink HlCondiciones;
+
+        /// <summary>
         /// Control BtnRegistrar.
         /// </summary>
         /// <remarks>

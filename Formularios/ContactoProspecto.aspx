@@ -10,47 +10,56 @@
     <title>Contacto</title>
 </head>
 <body>
-    <div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="../Vistas/index.html">
-                    <img src="../Imagenes/reciclemos_sin_bordes.png" width="180" height="41"/>
-                </a>
-                <div class="navbar-collapse">
-                    <ul class="navbar-nav me-auto mb-lg-0 d-flex justify-content-center">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="../Vistas/index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="../Vistas/Nosotros.html">Nosotros</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="../Vistas/Enlaces.html">Enlaces</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="../Vistas/Materiales.html">Materiales</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="../Vistas/Talleres.html">Talleres</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Contacto</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav d-flex justify-content-end align-content-end">
-                        <li>
-                            <a class="nav-link active" href="Login.aspx"><i class="fas fa-user"></i></a>
-                        </li>
-                        <li>
-                            <a class="nav-link active" href="Login.aspx">Ingresar</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="d-flex justify-content-start">
+            <a class="navbar-brand" href="index.html"><img src="../Imagenes/reciclemos sin bordes.png" width="180" height="41" /></a>
+        </div>
+        <div class="navbar-collapse d-flex justify-content-start">
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link active"  href="../Vistas/index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="../Vistas/Nosotros.html">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="../Vistas/Enlaces.html">Enlaces</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="../Vistas/Materiales.html">Materiales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="../Vistas/Talleres.html">Talleres</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="ContactoProspecto.aspx">Contacto</a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-collapse d-flex justify-content-end">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="../Formularios/Login.aspx"><i class="fas fa-user"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="../Formularios/Login.aspx">Ingresar</a>
+                </li>
+            </ul>
+        </div> 
+    </nav>
+<div class="container">
+    <p class="display-4 p-5">¿Tienes consultas?</p>
+    <h3 class="pl-5">Habla con nosotros</h3>
+</div>
     <form id="form3" runat="server">
-        <div>
+        <div class="row form-control">
+            <div class="col-8">
+                <asp:Label ID="LblNom" runat="server" Text="Nombre"></asp:Label>
+            </div>
+            <div class="col-sm-8">
+                <asp:TextBox ID="TxtNom" runat="server"></asp:TextBox>
+            </div>
         </div>
     </form>
 </body>
