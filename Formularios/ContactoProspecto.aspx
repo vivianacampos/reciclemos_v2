@@ -10,6 +10,26 @@
     <title>Contacto</title>
 </head>
 <body>
+    <style>
+    .padd{
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    border: none;
+    }
+    .colorNav {
+        background-color: #4b778d;
+    }
+
+    .colorFooter {
+        background-color: #8fd9a8;
+    }
+
+    .alignParr {
+        align-items: center;
+        font-weight: bold;
+        letter-spacing: 4px;
+    }
+    </style>
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="d-flex justify-content-start">
@@ -51,16 +71,36 @@
 <div class="container">
     <p class="display-4 p-5">¿Tienes consultas?</p>
     <h3 class="pl-5">Habla con nosotros</h3>
-</div>
+
     <form id="form3" runat="server">
-        <div class="row form-control">
-            <div class="col-8">
-                <asp:Label ID="LblNom" runat="server" Text="Nombre"></asp:Label>
+        <div class="row form-control padd">
+            <div class="col-sm-8 padd">
+                <asp:Label ID="LblNom" runat="server" Text="Nombre Completo" ></asp:Label>
             </div>
             <div class="col-sm-8">
-                <asp:TextBox ID="TxtNom" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TxtNom" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+            <div class="col-sm-8 padd">
+                <asp:Label ID="LblCorr" runat="server" Text="Correo"></asp:Label>
+            </div>
+            <div class="col-sm-8">
+                <asp:TextBox ID="TxtCorr" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+            <div class="col-sm-8 padd">
+                <asp:Label ID="LblTel" runat="server" Text="Teléfono"></asp:Label>
+            </div>
+            <div class="col-sm-8">
+                <asp:TextBox ID="TxtTel" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+            <div class="col-sm-8 pt-5">
+                <asp:TextBox ID="TxtArea" TextMode="multiline" Columns="95" Rows="5" runat="server" CssClass="pl-2" placeholder="Cuéntanos tus dudas..."></asp:TextBox>
+            </div>
+            <div class="col-sm-8 pt-4 text-center">
+                <asp:Button ID="BtnEnviar" runat="server" Text="Enviar" CssClass="btn btn-success" Width="250"/>
             </div>
         </div>
     </form>
+</div>
+
 </body>
 </html>
