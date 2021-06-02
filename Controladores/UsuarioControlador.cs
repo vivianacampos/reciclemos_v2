@@ -62,6 +62,7 @@ namespace reciclemos_v2.Controladores
             if(correo == "m@m.cl" && contrasena == "11111111")
             {
                 return "Ingresando a panel de usuario";
+                
             } else
             {
                 return "Usuario no registrado";
