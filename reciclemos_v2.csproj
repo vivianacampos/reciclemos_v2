@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Formularios\ContactoProspecto.aspx" />
     <Content Include="Formularios\RegistroUsuarios.aspx" />
+    <Content Include="Formularios\Solcitudes.aspx" />
     <Content Include="Imagenes\concurso.png" />
     <Content Include="Imagenes\educacionambiental.jpg" />
     <Content Include="Imagenes\estadoverde.png" />
@@ -1791,8 +1792,14 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\Logros.cs" />
+    <Compile Include="Clases\Material.cs" />
+    <Compile Include="Clases\Solicitud.cs" />
     <Compile Include="Clases\TipoUsuario.cs" />
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Controladores\LogrosControlador.cs" />
+    <Compile Include="Controladores\MaterialControlador.cs" />
+    <Compile Include="Controladores\SolicitudControlador.cs" />
     <Compile Include="Controladores\UsuarioControlador.cs" />
     <Compile Include="Formularios\ContactoProspecto.aspx.cs">
       <DependentUpon>ContactoProspecto.aspx</DependentUpon>
@@ -1814,6 +1821,13 @@
     </Compile>
     <Compile Include="Formularios\RegistroUsuarios.aspx.designer.cs">
       <DependentUpon>RegistroUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Solcitudes.aspx.cs">
+      <DependentUpon>Solcitudes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formularios\Solcitudes.aspx.designer.cs">
+      <DependentUpon>Solcitudes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

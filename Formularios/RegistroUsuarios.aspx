@@ -129,7 +129,7 @@
                     <asp:TextBox ID="TxtContrasena" runat="server" CssClass="form-control" placeholder="Letras ° Números ° mínimo 8 caracteres" type="password"></asp:TextBox>
                 </div>
                 <div class="col-8 form-control padd">
-                    <asp:Label ID="Label1" runat="server" Text="Confirme contraseña" CssClass="col-sm-6"></asp:Label>
+                    <asp:Label ID="LblConfirma" runat="server" Text="Confirme contraseña" CssClass="col-sm-6"></asp:Label>
                 </div>
                 <div class="col-sm-8 py-1">
                     <asp:TextBox ID="TxtConfirma" runat="server" CssClass="form-control" placeholder="" type="password"></asp:TextBox>
