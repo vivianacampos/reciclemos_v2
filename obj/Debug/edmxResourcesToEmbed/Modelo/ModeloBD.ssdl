@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="reciclemosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="comuna">
+    <Key>
+      <PropertyRef Name="idComuna" />
+    </Key>
+    <Property Name="idComuna" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" />
+    <Property Name="idProvincia" Type="int" />
+  </EntityType>
+  <EntityType Name="estado">
+    <Key>
+      <PropertyRef Name="idEstado" />
+    </Key>
+    <Property Name="idEstado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="estado" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="logros">
+    <Key>
+      <PropertyRef Name="idLogros" />
+    </Key>
+    <Property Name="idLogros" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="logros" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="materiales">
+    <Key>
+      <PropertyRef Name="idMateriales" />
+    </Key>
+    <Property Name="idMateriales" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="material" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="materiales_detalle">
+    <Key>
+      <PropertyRef Name="idMatDet" />
+    </Key>
+    <Property Name="idMatDet" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="idMateriales" Type="int" />
+  </EntityType>
+  <EntityType Name="provincia">
+    <Key>
+      <PropertyRef Name="idProvincia" />
+    </Key>
+    <Property Name="idProvincia" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" />
+    <Property Name="idRegion" Type="int" />
+  </EntityType>
+  <EntityType Name="region">
+    <Key>
+      <PropertyRef Name="idRegion" />
+    </Key>
+    <Property Name="idRegion" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="solicitud">
+    <Key>
+      <PropertyRef Name="idSolicitud" />
+    </Key>
+    <Property Name="idSolicitud" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUsuario" Type="int" />
+    <Property Name="idEstado" Type="int" />
+  </EntityType>
+  <EntityType Name="solicitud_detalle">
+    <Key>
+      <PropertyRef Name="idSolDet" />
+    </Key>
+    <Property Name="idSolDet" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idSolicitud" Type="int" />
+    <Property Name="idMatDet" Type="int" />
+    <Property Name="cantidad" Type="int" />
+    <Property Name="fecha" Type="date" />
+  </EntityType>
+  <EntityType Name="tipo_usuario">
+    <Key>
+      <PropertyRef Name="idTipoUsu" />
+    </Key>
+    <Property Name="idTipoUsu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tipo" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="int" Nullable="false" />
+    <Property Name="rut" Type="varchar" MaxLength="12" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" />
+    <Property Name="apellido" Type="varchar" MaxLength="100" />
+    <Property Name="correo" Type="varchar" MaxLength="100" />
+    <Property Name="telefono" Type="varchar" MaxLength="9" />
+    <Property Name="direccion" Type="varchar" MaxLength="100" />
+    <Property Name="contrasena" Type="varchar" MaxLength="20" />
+    <Property Name="idComuna" Type="int" />
+    <Property Name="idTipoUsu" Type="int" />
+  </EntityType>
+  <Association Name="FK__comuna__idProvin__2A4B4B5E">
+    <End Role="provincia" Type="Self.provincia" Multiplicity="0..1" />
+    <End Role="comuna" Type="Self.comuna" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="provincia">
+        <PropertyRef Name="idProvincia" />
+      </Principal>
+      <Dependent Role="comuna">
+        <PropertyRef Name="idProvincia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__materiale__idMat__36B12243">
+    <End Role="materiales" Type="Self.materiales" Multiplicity="0..1" />
+    <End Role="materiales_detalle" Type="Self.materiales_detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="materiales">
+        <PropertyRef Name="idMateriales" />
+      </Principal>
+      <Dependent Role="materiales_detalle">
+        <PropertyRef Name="idMateriales" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__provincia__idReg__276EDEB3">
+    <End Role="region" Type="Self.region" Multiplicity="0..1" />
+    <End Role="provincia" Type="Self.provincia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="region">
+        <PropertyRef Name="idRegion" />
+      </Principal>
+      <Dependent Role="provincia">
+        <PropertyRef Name="idRegion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__solicitud__idEst__3A81B327">
+    <End Role="estado" Type="Self.estado" Multiplicity="0..1" />
+    <End Role="solicitud" Type="Self.solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estado">
+        <PropertyRef Name="idEstado" />
+      </Principal>
+      <Dependent Role="solicitud">
+        <PropertyRef Name="idEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__solicitud__idMat__3E52440B">
+    <End Role="materiales_detalle" Type="Self.materiales_detalle" Multiplicity="0..1" />
+    <End Role="solicitud_detalle" Type="Self.solicitud_detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="materiales_detalle">
+        <PropertyRef Name="idMatDet" />
+      </Principal>
+      <Dependent Role="solicitud_detalle">
+        <PropertyRef Name="idMatDet" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__solicitud__idSol__3D5E1FD2">
+    <End Role="solicitud" Type="Self.solicitud" Multiplicity="0..1" />
+    <End Role="solicitud_detalle" Type="Self.solicitud_detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="solicitud">
+        <PropertyRef Name="idSolicitud" />
+      </Principal>
+      <Dependent Role="solicitud_detalle">
+        <PropertyRef Name="idSolicitud" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__solicitud__idUsu__398D8EEE">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+    <End Role="solicitud" Type="Self.solicitud" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="solicitud">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__usuario__idComun__2F10007B">
+    <End Role="comuna" Type="Self.comuna" Multiplicity="0..1" />
+    <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="comuna">
+        <PropertyRef Name="idComuna" />
+      </Principal>
+      <Dependent Role="usuario">
+        <PropertyRef Name="idComuna" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__usuario__idTipoU__300424B4">
+    <End Role="tipo_usuario" Type="Self.tipo_usuario" Multiplicity="0..1" />
+    <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_usuario">
+        <PropertyRef Name="idTipoUsu" />
+      </Principal>
+      <Dependent Role="usuario">
+        <PropertyRef Name="idTipoUsu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="reciclemosModelStoreContainer">
+    <EntitySet Name="comuna" EntityType="Self.comuna" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estado" EntityType="Self.estado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="logros" EntityType="Self.logros" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="materiales" EntityType="Self.materiales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="materiales_detalle" EntityType="Self.materiales_detalle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="provincia" EntityType="Self.provincia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="region" EntityType="Self.region" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="solicitud" EntityType="Self.solicitud" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="solicitud_detalle" EntityType="Self.solicitud_detalle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tipo_usuario" EntityType="Self.tipo_usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__comuna__idProvin__2A4B4B5E" Association="Self.FK__comuna__idProvin__2A4B4B5E">
+      <End Role="provincia" EntitySet="provincia" />
+      <End Role="comuna" EntitySet="comuna" />
+    </AssociationSet>
+    <AssociationSet Name="FK__materiale__idMat__36B12243" Association="Self.FK__materiale__idMat__36B12243">
+      <End Role="materiales" EntitySet="materiales" />
+      <End Role="materiales_detalle" EntitySet="materiales_detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK__provincia__idReg__276EDEB3" Association="Self.FK__provincia__idReg__276EDEB3">
+      <End Role="region" EntitySet="region" />
+      <End Role="provincia" EntitySet="provincia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__solicitud__idEst__3A81B327" Association="Self.FK__solicitud__idEst__3A81B327">
+      <End Role="estado" EntitySet="estado" />
+      <End Role="solicitud" EntitySet="solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="FK__solicitud__idMat__3E52440B" Association="Self.FK__solicitud__idMat__3E52440B">
+      <End Role="materiales_detalle" EntitySet="materiales_detalle" />
+      <End Role="solicitud_detalle" EntitySet="solicitud_detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK__solicitud__idSol__3D5E1FD2" Association="Self.FK__solicitud__idSol__3D5E1FD2">
+      <End Role="solicitud" EntitySet="solicitud" />
+      <End Role="solicitud_detalle" EntitySet="solicitud_detalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK__solicitud__idUsu__398D8EEE" Association="Self.FK__solicitud__idUsu__398D8EEE">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="solicitud" EntitySet="solicitud" />
+    </AssociationSet>
+    <AssociationSet Name="FK__usuario__idComun__2F10007B" Association="Self.FK__usuario__idComun__2F10007B">
+      <End Role="comuna" EntitySet="comuna" />
+      <End Role="usuario" EntitySet="usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__usuario__idTipoU__300424B4" Association="Self.FK__usuario__idTipoU__300424B4">
+      <End Role="tipo_usuario" EntitySet="tipo_usuario" />
+      <End Role="usuario" EntitySet="usuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

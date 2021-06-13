@@ -76,29 +76,26 @@
         <div class="form-floating padd" >
             <asp:Label ID="LblCorreo" runat="server" Text="Correo: " CssClass="control-label col-sm-2"></asp:Label>
             <div class="col-sm-12">
-                 <asp:TextBox ID="TxtCuenta" runat="server" CssClass="form-control" placeholder="correo@dominio.cl" ></asp:TextBox>
+                 <asp:TextBox ID="TxtCorreo" runat="server" CssClass="form-control" placeholder="correo@dominio.cl" ></asp:TextBox>
             </div>
         </div>
 <%--Contraseña--%>
         <div class="form-floating padd">
-            <asp:Label ID="LblContrasena" runat="server" Text="Contraseña:  " CssClass="control-label col-sm-2"></asp:Label>
+            <asp:Label ID="LblContrasena" runat="server" Text="Contraseña: " CssClass="control-label col-sm-2"></asp:Label>
             <div class="col-sm-12" >
-                 <asp:TextBox ID="TxtContrasena" runat="server" CssClass="form-control" placeholder="********"></asp:TextBox>
+                 <asp:TextBox ID="TxtContrasena" runat="server" CssClass="form-control" type="password" placeholder="**********"></asp:TextBox>
             </div>
         </div>
 <%--Boton--%>
         <div class="form-floating padd">
             <div class="col padd largo">
-                <asp:Button ID="BtnIngresar" runat="server" Text="Ingresar" Cssclass="form-control btn btn-primary" OnClick="Button1_Click"/>
+                <asp:Button ID="BtnIngresar" runat="server" Text="Ingresar" Cssclass="form-control btn btn-primary" OnClick="BtnIngresar_Click"/>
             </div>
         </div>
         <div class="text-center">
-            <asp:Label ID="LblMensaje" runat="server" Text=""></asp:Label>
-            <br />
-            <asp:Label ID="LblCamposOb" runat="server" Text=""></asp:Label>
-            <br />
             <asp:HyperLink ID="HlRegistrar" runat="server" href="RegistroUsuarios.aspx">Registrarse</asp:HyperLink>
         </div>
+        <asp:Label ID="LblMensaje" runat="server" Text=""></asp:Label>
     </form>
    </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

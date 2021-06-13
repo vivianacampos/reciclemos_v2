@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using reciclemos_v2.Controladores;
+using reciclemos_v2.Clases;
 
 namespace reciclemos_v2.Formularios
 {
@@ -15,9 +16,14 @@ namespace reciclemos_v2.Formularios
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void BtnIngresar_Click(object sender, EventArgs e)
         {
-            LblMensaje.Text = UsuarioControlador.loginUsuario(TxtCuenta.Text, TxtContrasena.Text);
+
+            LblMensaje.Text = Usuario.logearUsuario(TxtCorreo.Text, TxtContrasena.Text);
+            if(LblMensaje.Text == "Usuario autenticado")
+            {
+                Response.Redirect("MantenedorUsuarios.aspx");
+            }
 
         }
     }

@@ -50,8 +50,10 @@ C:\Users\Artsk\source\repos\reciclemos_v2\bin\roslyn\vbc.exe.config
 C:\Users\Artsk\source\repos\reciclemos_v2\bin\roslyn\vbc.rsp
 C:\Users\Artsk\source\repos\reciclemos_v2\bin\roslyn\VBCSCompiler.exe
 C:\Users\Artsk\source\repos\reciclemos_v2\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Artsk\source\repos\reciclemos_v2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Artsk\source\repos\reciclemos_v2\obj\Debug\reciclemos_v2.csprojAssemblyReference.cache
+C:\Users\Artsk\source\repos\reciclemos_v2\bin\EntityFramework.dll
+C:\Users\Artsk\source\repos\reciclemos_v2\bin\EntityFramework.SqlServer.dll
+C:\Users\Artsk\source\repos\reciclemos_v2\bin\EntityFramework.xml
+C:\Users\Artsk\source\repos\reciclemos_v2\bin\EntityFramework.SqlServer.xml
 C:\Users\Artsk\source\repos\reciclemos_v2\obj\Debug\reciclemos_v2.csproj.CoreCompileInputs.cache
 C:\Users\Artsk\source\repos\reciclemos_v2\obj\Debug\reciclemos_v2.csproj.CopyComplete
 C:\Users\Artsk\source\repos\reciclemos_v2\obj\Debug\reciclemos_v2.dll

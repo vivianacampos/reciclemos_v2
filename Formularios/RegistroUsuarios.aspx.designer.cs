@@ -141,13 +141,13 @@ namespace reciclemos_v2.Formularios
         protected global::System.Web.UI.WebControls.Label LblComuna;
 
         /// <summary>
-        /// Control DropDownList1.
+        /// Control DdlComunas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList DdlComunas;
 
         /// <summary>
         /// Control LblContrasena.
@@ -211,5 +211,14 @@ namespace reciclemos_v2.Formularios
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnRegistrar;
+
+        /// <summary>
+        /// Control LblMensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblMensaje;
     }
 }

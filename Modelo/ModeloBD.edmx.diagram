@@ -7,7 +7,7 @@
       <Diagram DiagramId="e89193aa02bd4800b34b4cc6d8d6b2f7" Name="Diagram1">
         <EntityTypeShape EntityType="reciclemosModel.comuna" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="reciclemosModel.estado" Width="1.5" PointX="7.5" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="reciclemosModel.logros" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="reciclemosModel.logros" Width="1.5" PointX="2.375" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="reciclemosModel.materiales" Width="1.5" PointX="7.5" PointY="9" IsExpanded="true" />
         <EntityTypeShape EntityType="reciclemosModel.materiales_detalle" Width="1.5" PointX="9.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="reciclemosModel.provincia" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />

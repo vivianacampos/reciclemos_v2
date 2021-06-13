@@ -118,7 +118,7 @@
                     <asp:Label ID="LblComuna" runat="server" Text="Comuna" CssClass="col-sm-6"></asp:Label>
                 </div>
                 <div class="col-sm-8 py-1">
-                    <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control">
+                    <asp:DropDownList ID="DdlComunas" runat="server" CssClass="form-control">
                         <asp:ListItem Selected="True" Value="SnRamon">San Ramón</asp:ListItem>
                     </asp:DropDownList>
                 </div>
@@ -132,18 +132,23 @@
                     <asp:Label ID="LblConfirma" runat="server" Text="Confirme contraseña" CssClass="col-sm-6"></asp:Label>
                 </div>
                 <div class="col-sm-8 py-1">
-                    <asp:TextBox ID="TxtConfirma" runat="server" CssClass="form-control" placeholder="" type="password"></asp:TextBox>
+                    <asp:TextBox ID="TxtConfirma" runat="server" CssClass="form-control"  type="password"></asp:TextBox>
                 </div>
                 <div class="col-sm-8 py-1">
                     <asp:CheckBox ID="ChbCondiciones" runat="server"/>
                     <asp:HyperLink ID="HlCondiciones" runat="server" href="../Vistas/Condiciones.html" target="_blank">Aceptar términos y condiciones</asp:HyperLink>
                 </div>
                 <div class="col-8 form-control padd text-center pt-5 pb-5">
-                    <asp:Button ID="BtnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-success" Width="300"/>
+                    <asp:Button ID="BtnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-success" Width="300" OnClick="BtnRegistrar_Click" />
                 </div>
+                <div class="text-center pt-5 align-content-center" style="width: 200px; height: 30px; color: #198754;">
+                <asp:Label ID="LblMensaje" runat="server" Text=""></asp:Label>   
+            </div>
            </div>
+
         </form>
     </div>
+
     <footer class="colorFooter p-2">
         <p class="text-center alignParr"><img src="../Imagenes/RE2.png" width="50" height="50" />  Re-Ciclemos  &copy;</p>
     </footer>

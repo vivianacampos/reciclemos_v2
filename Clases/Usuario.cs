@@ -7,6 +7,7 @@ namespace reciclemos_v2.Clases
 {
     public class Usuario : TipoUsuario
     {
+        private static List<Usuario> listaUsuario = new List<Usuario>();
         private string rut;
         private string nombre;
         private string apellido;
@@ -19,7 +20,7 @@ namespace reciclemos_v2.Clases
 
         public Usuario()
         {
-
+            
         }
         public Usuario (string correo, string contrasena)
         {
@@ -48,5 +49,27 @@ namespace reciclemos_v2.Clases
         public string Contrasena { get => contrasena; set => contrasena = value; }
         public string Direccion { get => direccion; set => direccion = value; }
         public string Comuna { get => comuna; set => comuna = value; }
+
+
+        //Método de clase
+        public static string agregarUsuario(Usuario usuario)
+        {
+            listaUsuario.Add(usuario);
+            return "Usuario agregado exitosamente";
+        }
+
+        public static string logearUsuario(string correo, string contrasena)
+        {
+            foreach (Usuario u in listaUsuario)
+            {
+                if (u.Correo.Equals(correo) && u.Contrasena.Equals(contrasena))
+                {
+                    return "Usuario autenticado";
+                }
+
+            }
+            return "Usuario no registrado";
+        }
+
     }
 }
