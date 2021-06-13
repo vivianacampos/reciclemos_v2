@@ -19,7 +19,7 @@ namespace reciclemos_v2.Formularios
         protected void BtnIngresar_Click(object sender, EventArgs e)
         {
 
-            LblMensaje.Text = Usuario.logearUsuario(TxtCorreo.Text, TxtContrasena.Text);
+            LblMensaje.Text = UsuarioControlador.logearUsuario(TxtCorreo.Text, TxtContrasena.Text);
             if(LblMensaje.Text == "Usuario autenticado")
             {
                 Response.Redirect("MantenedorUsuarios.aspx");

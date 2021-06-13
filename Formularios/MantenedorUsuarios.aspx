@@ -55,11 +55,12 @@
    
     <form id="form1" runat="server">
         <h2>Mantenedor de Usuarios</h2>
-        <asp:TextBox ID="TxtBusqueda" runat="server" placeholder="Ingrese Rut"></asp:TextBox>
-        <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" />
+        <asp:TextBox ID="TxtBusqueda" runat="server" placeholder="Ingrese Rut" CssClass="mt-0"></asp:TextBox>
+        <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" OnClick="BtnBuscar_Click" />
+        <asp:Label ID="LblMensaje" runat="server" Text="Label"></asp:Label>
         <br />
         <div class="text-left">
-            <asp:Panel ID="Panel1" runat="server" Visible="true" Height="243px">
+            <asp:Panel ID="Panel1" runat="server" Visible="false" Height="243px">
                 <table class="auto-style2" align="center">
                     <tr>
                         <td class="auto-style1">Rut</td>

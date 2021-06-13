@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using reciclemos_v2.Modelo;
 using reciclemos_v2.Clases;
+using reciclemos_v2.Controladores;
 
 namespace reciclemos_v2.Formularios
 {
@@ -38,18 +39,7 @@ namespace reciclemos_v2.Formularios
 
         protected void BtnRegistrar_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario()
-            {
-                Rut = TxtRut.Text,
-                Nombre = TxtNombre.Text,
-                Apellido = TxtApellido.Text,
-                Correo = TxtCorreo.Text,
-                Direccion = TxtDirección.Text,
-                Comuna = DdlComunas.SelectedValue,
-                Contrasena = TxtContrasena.Text,
-                Telefono = TxtTelefono.Text
-            };
-            LblMensaje.Text = Usuario.agregarUsuario(usuario);
+            LblMensaje.Text = UsuarioControlador.agregarUsuario(TxtRut.Text, TxtNombre.Text, TxtApellido.Text, TxtCorreo.Text, TxtTelefono.Text, TxtDirección.Text, DdlComunas.SelectedValue, TxtContrasena.Text);
         }
     }
 }

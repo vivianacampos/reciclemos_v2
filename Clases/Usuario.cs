@@ -51,25 +51,5 @@ namespace reciclemos_v2.Clases
         public string Comuna { get => comuna; set => comuna = value; }
 
 
-        //Método de clase
-        public static string agregarUsuario(Usuario usuario)
-        {
-            listaUsuario.Add(usuario);
-            return "Usuario agregado exitosamente";
-        }
-
-        public static string logearUsuario(string correo, string contrasena)
-        {
-            foreach (Usuario u in listaUsuario)
-            {
-                if (u.Correo.Equals(correo) && u.Contrasena.Equals(contrasena))
-                {
-                    return "Usuario autenticado";
-                }
-
-            }
-            return "Usuario no registrado";
-        }
-
     }
 }

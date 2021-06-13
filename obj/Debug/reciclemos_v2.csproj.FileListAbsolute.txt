@@ -58,3 +58,4 @@ C:\Users\Artsk\source\repos\reciclemos_v2\obj\Debug\reciclemos_v2.csproj.CoreCom
 C:\Users\Artsk\source\repos\reciclemos_v2\obj\Debug\reciclemos_v2.csproj.CopyComplete
 C:\Users\Artsk\source\repos\reciclemos_v2\obj\Debug\reciclemos_v2.dll
 C:\Users\Artsk\source\repos\reciclemos_v2\obj\Debug\reciclemos_v2.pdb
+C:\Users\Artsk\source\repos\reciclemos_v2\obj\Debug\reciclemos_v2.csprojAssemblyReference.cache

@@ -20,7 +20,7 @@ namespace reciclemos_v2.Controladores
         //Método para agregar a un usuario a la BD
         //public static string agregarUsuario(string rut, string nombre, string apellido, string telefono, string correo, string contrasena, string direccion, int comuna)
         //{
-            
+
         //    try
         //    {
         //        usuario usu = new usuario()
@@ -33,7 +33,7 @@ namespace reciclemos_v2.Controladores
         //            contrasena = contrasena,
         //            direccion = direccion,
         //            idComuna = 126
-                
+
         //        };
 
         //        dbc.usuario.Add(usu);
@@ -46,6 +46,48 @@ namespace reciclemos_v2.Controladores
         //        return "No se pudo agregar al usuario" + e.Message;
         //    }
         //}
+
+        //Método para agregar un usuario
+    
+        public static string agregarUsuario(string rut, string nombre, string apellido, string correo, string telefono, string direccion, string comuna, string contrasena)
+        {
+            try
+            {
+                Usuario usuario = new Usuario()
+                {
+                    Rut = rut,
+                    Nombre = nombre,
+                    Apellido = apellido,
+                    Correo = correo,
+                    Telefono = telefono,
+                    Direccion = direccion,
+                    Comuna = comuna,
+                    Contrasena = contrasena
+
+                };
+
+            listaUsuarios.Add(usuario);
+            return "Usuario agregado exitosamente";
+        }
+            catch (Exception e)
+            {
+
+                return "Error " + e.Message.ToString();
+            }
+        }
+        //Método para logear al usuario
+        public static string logearUsuario(string correo, string contrasena)
+        {
+            foreach (Usuario u in listaUsuarios)
+            {
+                if (u.Correo.Equals(correo) && u.Contrasena.Equals(contrasena))
+                {
+                    return "Usuario autenticado";
+                }
+
+            }
+            return "Usuario no registrado";
+        }
 
 
         //Método para buscar un usuario
@@ -60,6 +102,8 @@ namespace reciclemos_v2.Controladores
             }
             return null;
         }
+
+        //Método para modificar un usuario
 
 
         public static void fillComunas()
