@@ -26,6 +26,12 @@
         .opacidad {
             opacity: 0.3;
         }
+        .padd2{
+            padding-top: 0.8rem;
+            padding-bottom: 0.8rem;
+            border: none;
+            text-align: end;
+            }
 
         .padd {
             padding-top: 16px;
@@ -34,15 +40,20 @@
         .align {
             padding-left: 640px;
         }
-            .auto-style1 {
-                width: 119px;
-            }
-            .auto-style2 {
-                width: 40%;
-                height: 233px;
-            }
+        .auto-style3 {
+            display: block;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #495057;
+            background-clip: padding-box;
+            border-radius: .25rem;
+            transition: none;
+            border: 1px solid #ced4da;
+            background-color: #fff;
+        }
     </style>
-    <%--<nav class="navbar navbar-expand-lg navbar-dark colorNav p-1">
+    <nav class="navbar navbar-expand-lg navbar-dark colorNav p-1">
         <div class="container-fluid">
             <a class="navbar-brand pl-2" href="#"><img src="../Imagenes/RE3.png" width="50" height="50" /> Re-Ciclemos</a>
             <a class="navbar-brand" href="../Formularios/MantenedorUsuarios.aspx">Clientes</a>
@@ -51,77 +62,81 @@
             <a class="navbar-brand" href="#">Reportes</a>
             <a class="navbar-brand pr-5" href="#"><i class="fas fa-sign-out-alt"></i></a>
         </div>
-    </nav>--%>
+    </nav>
    
     <form id="form1" runat="server">
-        <h2>Mantenedor de Usuarios</h2>
-        <asp:TextBox ID="TxtBusqueda" runat="server" placeholder="Ingrese Rut" CssClass="mt-0"></asp:TextBox>
-        <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" OnClick="BtnBuscar_Click" />
-        <asp:Label ID="LblMensaje" runat="server" Text="Label"></asp:Label>
-        <br />
-        <div class="text-left">
-            <asp:Panel ID="Panel1" runat="server" Visible="false" Height="243px">
-                <table class="auto-style2" align="center">
-                    <tr>
-                        <td class="auto-style1">Rut</td>
-                        <td>
-                            <asp:TextBox ID="TxtRut" runat="server"></asp:TextBox>
-                        </td>
-                
-                    </tr>
-                    <tr>
-                        <td class="auto-style1">Nombre</td>
-                        <td>
-                            <asp:TextBox ID="TxtNombre" runat="server"></asp:TextBox>
-                        </td>
-                
-                    </tr>
-                    <tr>
-                        <td class="auto-style1">Apellido</td>
-                        <td>
-                            <asp:TextBox ID="TxtApellido" runat="server"></asp:TextBox>
-                        </td>
-                
-                    </tr>
-                    <tr>
-                        <td class="auto-style1">Correo</td>
-                        <td>
-                            <asp:TextBox ID="TxtCorreo" runat="server"></asp:TextBox>
-                        </td>
-                
-                    </tr>
-                    <tr>
-                        <td class="auto-style1">Teléfono</td>
-                        <td>
-                            <asp:TextBox ID="TxtTelefono" runat="server"></asp:TextBox>
-                        </td>
-                
-                    </tr>
-                    <tr>
-                        <td class="auto-style1">Dirección</td>
-                        <td>
-                            <asp:TextBox ID="TxtDireccion" runat="server"></asp:TextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style1">Comuna</td>
-                        <td>
-                            <asp:DropDownList ID="DdlComunas" runat="server" Width="181px" Height="27px">
+        <div class="container pt-5">
+            <h1 class="display-4 text-center" style="font-size: 2.5rem; padding-bottom: 2rem;">Mantenedor de Usuarios</h1>
+            <div class="row">
+                <div class="col-2 pr-4" style="text-align:center;">
+                    <asp:TextBox ID="TxtBusqueda" runat="server" placeholder="Ingrese Rut" CssClass="form-control" Width="200px"></asp:TextBox>
+                </div>
+                <div class="col-2 pl-5">
+                    <asp:Button ID="BtnBuscar" runat="server" Text="Buscar" OnClick="BtnBuscar_Click" CssClass="btn btn-primary"/>
+                </div>
+            </div>
+            <div class="px-2 py-4">
+                <asp:Label ID="LblMensaje" runat="server" Text=""></asp:Label>
+            </div>
+            <br />
+      
+            <asp:Panel ID="Panel1" runat="server" Visible="true" Height="243px">
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-4 form-control padd2">
+                            <asp:Label ID="LblRut" runat="server" Text="Rut"></asp:Label>
+                        </div> 
+                        <div class="col-sm-5 py-1">
+                            <asp:TextBox ID="TxtRut" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="col-4 form-control padd2">
+                            <asp:Label ID="LblNombre" runat="server" Text="Nombre"></asp:Label>
+                        </div>
+                        <div class="col-sm-5 py-1">
+                            <asp:TextBox ID="TxtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="col-4 form-control padd2">
+                            <asp:Label ID="LblApellido" runat="server" Text="Apellido"></asp:Label>
+                        </div>   
+                        <div class="col-sm-5 py-1">
+                            <asp:TextBox ID="TxtApellido" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="col-4 form-control padd2">
+                            <asp:Label ID="LblCorreo" runat="server" Text="Correo"></asp:Label>
+                        </div>   
+                        <div class="col-sm-5 py-1">
+                            <asp:TextBox ID="TxtCorreo" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="col-4 form-control padd2">
+                            <asp:Label ID="LblTelefono" runat="server" Text="Teléfono"></asp:Label>
+                        </div>
+                        <div class="col-sm-5 py-1">
+                            <asp:TextBox ID="TxtTelefono" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="col-4 form-control padd2">
+                            <asp:Label ID="LblDireccion" runat="server" Text="Dirección"></asp:Label>
+                        </div>
+                        <div class="col-sm-5 py-1">
+                            <asp:TextBox ID="TxtDireccion" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                        <div class="col-4 form-control padd2">
+                            <asp:Label ID="LblComuna" runat="server" Text="Comuna"></asp:Label>
+                        </div>
+                        <div class="col-sm-5 py-1">
+                            <asp:DropDownList ID="DdlComunas" runat="server" CssClass="form-control"> 
+                                <asp:ListItem Selected="True">San Ramon</asp:ListItem>
                             </asp:DropDownList>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="auto-style1">Contraseña</td>
-                        <td>
-                            <asp:TextBox ID="TxtContrasena" runat="server"></asp:TextBox>
-                        </td>
-                    </tr>
-                </table>
-            </asp:Panel>
+                        </div>
+                        <div class="col-4 form-control padd2">
+                            <asp:Label ID="LblContrasena" runat="server" Text="Contraseña"></asp:Label>
+                        </div>
+                        <div class="col-sm-5 py-1">
+                            <asp:TextBox ID="TxtContrasena" runat="server" CssClass="form-control"></asp:TextBox>
+                        </div>
+                    </div>
+                </div>
+            </asp:Panel> 
         </div>
-        
-
-        
     </form>
     
    <%-- <div class="padd">

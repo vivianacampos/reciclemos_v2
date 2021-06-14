@@ -39,6 +39,7 @@ namespace reciclemos_v2.Formularios
                 LblMensaje.Text = "Usuario encontrado";
                 LblMensaje.ForeColor = Color.Green;
                 Panel1.Visible = true;
+                TxtRut.Text = usuario.Rut;
                 TxtNombre.Text = usuario.Nombre;
                 TxtApellido.Text = usuario.Apellido;
                 TxtCorreo.Text = usuario.Correo;

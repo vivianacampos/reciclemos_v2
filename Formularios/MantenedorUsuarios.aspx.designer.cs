@@ -60,6 +60,15 @@ namespace reciclemos_v2.Formularios
         protected global::System.Web.UI.WebControls.Panel Panel1;
 
         /// <summary>
+        /// Control LblRut.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblRut;
+
+        /// <summary>
         /// Control TxtRut.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace reciclemos_v2.Formularios
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtRut;
+
+        /// <summary>
+        /// Control LblNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblNombre;
 
         /// <summary>
         /// Control TxtNombre.
@@ -78,6 +96,15 @@ namespace reciclemos_v2.Formularios
         protected global::System.Web.UI.WebControls.TextBox TxtNombre;
 
         /// <summary>
+        /// Control LblApellido.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblApellido;
+
+        /// <summary>
         /// Control TxtApellido.
         /// </summary>
         /// <remarks>
@@ -85,6 +112,15 @@ namespace reciclemos_v2.Formularios
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtApellido;
+
+        /// <summary>
+        /// Control LblCorreo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblCorreo;
 
         /// <summary>
         /// Control TxtCorreo.
@@ -96,6 +132,15 @@ namespace reciclemos_v2.Formularios
         protected global::System.Web.UI.WebControls.TextBox TxtCorreo;
 
         /// <summary>
+        /// Control LblTelefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblTelefono;
+
+        /// <summary>
         /// Control TxtTelefono.
         /// </summary>
         /// <remarks>
@@ -103,6 +148,15 @@ namespace reciclemos_v2.Formularios
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtTelefono;
+
+        /// <summary>
+        /// Control LblDireccion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblDireccion;
 
         /// <summary>
         /// Control TxtDireccion.
@@ -114,6 +168,15 @@ namespace reciclemos_v2.Formularios
         protected global::System.Web.UI.WebControls.TextBox TxtDireccion;
 
         /// <summary>
+        /// Control LblComuna.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblComuna;
+
+        /// <summary>
         /// Control DdlComunas.
         /// </summary>
         /// <remarks>
@@ -121,6 +184,15 @@ namespace reciclemos_v2.Formularios
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DdlComunas;
+
+        /// <summary>
+        /// Control LblContrasena.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblContrasena;
 
         /// <summary>
         /// Control TxtContrasena.
