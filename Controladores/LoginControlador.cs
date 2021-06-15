@@ -9,8 +9,8 @@ namespace reciclemos_v2.Controladores
 {
     public class LoginControlador
     {
-        //Método para buscar usuario y contraseña en la BD
         
+
     }
 
 }

@@ -9,11 +9,12 @@ namespace reciclemos_v2.Controladores
 {
     public class UsuarioControlador
     {
-        private static List<Usuario> listaUsuarios = new List<Usuario>();
+        
         private static List<Comuna> listaComunas = new List<Comuna>();
+        private static List<Usuario> listaUsuarios = new List<Usuario>();
 
-
-
+        
+        
         //private static reciclemosEntities dbc = new reciclemosEntities();
 
 
@@ -65,7 +66,7 @@ namespace reciclemos_v2.Controladores
                     Contrasena = contrasena
 
                 };
-
+            
             listaUsuarios.Add(usuario);
             return "Usuario agregado exitosamente";
         }
@@ -104,8 +105,37 @@ namespace reciclemos_v2.Controladores
         }
 
         //Método para modificar un usuario
+        public static string modificarUsuario(string rut, string nombre, string apellido, string correo, string telefono, string direccion, string comuna, string contrasena)
+        {
+            try
+            {
+                Usuario usuario = new Usuario()
+                {
+                    Rut = rut,
+                    Nombre = nombre,
+                    Apellido = apellido,
+                    Correo = correo,
+                    Telefono = telefono,
+                    Direccion = direccion,
+                    Comuna = comuna,
+                    Contrasena = contrasena
+                };
 
+                listaUsuarios.Add(usuario);
+                return "Usuario modificado exitósamente";
+            }
+            catch (Exception e)
+            {
+                return "Error: " + e.Message.ToString();
+            }
+            
+        }
 
+        public static List<Comuna> getAll()
+        {
+            return listaComunas;
+        }
+        //Método de autollenado de comunas
         public static void fillComunas()
         {
            if(ComunaControlador.getAll().Count == 0)

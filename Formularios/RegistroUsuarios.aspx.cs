@@ -12,30 +12,49 @@ namespace reciclemos_v2.Formularios
 {
     public partial class RegistroUsuarios : System.Web.UI.Page
     {
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Llamar al método de carga de las comunas
+            UsuarioControlador.fillComunas();
+
             if (!IsPostBack)
             {
-                //using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["reciclemosEntities"].ConnectionString))
-                //{
-                //    SqlCommand cmd = new SqlCommand();
-                //    cmd.CommandType = CommandType.StoredProcedure;
-                //    GrdUsuarios.DataSource = from usuario in dbc.usuario.ToList()
-                //                             select new
-                //                             {
-                //                                 Rut = usuario.rut,
-                //                                 Nombre = usuario.nombre,
-                //                                 Apellido = usuario.apellido,
-                //                                 Telefono = usuario.telefono,
-                //                                 Correo = usuario.telefono,
-                //                                 Direccion = usuario.direccion,
-                //                                 LblContrasena = usuario.contrasena
-                //                             };
-                //    GrdUsuarios.DataBind();
-                //}
+                cargarComunas();
             }
         }
+            //Método para cargar comunas
+            private  void cargarComunas()
+
+            {
+                DdlComunas.DataSource = from c in ComunaControlador.getAll()
+                                        select new
+                                        {
+                                            Nombre = c.Nombrecomuna,
+                                        };
+            DdlComunas.DataTextField = "nombreComuna";
+            DdlComunas.DataBind();
+            }
+
+            //using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["reciclemosEntities"].ConnectionString))
+            //{
+            //    SqlCommand cmd = new SqlCommand();
+            //    cmd.CommandType = CommandType.StoredProcedure;
+            //    GrdUsuarios.DataSource = from usuario in dbc.usuario.ToList()
+            //                             select new
+            //                             {
+            //                                 Rut = usuario.rut,
+            //                                 Nombre = usuario.nombre,
+            //                                 Apellido = usuario.apellido,
+            //                                 Telefono = usuario.telefono,
+            //                                 Correo = usuario.telefono,
+            //                                 Direccion = usuario.direccion,
+            //                                 LblContrasena = usuario.contrasena
+            //                             };
+            //    GrdUsuarios.DataBind();
+            //}
+      
+        
 
         protected void BtnRegistrar_Click(object sender, EventArgs e)
         {

@@ -54,9 +54,49 @@ namespace reciclemos_v2.Formularios
                 LblMensaje.ForeColor = Color.Red;
 
             }
+        }
 
-            
-            
+        protected void BtnModificar_Click(object sender, EventArgs e)
+        {
+            if (BtnModificar.Text == "Modificar")
+            {
+                BtnGuardar.Visible = true;
+                BtnEliminar.Visible = true;
+                TxtRut.Enabled = true;
+                TxtNombre.Enabled = true;
+                TxtApellido.Enabled = true;
+                TxtCorreo.Enabled = true;
+                TxtDireccion.Enabled = true;
+                TxtTelefono.Enabled = true;
+                TxtContrasena.Enabled = true;
+                DdlComunas.Enabled = true;
+                BtnModificar.Text = "Ocultar";
+
+            } else if (BtnModificar.Text == "Ocultar")
+            {
+                BtnGuardar.Visible = false;
+                BtnEliminar.Visible = false;
+                TxtRut.Enabled = false;
+                TxtNombre.Enabled = false;
+                TxtApellido.Enabled = false;
+                TxtCorreo.Enabled = false;
+                TxtDireccion.Enabled = false;
+                TxtTelefono.Enabled = false;
+                TxtContrasena.Enabled = false;
+                DdlComunas.Enabled = false;
+                BtnModificar.Text = "Modificar";
+            }
+
+        }
+
+        protected void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            Usuario usuario = new Usuario();
+            public static string modificarUsuario()
+            {
+                return "";
+            }
+
         }
     }
 }

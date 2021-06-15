@@ -87,43 +87,43 @@
                             <asp:Label ID="LblRut" runat="server" Text="Rut"></asp:Label>
                         </div> 
                         <div class="col-sm-5 py-1">
-                            <asp:TextBox ID="TxtRut" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="TxtRut" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
                         </div>
                         <div class="col-4 form-control padd2">
                             <asp:Label ID="LblNombre" runat="server" Text="Nombre"></asp:Label>
                         </div>
                         <div class="col-sm-5 py-1">
-                            <asp:TextBox ID="TxtNombre" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="TxtNombre" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
                         </div>
                         <div class="col-4 form-control padd2">
-                            <asp:Label ID="LblApellido" runat="server" Text="Apellido"></asp:Label>
+                            <asp:Label ID="LblApellido" runat="server" Text="Apellido" ></asp:Label>
                         </div>   
                         <div class="col-sm-5 py-1">
-                            <asp:TextBox ID="TxtApellido" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="TxtApellido" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
                         </div>
                         <div class="col-4 form-control padd2">
                             <asp:Label ID="LblCorreo" runat="server" Text="Correo"></asp:Label>
                         </div>   
                         <div class="col-sm-5 py-1">
-                            <asp:TextBox ID="TxtCorreo" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="TxtCorreo" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
                         </div>
                         <div class="col-4 form-control padd2">
                             <asp:Label ID="LblTelefono" runat="server" Text="Teléfono"></asp:Label>
                         </div>
                         <div class="col-sm-5 py-1">
-                            <asp:TextBox ID="TxtTelefono" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="TxtTelefono" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
                         </div>
                         <div class="col-4 form-control padd2">
                             <asp:Label ID="LblDireccion" runat="server" Text="Dirección"></asp:Label>
                         </div>
                         <div class="col-sm-5 py-1">
-                            <asp:TextBox ID="TxtDireccion" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="TxtDireccion" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
                         </div>
                         <div class="col-4 form-control padd2">
                             <asp:Label ID="LblComuna" runat="server" Text="Comuna"></asp:Label>
                         </div>
                         <div class="col-sm-5 py-1">
-                            <asp:DropDownList ID="DdlComunas" runat="server" CssClass="form-control"> 
+                            <asp:DropDownList ID="DdlComunas" runat="server" CssClass="form-control" Enabled="False"> 
                                 <asp:ListItem Selected="True">San Ramon</asp:ListItem>
                             </asp:DropDownList>
                         </div>
@@ -131,7 +131,16 @@
                             <asp:Label ID="LblContrasena" runat="server" Text="Contraseña"></asp:Label>
                         </div>
                         <div class="col-sm-5 py-1">
-                            <asp:TextBox ID="TxtContrasena" runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="TxtContrasena" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
+                        </div>
+                        <div class="col-4 py-1 pt-3" style="text-align: end;">
+                            <asp:Button ID="BtnModificar" runat="server" Text="Modificar" CssClass="btn btn-success" Width="150px" OnClick="BtnModificar_Click"/>
+                       </div>
+                       <div class="col-4 py-1 pt-3" style="text-align: center;">
+                            <asp:Button ID="BtnGuardar" runat="server" Text="Guardar" CssClass="btn btn-warning" Width="150px" Visible="false" OnClick="BtnGuardar_Click"/>
+                       </div>
+                        <div class="col-4 py-1 pt-3" style="text-align: start;">
+                            <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger" Width="150px" Visible="false"/>
                         </div>
                     </div>
                 </div>

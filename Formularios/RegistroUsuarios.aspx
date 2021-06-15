@@ -119,7 +119,6 @@
                 </div>
                 <div class="col-sm-8 py-1">
                     <asp:DropDownList ID="DdlComunas" runat="server" CssClass="form-control">
-                        <asp:ListItem Selected="True" Value="SnRamon">San Ramón</asp:ListItem>
                     </asp:DropDownList>
                 </div>
                 <div class="col-8 form-control padd">
