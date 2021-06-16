@@ -14,6 +14,7 @@ namespace reciclemos_v2.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            UsuarioControlador.fillComunas();
             if (!IsPostBack)
             {
                 cargarComunas();
@@ -25,9 +26,11 @@ namespace reciclemos_v2.Formularios
             DdlComunas.DataSource = from c in ComunaControlador.getAll()
                                     select new
                                     {
-                                        Nombre = c.Nombrecomuna,
+                                        Comuna = c.Nombrecomuna,
+                                        IdComuna = c.IdComuna
                                     };
-            DdlComunas.DataValueField = "Comuna";
+            DdlComunas.DataValueField = "IdComuna";
+            DdlComunas.DataTextField = "Comuna";
             DdlComunas.DataBind();
         }
 
@@ -52,15 +55,18 @@ namespace reciclemos_v2.Formularios
             {
                 LblMensaje.Text = "Usuario no encontrado";
                 LblMensaje.ForeColor = Color.Red;
+                Panel1.Visible = false;
 
             }
         }
 
-        protected void BtnModificar_Click(object sender, EventArgs e)
+        protected void BtnOpciones_Click(object sender, EventArgs e)
         {
-            if (BtnModificar.Text == "Modificar")
+            cargarComunas();
+
+            if (BtnOpciones.Text == "Opciones")
             {
-                BtnGuardar.Visible = true;
+                BtnModificar.Visible = true;
                 BtnEliminar.Visible = true;
                 TxtRut.Enabled = true;
                 TxtNombre.Enabled = true;
@@ -70,11 +76,11 @@ namespace reciclemos_v2.Formularios
                 TxtTelefono.Enabled = true;
                 TxtContrasena.Enabled = true;
                 DdlComunas.Enabled = true;
-                BtnModificar.Text = "Ocultar";
+                BtnOpciones.Text = "Ocultar";
 
-            } else if (BtnModificar.Text == "Ocultar")
+            } else if (BtnOpciones.Text == "Ocultar")
             {
-                BtnGuardar.Visible = false;
+                BtnModificar.Visible = false;
                 BtnEliminar.Visible = false;
                 TxtRut.Enabled = false;
                 TxtNombre.Enabled = false;
@@ -84,19 +90,32 @@ namespace reciclemos_v2.Formularios
                 TxtTelefono.Enabled = false;
                 TxtContrasena.Enabled = false;
                 DdlComunas.Enabled = false;
-                BtnModificar.Text = "Modificar";
+                BtnOpciones.Text = "Opciones";
             }
+
 
         }
 
-        protected void BtnGuardar_Click(object sender, EventArgs e)
+        protected void BtnModificar_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario();
-            public static string modificarUsuario()
-            {
-                return "";
-            }
+            LblMensaje.Text = UsuarioControlador.modificarUsuario(TxtRut.Text, TxtNombre.Text, TxtApellido.Text, TxtCorreo.Text, TxtTelefono.Text, TxtDireccion.Text, DdlComunas.SelectedValue, TxtContrasena.Text);
 
+        }
+
+        protected void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            LblMensaje.Text = UsuarioControlador.eliminarUsuario(TxtRut.Text);
+            if (LblMensaje.Text == "Usuario eliminado exitosamente")
+            {
+                TxtRut.Text = "";
+                TxtNombre.Text = "";
+                TxtApellido.Text = "";
+                TxtCorreo.Text = "";
+                TxtTelefono.Text = "";
+                TxtDireccion.Text = "";
+                DdlComunas.SelectedIndex = 0;
+                TxtContrasena.Text = "";
+            }
         }
     }
 }

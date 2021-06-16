@@ -9,19 +9,29 @@ namespace reciclemos_v2.Controladores
 {
     public class UsuarioControlador
     {
-        
+
         private static List<Comuna> listaComunas = new List<Comuna>();
         private static List<Usuario> listaUsuarios = new List<Usuario>();
+        private static List<Usuario> listaUser = new List<Usuario>();
 
+        public static void fillUser()
+        {
+            if (listaUser.Count == 0)
+            {
+                listaUser.Add(new Usuario("a@a.cl", "123", new TipoUsuario(1, "Admin")));
+                listaUser.Add(new Usuario("n@n.cl", "123", new TipoUsuario(2, "User")));
+            }
+        }
+        public static List<Usuario> getUser()
+        {
+            return listaUser;
+        }
         
         
         //private static reciclemosEntities dbc = new reciclemosEntities();
-
-
         //Método para agregar a un usuario a la BD
         //public static string agregarUsuario(string rut, string nombre, string apellido, string telefono, string correo, string contrasena, string direccion, int comuna)
         //{
-
         //    try
         //    {
         //        usuario usu = new usuario()
@@ -34,13 +44,10 @@ namespace reciclemos_v2.Controladores
         //            contrasena = contrasena,
         //            direccion = direccion,
         //            idComuna = 126
-
         //        };
-
         //        dbc.usuario.Add(usu);
         //        dbc.SaveChanges();
         //        return "Usuario agregado exitosamente";
-
         //    }
         //    catch (Exception e)
         //    {
@@ -49,11 +56,16 @@ namespace reciclemos_v2.Controladores
         //}
 
         //Método para agregar un usuario
-    
         public static string agregarUsuario(string rut, string nombre, string apellido, string correo, string telefono, string direccion, string comuna, string contrasena)
         {
             try
             {
+                //Comuna comuna = ComunaControlador.buscarComuna(idComuna);
+
+                //if(comuna != null)
+                //{
+
+                //}
                 Usuario usuario = new Usuario()
                 {
                     Rut = rut,
@@ -66,10 +78,10 @@ namespace reciclemos_v2.Controladores
                     Contrasena = contrasena
 
                 };
-            
-            listaUsuarios.Add(usuario);
-            return "Usuario agregado exitosamente";
-        }
+                listaUsuarios.Add(usuario);
+                return "Usuario agregado exitosamente";
+
+            }
             catch (Exception e)
             {
 
@@ -109,32 +121,42 @@ namespace reciclemos_v2.Controladores
         {
             try
             {
-                Usuario usuario = new Usuario()
-                {
-                    Rut = rut,
-                    Nombre = nombre,
-                    Apellido = apellido,
-                    Correo = correo,
-                    Telefono = telefono,
-                    Direccion = direccion,
-                    Comuna = comuna,
-                    Contrasena = contrasena
-                };
+                Usuario usuario = buscarUsuario(rut);
 
-                listaUsuarios.Add(usuario);
+                usuario.Rut = rut;
+                usuario.Nombre = nombre;
+                usuario.Apellido = apellido;
+                usuario.Correo = correo;
+                usuario.Telefono = telefono;
+                usuario.Direccion = direccion;
+                usuario.Comuna = comuna;
+                usuario.Contrasena = contrasena;
+                
                 return "Usuario modificado exitósamente";
             }
             catch (Exception e)
-            {
+            {   
                 return "Error: " + e.Message.ToString();
             }
             
         }
 
-        public static List<Comuna> getAll()
+        //Método para eliminar usuario de la lista
+        public static string eliminarUsuario(string rut)
         {
-            return listaComunas;
+            Usuario usuario = buscarUsuario(rut);
+            if(usuario != null)
+            {
+                listaUsuarios.Remove(usuario);
+
+                return "Usuario eliminado exitosamente";
+            }
+            else
+            {
+                return "No se pudo eliminar a usuario";
+            }
         }
+
         //Método de autollenado de comunas
         public static void fillComunas()
         {

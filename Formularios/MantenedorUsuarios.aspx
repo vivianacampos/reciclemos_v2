@@ -80,7 +80,7 @@
             </div>
             <br />
       
-            <asp:Panel ID="Panel1" runat="server" Visible="true" Height="243px">
+            <asp:Panel ID="Panel1" runat="server" Visible="false" Height="243px">
                 <div class="container">
                     <div class="row ">
                         <div class="col-4 form-control padd2">
@@ -124,7 +124,6 @@
                         </div>
                         <div class="col-sm-5 py-1">
                             <asp:DropDownList ID="DdlComunas" runat="server" CssClass="form-control" Enabled="False"> 
-                                <asp:ListItem Selected="True">San Ramon</asp:ListItem>
                             </asp:DropDownList>
                         </div>
                         <div class="col-4 form-control padd2">
@@ -134,13 +133,13 @@
                             <asp:TextBox ID="TxtContrasena" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
                         </div>
                         <div class="col-4 py-1 pt-3" style="text-align: end;">
-                            <asp:Button ID="BtnModificar" runat="server" Text="Modificar" CssClass="btn btn-success" Width="150px" OnClick="BtnModificar_Click"/>
+                            <asp:Button ID="BtnOpciones" runat="server" Text="Opciones" CssClass="btn btn-success" Width="150px" OnClick="BtnOpciones_Click"/>
                        </div>
                        <div class="col-4 py-1 pt-3" style="text-align: center;">
-                            <asp:Button ID="BtnGuardar" runat="server" Text="Guardar" CssClass="btn btn-warning" Width="150px" Visible="false" OnClick="BtnGuardar_Click"/>
+                            <asp:Button ID="BtnModificar" runat="server" Text="Modificar" CssClass="btn btn-warning" Width="150px" Visible="false" OnClick="BtnModificar_Click"/>
                        </div>
                         <div class="col-4 py-1 pt-3" style="text-align: start;">
-                            <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger" Width="150px" Visible="false"/>
+                            <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger" Width="150px" Visible="false" OnClick="BtnEliminar_Click"/>
                         </div>
                     </div>
                 </div>

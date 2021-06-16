@@ -23,38 +23,50 @@ namespace reciclemos_v2.Formularios
                 cargarComunas();
             }
         }
-            //Método para cargar comunas
-            private  void cargarComunas()
 
-            {
-                DdlComunas.DataSource = from c in ComunaControlador.getAll()
-                                        select new
-                                        {
-                                            Nombre = c.Nombrecomuna,
-                                        };
-            DdlComunas.DataTextField = "nombreComuna";
+        private void cargarComunas()
+        {
+            DdlComunas.DataSource = from c in ComunaControlador.getAll()
+                                    select new
+                                    {
+                                        Comuna = c.Nombrecomuna,
+                                        IdComuna = c.IdComuna
+                                    };
+            DdlComunas.DataValueField = "IdComuna";
+            DdlComunas.DataTextField = "Comuna";
             DdlComunas.DataBind();
-            }
+        }
+        //Método para cargar comunas
+        //private  void cargarComunas()
 
-            //using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["reciclemosEntities"].ConnectionString))
-            //{
-            //    SqlCommand cmd = new SqlCommand();
-            //    cmd.CommandType = CommandType.StoredProcedure;
-            //    GrdUsuarios.DataSource = from usuario in dbc.usuario.ToList()
-            //                             select new
-            //                             {
-            //                                 Rut = usuario.rut,
-            //                                 Nombre = usuario.nombre,
-            //                                 Apellido = usuario.apellido,
-            //                                 Telefono = usuario.telefono,
-            //                                 Correo = usuario.telefono,
-            //                                 Direccion = usuario.direccion,
-            //                                 LblContrasena = usuario.contrasena
-            //                             };
-            //    GrdUsuarios.DataBind();
-            //}
-      
-        
+        //{
+        //DdlComunas.DataSource = from c in ComunaControlador.getAll()
+        //                        select new
+        //                        {
+        //                            c.Nombrecomuna
+        //                            };
+        //    DdlComunas.DataBind();
+        //}
+
+        //using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["reciclemosEntities"].ConnectionString))
+        //{
+        //    SqlCommand cmd = new SqlCommand();
+        //    cmd.CommandType = CommandType.StoredProcedure;
+        //    GrdUsuarios.DataSource = from usuario in dbc.usuario.ToList()
+        //                             select new
+        //                             {
+        //                                 Rut = usuario.rut,
+        //                                 Nombre = usuario.nombre,
+        //                                 Apellido = usuario.apellido,
+        //                                 Telefono = usuario.telefono,
+        //                                 Correo = usuario.telefono,
+        //                                 Direccion = usuario.direccion,
+        //                                 LblContrasena = usuario.contrasena
+        //                             };
+        //    GrdUsuarios.DataBind();
+        //}
+
+
 
         protected void BtnRegistrar_Click(object sender, EventArgs e)
         {

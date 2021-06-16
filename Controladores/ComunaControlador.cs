@@ -10,14 +10,26 @@ namespace reciclemos_v2.Controladores
     {
         private static List<Comuna> listaComunas = new List<Comuna>();
 
-        public static void addComunas(int idComuna, string nombreComuna)
+        public static void addComunas(int idComuna, string comuna)
         {
-            Comuna comuna = new Comuna()
+            Comuna c = new Comuna()
             {
                 IdComuna = idComuna,
-                Nombrecomuna = nombreComuna,
+                Nombrecomuna = comuna,
             };
-            listaComunas.Add(comuna);
+            listaComunas.Add(c);
+        }
+
+        public static Comuna buscarComuna(string codigo)
+        {
+            foreach (Comuna comuna in listaComunas)
+            {
+                if (comuna.IdComuna == int.Parse(codigo))
+                {
+                    return comuna;
+                }
+            }
+            return null;
         }
 
         public static List<Comuna> getAll()
