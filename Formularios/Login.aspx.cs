@@ -27,6 +27,15 @@ namespace reciclemos_v2.Formularios
             Usuario usuario = LoginControlador.login(TxtCorreo.Text, TxtContrasena.Text);
             if(usuario != null)
             {
+                switch (usuario.Rol.Id)
+                {
+                    case 1:
+                        Response.Redirect("../Vistas/PanelDeEmpresa.html");
+                        break;
+                    case 2:
+                        Response.Redirect("../Vistas/PanelDeUsuario.html");
+                        break;
+                }
                 
                 Session["usuario"] = usuario;
                 Response.Redirect("MantenedorUsuarios.aspx");
