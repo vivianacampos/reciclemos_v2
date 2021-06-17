@@ -35,14 +35,17 @@ namespace reciclemos_v2.Clases
             this.rol = rol;
         }
 
-        public Usuario(string rut, string nombre, string apellido, string telefono, string correo, string contrasena, string direccion, string comuna) : this(rut, nombre)
+        public Usuario(string rut, string nombre, string apellido, string telefono, string correo, string contrasena, string direccion, string comuna, TipoUsuario rol) 
         {
+            this.rut = rut;
+            this.nombre = nombre;
             this.apellido = apellido;
             this.telefono = telefono;
             this.correo = correo;
             this.contrasena = contrasena;
             this.direccion = direccion;
             this.comuna = comuna;
+            this.rol = rol;
         }
 
         public static List<Usuario> ListaUsuario { get => listaUsuario; set => listaUsuario = value; }
@@ -54,5 +57,6 @@ namespace reciclemos_v2.Clases
         public string Contrasena { get => contrasena; set => contrasena = value; }
         public string Direccion { get => direccion; set => direccion = value; }
         public string Comuna { get => comuna; set => comuna = value; }
+        public TipoUsuario Rol { get => rol; set => rol = value; }
     }
 }

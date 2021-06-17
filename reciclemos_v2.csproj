@@ -2034,7 +2034,7 @@
     <Content Include="Vistas\index.html" />
     <Content Include="Vistas\Materiales.html" />
     <Content Include="Vistas\Nosotros.html" />
-    <Content Include="Vistas\Panel de Empresa.html" />
+    <Content Include="Vistas\PanelDeEmpresa.html" />
     <Content Include="Vistas\PanelDeUsuario.html" />
     <Content Include="Vistas\Talleres.html" />
     <Content Include="Web.config" />

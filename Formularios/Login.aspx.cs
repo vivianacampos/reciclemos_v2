@@ -13,7 +13,13 @@ namespace reciclemos_v2.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             UsuarioControlador.fillUser();
+            if(Session["error"] != null)
+            {
+                LblMensaje.Text = Session["error"].ToString();
+                Session["error"] = null;
+            }
         }
 
         protected void BtnIngresar_Click(object sender, EventArgs e)
@@ -21,16 +27,17 @@ namespace reciclemos_v2.Formularios
             Usuario usuario = LoginControlador.login(TxtCorreo.Text, TxtContrasena.Text);
             if(usuario != null)
             {
-                LblMensaje.Text = "Correcto";
+                
                 Session["usuario"] = usuario;
                 Response.Redirect("MantenedorUsuarios.aspx");
             }
             else
             {
-                LblMensaje.Text = "Incorrecto";
+                LblMensaje.Text = "Usuario y/o contraseña incorrectos.";
                 Session["usuario"] = null;
             }
 
         }
+
     }
 }
