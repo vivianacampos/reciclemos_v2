@@ -40,31 +40,25 @@
         .align {
             padding-left: 640px;
         }
-        .auto-style3 {
-            display: block;
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.5;
-            color: #495057;
-            background-clip: padding-box;
-            border-radius: .25rem;
-            transition: none;
-            border: 1px solid #ced4da;
-            background-color: #fff;
-        }
+            .auto-style4 {
+                left: 0px;
+                top: 0px;
+            }
     </style>
-    <nav class="navbar navbar-expand-lg navbar-dark colorNav p-1">
+<form id="form1" runat="server">
+    <nav class="auto-style4">
         <div class="container-fluid">
             <a class="navbar-brand pl-2" href="#"><img src="../Imagenes/RE3.png" width="50" height="50" /> Re-Ciclemos</a>
             <a class="navbar-brand" href="../Formularios/MantenedorUsuarios.aspx">Clientes</a>
             <a class="navbar-brand" href="#">Solicitudes</a>
             <a class="navbar-brand" href="#">Mensajes</a>
             <a class="navbar-brand" href="#">Reportes</a>
-            <a class="navbar-brand pr-5" href="#"><i class="fas fa-sign-out-alt"></i></a>
+            <a class="navbar-brand pr-5" ><i class="fas fa-sign-out-alt"><asp:ImageButton ID="ImgBtnLogout" runat="server" OnClick="ImgBtnLogout_Click" style="width: 14px"  /></i></a>
+            <a>Usuario <asp:LinkButton ID="LnkUsuario" runat="server"></asp:LinkButton></a>
         </div>
     </nav>
    
-    <form id="form1" runat="server">
+
         <div class="container pt-5">
             <h1 class="display-4 text-center" style="font-size: 2.5rem; padding-bottom: 2rem;">Mantenedor de Usuarios</h1>
             <div class="row">

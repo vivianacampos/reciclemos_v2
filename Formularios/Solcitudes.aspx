@@ -42,8 +42,11 @@
             border-top-left-radius: 1em;
             border-top-right-radius: 1em;
         }
+        .auto-style1 {
+            margin-bottom: 1px;
+        }
     </style>
-        <nav class="navbar navbar-expand-lg navbar-dark colorNav p-0">
+        <nav class="auto-style1">
         <div class="container-fluid">
             <a class="navbar-brand pl-2" href="#"><img src="../Imagenes/RE3.png" width="50" height="50"/> Re-Ciclemos</a>
             <a class="navbar-brand" href="#">Solicitar Retiros</a>
@@ -51,7 +54,7 @@
             <a class="navbar-brand" href="#">Logros</a>
             <a class="navbar-brand" href="#">Mensajes</a>
             <a class="navbar-brand pr-5" href="#">Mis Solicitudes</a>
-            <a class="navbar-brand pr-5" href="#"><i class="fas fa-sign-out-alt"></i></a>
+            <a class="navbar-brand pr-5" href="#"><i class="fas fa-sign-out-alt"><asp:ImageButton ID="ImgBtnLogout" runat="server" OnClick="ImgBtnLogout_Click" /> </i></a>
         </div>
     </nav>
     <form id="form1" runat="server">

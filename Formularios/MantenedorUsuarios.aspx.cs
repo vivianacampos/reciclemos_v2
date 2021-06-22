@@ -122,28 +122,21 @@ namespace reciclemos_v2.Formularios
 
         public void loginControl()
         {
+
             if (Session["usuario"] == null)
             {
                 Session["error"] = "Debe estar registrado";
                 Response.Redirect("Login.aspx");
+
             }
-
-            //Controlar que tenga acceso el administrador a su panel de admin o un usuario a su panel de usuario
-            //Usuario usuario = (Usuario)Session["usuario"];
-            //if (usuario.Rol.Id == 1)
-            //{
-            //    Response.Redirect("../Vistas/PanelDeEmpresa.html");
-            //}
-            //else if (usuario.Rol.Id == 2)
-            //{
-            //    Response.Redirect("../Vistas/PanelDeUsuario.html");
-            //}
-            //else
-            //{
-            //    Session["usuario"] = "Privilegios insuficientes";
-            //}
-
         }
 
+        protected void ImgBtnLogout_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["error"] = "Ha cerrado sesion";
+            Session["usuario"] = null;
+            Response.Redirect("Login.apsx");
+
+        }
     }
 }

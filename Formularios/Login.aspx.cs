@@ -31,6 +31,7 @@ namespace reciclemos_v2.Formularios
                 {
                     case 1:
                         Response.Redirect("../Vistas/PanelDeEmpresa.html");
+                        
                         break;
                     case 2:
                         Response.Redirect("../Vistas/PanelDeUsuario.html");
@@ -47,6 +48,7 @@ namespace reciclemos_v2.Formularios
             }
 
         }
+
 
     }
 }

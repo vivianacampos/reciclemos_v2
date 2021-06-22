@@ -13,5 +13,12 @@ namespace reciclemos_v2.Formularios
         {
 
         }
+
+        protected void ImgBtnLogout_Click(object sender, ImageClickEventArgs e)
+        {
+            Session["error"] = "Ha cerrado sesion";
+            Session["usuario"] = null;
+            Response.Redirect("Login.apsx");
+        }
     }
 }
