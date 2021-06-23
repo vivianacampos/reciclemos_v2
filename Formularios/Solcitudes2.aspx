@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Solcitudes.aspx.cs" Inherits="reciclemos_v2.Formularios.Solcitudes" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Solcitudes2.aspx.cs" Inherits="reciclemos_v2.Formularios.Solcitudes" %>
 
 <!DOCTYPE html>
 

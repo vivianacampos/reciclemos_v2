@@ -127,11 +127,12 @@
     <Content Include="Formularios\ContactoProspecto.aspx" />
     <Content Include="Formularios\MantenedorUsuarios.aspx" />
     <Content Include="Formularios\RegistroUsuarios.aspx" />
-    <Content Include="Formularios\Solcitudes.aspx" />
+    <Content Include="Formularios\Solcitudes2.aspx" />
     <Content Include="Imagenes\concurso.png" />
     <Content Include="Imagenes\educacionambiental.jpg" />
     <Content Include="Imagenes\estadoverde.png" />
     <Content Include="Imagenes\logo-airechile2x.png" />
+    <Content Include="Imagenes\sign-out-alt-solid.svg" />
     <Content Include="Modelo\ModeloBD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ModeloBD.Context.cs</LastGenOutput>
@@ -182,6 +183,15 @@
     <Content Include="bin\roslyn\vbc.exe.config" />
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="WebFormEmpresa\ClientesEmpresa.aspx" />
+    <Content Include="WebFormEmpresa\MensajesEmpresa.aspx" />
+    <Content Include="WebFormEmpresa\ReportesEmpresa.aspx" />
+    <Content Include="WebFormEmpresa\SolicitudesEmpresa.aspx" />
+    <Content Include="WebFormUsuario\LogrosUsuario.aspx" />
+    <Content Include="WebFormUsuario\MensajesUsuario.aspx" />
+    <Content Include="WebFormUsuario\MisSolicitudesUsuario.aspx" />
+    <Content Include="WebFormUsuario\ReportesUsuario.aspx" />
+    <Content Include="WebFormUsuario\SolicitudesUsuario.aspx" />
     <EntityDeploy Include="Modelo\ModeloBD.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModeloBD.Designer.cs</LastGenOutput>
@@ -2034,7 +2044,6 @@
     <Content Include="Vistas\index.html" />
     <Content Include="Vistas\Materiales.html" />
     <Content Include="Vistas\Nosotros.html" />
-    <Content Include="Vistas\PanelDeEmpresa.html" />
     <Content Include="Vistas\PanelDeUsuario.html" />
     <Content Include="Vistas\Talleres.html" />
     <Content Include="Web.config" />
@@ -2080,12 +2089,12 @@
     <Compile Include="Formularios\RegistroUsuarios.aspx.designer.cs">
       <DependentUpon>RegistroUsuarios.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Solcitudes.aspx.cs">
-      <DependentUpon>Solcitudes.aspx</DependentUpon>
+    <Compile Include="Formularios\Solcitudes2.aspx.cs">
+      <DependentUpon>Solcitudes2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Formularios\Solcitudes.aspx.designer.cs">
-      <DependentUpon>Solcitudes.aspx</DependentUpon>
+    <Compile Include="Formularios\Solcitudes2.aspx.designer.cs">
+      <DependentUpon>Solcitudes2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modelo\comuna.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>
@@ -2136,7 +2145,84 @@
       <DependentUpon>ModeloBD.tt</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="WebFormEmpresa\ClientesEmpresa.aspx.cs">
+      <DependentUpon>ClientesEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormEmpresa\ClientesEmpresa.aspx.designer.cs">
+      <DependentUpon>ClientesEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormEmpresa\MensajesEmpresa.aspx.cs">
+      <DependentUpon>MensajesEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormEmpresa\MensajesEmpresa.aspx.designer.cs">
+      <DependentUpon>MensajesEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormEmpresa\PaginaMaestraEmpresa.Master.cs">
+      <DependentUpon>PaginaMaestraEmpresa.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormEmpresa\PaginaMaestraEmpresa.Master.designer.cs">
+      <DependentUpon>PaginaMaestraEmpresa.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormEmpresa\ReportesEmpresa.aspx.cs">
+      <DependentUpon>ReportesEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormEmpresa\ReportesEmpresa.aspx.designer.cs">
+      <DependentUpon>ReportesEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormEmpresa\SolicitudesEmpresa.aspx.cs">
+      <DependentUpon>SolicitudesEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormEmpresa\SolicitudesEmpresa.aspx.designer.cs">
+      <DependentUpon>SolicitudesEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormUsuario\PaginaMaestraUsuario.Master.cs">
+      <DependentUpon>PaginaMaestraUsuario.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormUsuario\PaginaMaestraUsuario.Master.designer.cs">
+      <DependentUpon>PaginaMaestraUsuario.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebFormUsuario\LogrosUsuario.aspx.cs">
+      <DependentUpon>LogrosUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormUsuario\LogrosUsuario.aspx.designer.cs">
+      <DependentUpon>LogrosUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormUsuario\MensajesUsuario.aspx.cs">
+      <DependentUpon>MensajesUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormUsuario\MensajesUsuario.aspx.designer.cs">
+      <DependentUpon>MensajesUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormUsuario\MisSolicitudesUsuario.aspx.cs">
+      <DependentUpon>MisSolicitudesUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormUsuario\MisSolicitudesUsuario.aspx.designer.cs">
+      <DependentUpon>MisSolicitudesUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormUsuario\ReportesUsuario.aspx.cs">
+      <DependentUpon>ReportesUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormUsuario\ReportesUsuario.aspx.designer.cs">
+      <DependentUpon>ReportesUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormUsuario\SolicitudesUsuario.aspx.cs">
+      <DependentUpon>SolicitudesUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormUsuario\SolicitudesUsuario.aspx.designer.cs">
+      <DependentUpon>SolicitudesUsuario.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="resources\css\bootstrap-grid.css.map" />
@@ -2309,6 +2395,8 @@
     <Content Include="packages\Newtonsoft.Json.12.0.2\Newtonsoft.Json.12.0.2.nupkg" />
     <Content Include="packages\WebGrease.1.6.0\.signature.p7s" />
     <Content Include="packages\WebGrease.1.6.0\WebGrease.1.6.0.nupkg" />
+    <Content Include="WebFormUsuario\PaginaMaestraUsuario.Master" />
+    <Content Include="WebFormEmpresa\PaginaMaestraEmpresa.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

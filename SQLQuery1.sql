@@ -1,1 +1,0 @@
-﻿Alter table usuario	add foreign key (idLogros) references logros (idLogros)

@@ -1,0 +1,105 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaMaestraUsuario.Master.cs" Inherits="reciclemos_v2.PaginaMaestra" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../resources/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../resources/Font-awesome/css/all.min.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <style>
+        .colorNav {
+            background-color: #28b5b5;
+        }
+
+        .colorFoot {
+            background-color: #8fd9a8;
+            align-items: center;
+            letter-spacing: 7px;
+            color: white;
+            font-size: 17px;
+        }
+
+        .opacidad {
+            opacity: 0.3;
+        }
+
+        .padd {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .align {
+            padding-left: 640px;
+        }
+        .colorIcon{
+            color: white;
+        }
+        .he{
+            height: 20px;
+        }
+
+        .auto-style1 {
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            margin-top: 0px;
+        }
+
+        .estilo{
+            display:inline-block;
+            float: left;
+        }
+        .estilo2{
+            display:inline-block;
+            float: inline-end;
+
+        }
+    </style>
+
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-expand-lg navbar-dark colorNav p-0" style="height:8%">
+            <div class="py-1">
+                <a class="navbar-brand estilo2 px-5" href="#">
+                    <img src="../Imagenes/re3.png" width="50" height="50" />
+                    Re-Ciclemos</a>
+                <a class="navbar-brand estilo2 px-5" href="SolicitudesUsuario.aspx">Solicitar Retiros</a>
+                <a class="navbar-brand estilo2 px-5" href="ReportesUsuario.aspx">Reportes</a>
+                <a class="navbar-brand estilo2 px-5" href="LogrosUsuario.aspx">Logros</a>
+                <a class="navbar-brand estilo2 px-5" href="MensajesUsuario.aspx">Mensajes</a>
+                <a class="navbar-brand estilo2 px-5" href="MisSolicitudesUsuario.aspx">Mis Solicitudes</a>
+                <asp:ImageButton ID="ImgBtnLogout" runat="server" OnClick="ImgBtnLogout_Click" CssClass="colorIcon" Height="28px" ImageUrl="~/Imagenes/sign-out-alt-solid.svg" Width="28px" ForeColor="White" ImageAlign="AbsMiddle" />
+                
+            </div>
+        </nav>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+    <div class="auto-style1">
+        <footer class="colorFoot p-0">
+            <div class="d-flex flex-wrap justify-content-around align">
+                <div class="d-flex flex-wrap justify-content-center pt-1" style="width: 290px;">
+                    <p class="px-2 pt-2">
+                        <img src="../Imagenes/RE2.png" width="50" height="50" />
+                        Re-Ciclemos  &copy;</p>
+                </div>
+                <div class="d-flex flex-wrap justify-content-end pl-5 pt-4">
+                    <p class="px-2 he"><i class="fab fa-youtube"></i></p>
+                    <p class="px-2 he"><i class="fab fa-twitter-square"></i></p>
+                    <p class="px-2 he"><i class="fab fa-instagram-square"></i></p>
+                    <p class="px-2 he"><i class="fab fa-facebook-square"></i></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
