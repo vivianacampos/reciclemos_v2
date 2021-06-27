@@ -4,29 +4,51 @@ using System.Linq;
 using System.Web;
 using reciclemos_v2.Clases;
 using reciclemos_v2.Controladores;
+using reciclemos_v2.Modelo;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 
 namespace reciclemos_v2.Controladores
 {
     public class LoginControlador
     {
-        public static Usuario login(string correo, string contrasena)
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2T6G65H;Initial Catalog=reciclemos;Integrated Security=True");
+        public string logear(string correo, string contrasena)
         {
-            foreach (Usuario usuario in UsuarioControlador.getUser())
+
+            try
             {
-                if (usuario.Correo.Equals(correo))
+                con.Open();
+                SqlCommand cmd = new SqlCommand("Select correo, contrasena, idTipoUsu From usuario Where correo = @correo and contrasena = @contrasena", con);
+                cmd.Parameters.AddWithValue("correo", correo);
+                cmd.Parameters.AddWithValue("contrasena", contrasena);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                
+                if (dt.Rows.Count == 1)
                 {
-                    if (usuario.Contrasena.Equals(contrasena))
-                    {
-                        return usuario;
-                    }else
-                    {
-                        return null;
-                    }
+                    return "Usuario autenticado exitosamente";
+                }
+                else
+                {
+                    return "Usuario y/o contrasena incorrectos";
                 }
 
             }
-            return null;
+            catch (Exception e)
+            {
+                Console.WriteLine("Error " + e);
+
+            }
+            finally
+            {
+                con.Close();
+            }
+            return "LALALALALA";
+
         }
     }
 
