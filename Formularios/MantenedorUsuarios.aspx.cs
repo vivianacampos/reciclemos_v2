@@ -15,7 +15,7 @@ namespace reciclemos_v2.Formularios
         protected void Page_Load(object sender, EventArgs e)
         {
             UsuarioControlador.fillComunas();
-            loginControl();
+            
 
             if (!IsPostBack)
             {

@@ -88,8 +88,8 @@
         </div>
 <%--Boton--%>
         <div class="form-floating padd">
-            <div class="col padd largo">
-                <asp:Button ID="BtnIngresar" runat="server" Text="Ingresar" Cssclass="form-control btn btn-primary" OnClick="BtnIngresar_Click"/>
+            <div class="col padd largo text-center" style="text-align: left">
+                <asp:Button ID="BtnIngresar" runat="server" Text="Ingresar" Cssclass="form-control btn btn-primary" OnClick="BtnIngresar_Click" style="margin-left: 42" Width="242px"/>
             </div>
         </div>
         <div class="text-center">

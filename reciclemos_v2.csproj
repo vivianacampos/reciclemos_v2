@@ -127,7 +127,6 @@
     <Content Include="Formularios\ContactoProspecto.aspx" />
     <Content Include="Formularios\MantenedorUsuarios.aspx" />
     <Content Include="Formularios\RegistroUsuarios.aspx" />
-    <Content Include="Formularios\Solcitudes2.aspx" />
     <Content Include="Imagenes\concurso.png" />
     <Content Include="Imagenes\educacionambiental.jpg" />
     <Content Include="Imagenes\estadoverde.png" />
@@ -2088,13 +2087,6 @@
     </Compile>
     <Compile Include="Formularios\RegistroUsuarios.aspx.designer.cs">
       <DependentUpon>RegistroUsuarios.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\Solcitudes2.aspx.cs">
-      <DependentUpon>Solcitudes2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Formularios\Solcitudes2.aspx.designer.cs">
-      <DependentUpon>Solcitudes2.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modelo\comuna.cs">
       <DependentUpon>ModeloBD.tt</DependentUpon>

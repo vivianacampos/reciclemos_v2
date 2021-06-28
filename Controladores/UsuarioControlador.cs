@@ -12,48 +12,6 @@ namespace reciclemos_v2.Controladores
 
         private static List<Comuna> listaComunas = new List<Comuna>();
         private static List<Usuario> listaUsuarios = new List<Usuario>();
-        private static List<Usuario> listaUser = new List<Usuario>();
-
-        public static void fillUser()
-        {
-            if (listaUser.Count == 0)
-            {
-                listaUser.Add(new Usuario("a@a.cl", "123", new TipoUsuario(1, "Admin")));
-                listaUser.Add(new Usuario("n@n.cl", "123", new TipoUsuario(2, "User")));
-            }
-        }
-        public static List<Usuario> getUser()
-        {
-            return listaUser;
-        }
-        
-        
-        //private static reciclemosEntities dbc = new reciclemosEntities();
-        //Método para agregar a un usuario a la BD
-        //public static string agregarUsuario(string rut, string nombre, string apellido, string telefono, string correo, string contrasena, string direccion, int comuna)
-        //{
-        //    try
-        //    {
-        //        usuario usu = new usuario()
-        //        {
-        //            rut = rut,
-        //            nombre = nombre,
-        //            apellido = apellido,
-        //            telefono = telefono,
-        //            correo = correo,
-        //            contrasena = contrasena,
-        //            direccion = direccion,
-        //            idComuna = 126
-        //        };
-        //        dbc.usuario.Add(usu);
-        //        dbc.SaveChanges();
-        //        return "Usuario agregado exitosamente";
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        return "No se pudo agregar al usuario" + e.Message;
-        //    }
-        //}
 
         //Método para agregar un usuario
         public static string agregarUsuario(string rut, string nombre, string apellido, string correo, string telefono, string direccion, string comuna, string contrasena)
@@ -87,19 +45,6 @@ namespace reciclemos_v2.Controladores
 
                 return "Error " + e.Message.ToString();
             }
-        }
-        //Método para logear al usuario
-        public static string logearUsuario(string correo, string contrasena)
-        {
-            foreach (Usuario u in listaUsuarios)
-            {
-                if (u.Correo.Equals(correo) && u.Contrasena.Equals(contrasena))
-                {
-                    return "Usuario autenticado";
-                }
-
-            }
-            return "Usuario no registrado";
         }
 
 

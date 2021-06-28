@@ -15,48 +15,47 @@ namespace reciclemos_v2.Controladores
     public class LoginControlador
     {
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2T6G65H;Initial Catalog=reciclemos;Integrated Security=True");
-        public string logear(string correo, string contrasena)
+        public Usuario logear(string correo, string contrasena)
         {
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("Select correo, contrasena, idTipoUsu From usuario Where correo = @correo and contrasena = @contrasena", con);
+                SqlCommand cmd = new SqlCommand("Select correo, contrasena, idTipoUsu, nombre, apellido From usuario Where correo = @correo and contrasena = @contrasena", con);
                 cmd.Parameters.AddWithValue("correo", correo);
                 cmd.Parameters.AddWithValue("contrasena", contrasena);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
+                Usuario usu = new Usuario() { 
+                    Correo = dt.Rows[0][0].ToString(),
+                    Contrasena = dt.Rows[0][1].ToString(),
+                    Rol = int.Parse(dt.Rows[0][2].ToString()),
+                    Nombre = dt.Rows[0][3].ToString(),
+                    Apellido = dt.Rows[0][4].ToString()
+                };
+                //Session[p] = usu;
                 
                 if (dt.Rows.Count == 1)
                 {
-                    if(dt.Rows[0][2].Equals(1))
-                    {
-                        return "Administrador";
-
-                    }
-                    else if(dt.Rows[0][2].Equals(2))
-                    {
-                        return "Usuario";
-                    }
+                    return usu;
                 }
                 else
                 {
-                    return "Usuario y/o contrasena incorrectos";
+                    return null;
                 }
 
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error " + e);
-
             }
             finally
             {
                 con.Close();
             }
-            return "LOÑOLOLO";
-
+            return null;
         }
+
     }
 
 }

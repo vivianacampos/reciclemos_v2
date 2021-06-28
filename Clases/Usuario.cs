@@ -5,7 +5,7 @@ using System.Web;
 
 namespace reciclemos_v2.Clases
 {
-    public class Usuario : TipoUsuario
+    public class Usuario
     {
         private static List<Usuario> listaUsuario = new List<Usuario>();
         private string rut;
@@ -16,7 +16,7 @@ namespace reciclemos_v2.Clases
         private string contrasena;
         private string direccion;
         private string comuna;
-        private TipoUsuario rol;
+        private int rol;
        
 
         public Usuario()
@@ -28,14 +28,16 @@ namespace reciclemos_v2.Clases
             this.correo = correo;
             this.contrasena = contrasena;
         }
-        public Usuario(string correo, string contrasena, TipoUsuario rol)
+        public Usuario(string correo, string contrasena, int rol, string nombre, string apellido)
         {
             this.correo = correo;
             this.contrasena = contrasena;
             this.rol = rol;
+            this.nombre = nombre;
+            this.apellido = apellido;
         }
 
-        public Usuario(string rut, string nombre, string apellido, string telefono, string correo, string contrasena, string direccion, string comuna, TipoUsuario rol) 
+        public Usuario(string rut, string nombre, string apellido, string telefono, string correo, string contrasena, string direccion, string comuna, int rol) 
         {
             this.rut = rut;
             this.nombre = nombre;
@@ -57,6 +59,6 @@ namespace reciclemos_v2.Clases
         public string Contrasena { get => contrasena; set => contrasena = value; }
         public string Direccion { get => direccion; set => direccion = value; }
         public string Comuna { get => comuna; set => comuna = value; }
-        public TipoUsuario Rol { get => rol; set => rol = value; }
+        public int Rol { get => rol; set => rol = value; }
     }
 }

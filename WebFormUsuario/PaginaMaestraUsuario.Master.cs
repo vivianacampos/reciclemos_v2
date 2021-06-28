@@ -14,29 +14,24 @@ namespace reciclemos_v2
         protected void Page_Load(object sender, EventArgs e)
         {
             UsuarioControlador.fillComunas();
-            //loginControl();
+            loginControl();
         }
 
-        protected void btnLogout_Click(object sender, ImageClickEventArgs e)
-        {
-            Session["error"] = "Ha cerrado sesion";
-            Session["usuario"] = null;
-            Response.Redirect("Login.apsx");
-        }
+
         public void loginControl()
         {
-
-            if (Session["usuario"] == null)
+            if (Session["Usuario"] == null)
             {
                 Session["error"] = "Debe estar registrado";
-                Response.Redirect("Login.aspx");
+                Response.Redirect("../Formularios/Login.aspx");
             }
         }
 
         protected void ImgBtnLogout_Click(object sender, ImageClickEventArgs e)
         {
-            //Logout
-
+            Session["Usuario"] = null;
+            Session["error"] = "Ha cerrado sesion";
+            Response.Redirect("../Formularios/Login.aspx");
         }
     }
 }

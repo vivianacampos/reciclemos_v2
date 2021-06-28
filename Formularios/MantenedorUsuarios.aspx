@@ -140,21 +140,6 @@
             </asp:Panel> 
         </div>
     </form>
-    
-   <%-- <div class="padd">
-        <footer class="colorFoot p-1">
-            <div class="d-flex flex-wrap justify-content-around align">
-                <div class="d-flex flex-wrap justify-content-center pt-1">
-                    <p class="px-2 pt-2"><img src="../Imagenes/RE2.png" width="50" height="50" />  Re-Ciclemos  &copy;</p>
-                </div>
-                <div class="d-flex flex-wrap justify-content-end pl-5 pt-4">
-                    <p class="px-2"><i class="fab fa-youtube"></i></p>
-                    <p class="px-2"><i class="fab fa-twitter-square"></i></p>
-                    <p class="px-2"><i class="fab fa-instagram-square"></i></p>
-                    <p class="px-2"><i class="fab fa-facebook-square"></i></p>
-                </div>
-            </div>
-        </footer>
-    </div>--%>
+   
 </body>
 </html>

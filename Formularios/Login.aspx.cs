@@ -13,30 +13,39 @@ namespace reciclemos_v2.Formularios
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            //UsuarioControlador.fillUser();
-            //if(Session["error"] != null)
-            //{
-            //    LblMensaje.Text = Session["error"].ToString();
-            //    Session["error"] = null;
-            //}
+            if (Session["error"] != null)
+            {
+                LblMensaje.Text = Session["error"].ToString();
+                Session["error"] = null;
+            }
         }
 
         protected void BtnIngresar_Click(object sender, EventArgs e)
         {
             LoginControlador login = new LoginControlador();
-            LblMensaje.Text = login.logear(TxtCorreo.Text,TxtContrasena.Text);
+            Usuario usu = new Usuario();
             
-            if (LblMensaje.Text == "Administrador")
+            usu = login.logear(TxtCorreo.Text,TxtContrasena.Text);
+            if (usu != null)
             {
-                Response.Redirect("../WebFormEmpresa/ClientesEmpresa.aspx");
-
-            } else if(LblMensaje.Text == "Usuario")
-            {
-                Response.Redirect("../WebFormUsuario/SolicitudesUsuario.aspx");
+                if (usu.Rol == 1)
+                {
+                    Session["Admin"] = usu;
+                    Response.Redirect("../WebFormEmpresa/ClientesEmpresa.aspx");
+                }
+                else if (usu.Rol == 2)
+                {
+                    Session["Usuario"] = usu;
+                    Response.Redirect("../WebFormUsuario/SolicitudesUsuario.aspx");
+                }
+                
             }
+            else
+            {
+                LblMensaje.Text = "Usuario y/o contraseña incorrectos";
+                Session["Usuario"] = null;
+            }
+            
         }
-
-
     }
 }
