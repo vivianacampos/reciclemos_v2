@@ -17,7 +17,6 @@ namespace reciclemos_v2.Controladores
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2T6G65H;Initial Catalog=reciclemos;Integrated Security=True");
         public string logear(string correo, string contrasena)
         {
-
             try
             {
                 con.Open();
@@ -30,7 +29,15 @@ namespace reciclemos_v2.Controladores
                 
                 if (dt.Rows.Count == 1)
                 {
-                    return "Usuario autenticado exitosamente";
+                    if(dt.Rows[0][2].Equals(1))
+                    {
+                        return "Administrador";
+
+                    }
+                    else if(dt.Rows[0][2].Equals(2))
+                    {
+                        return "Usuario";
+                    }
                 }
                 else
                 {
@@ -47,7 +54,7 @@ namespace reciclemos_v2.Controladores
             {
                 con.Close();
             }
-            return "LALALALALA";
+            return "LOÑOLOLO";
 
         }
     }

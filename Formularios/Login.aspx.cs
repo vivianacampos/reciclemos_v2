@@ -26,6 +26,15 @@ namespace reciclemos_v2.Formularios
         {
             LoginControlador login = new LoginControlador();
             LblMensaje.Text = login.logear(TxtCorreo.Text,TxtContrasena.Text);
+            
+            if (LblMensaje.Text == "Administrador")
+            {
+                Response.Redirect("../WebFormEmpresa/ClientesEmpresa.aspx");
+
+            } else if(LblMensaje.Text == "Usuario")
+            {
+                Response.Redirect("../WebFormUsuario/SolicitudesUsuario.aspx");
+            }
         }
 
 
