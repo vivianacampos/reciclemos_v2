@@ -118,9 +118,10 @@
                     <asp:Label ID="LblComuna" runat="server" Text="Comuna" CssClass="col-sm-6"></asp:Label>
                 </div>
                 <div class="col-sm-8 py-1">
-                    <asp:DropDownList ID="DdlComunas" runat="server" CssClass="form-control">
+                    <asp:DropDownList ID="DdlComunas" runat="server" CssClass="form-control" DataSourceID="SqlDataSource1" DataTextField="nombre" DataValueField="idComuna">
                         <asp:ListItem Selected="True">San Ramon</asp:ListItem>
                     </asp:DropDownList>
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:select %>" SelectCommand="SELECT [idComuna], [nombre] FROM [comuna]"></asp:SqlDataSource>
                 </div>
                 <div class="col-8 form-control padd">
                     <asp:Label ID="LblContrasena" runat="server" Text="Contraseña" CssClass="col-sm-6"></asp:Label>

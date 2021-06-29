@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using reciclemos_v2.Clases;
 using reciclemos_v2.Modelo;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace reciclemos_v2.Controladores
 {
@@ -14,37 +16,33 @@ namespace reciclemos_v2.Controladores
         private static List<Usuario> listaUsuarios = new List<Usuario>();
 
         //Método para agregar un usuario
-        public static string agregarUsuario(string rut, string nombre, string apellido, string correo, string telefono, string direccion, string comuna, string contrasena)
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2T6G65H;Initial Catalog=reciclemos;Integrated Security=True");
+        public string agregarUsuario(string rut, string nombre, string apellido, string correo, string telefono, string direccion, string contrasena, int comuna, int rol)
         {
             try
             {
-                //Comuna comuna = ComunaControlador.buscarComuna(idComuna);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("Insert into usuario (rut, nombre, apellido, correo, telefono, direccion, contrasena, idComuna, idTipoUsu) values (@rut, @nombre, @apellido, @correo, @telefono, @direccion, @contrasena, @comuna, @rol)", con);
+                cmd.Parameters.AddWithValue("rut", rut);
+                cmd.Parameters.AddWithValue("nombre", nombre);
+                cmd.Parameters.AddWithValue("apellido", apellido);
+                cmd.Parameters.AddWithValue("correo", correo);
+                cmd.Parameters.AddWithValue("telefono", telefono);
+                cmd.Parameters.AddWithValue("direccion", direccion);
+                cmd.Parameters.AddWithValue("contrasena", contrasena);
+                cmd.Parameters.AddWithValue("comuna", comuna);
+                cmd.Parameters.AddWithValue("rol", rol);
+                cmd.ExecuteNonQuery();
+                con.Close();
 
-                //if(comuna != null)
-                //{
 
-                //}
-                Usuario usuario = new Usuario()
-                {
-                    Rut = rut,
-                    Nombre = nombre,
-                    Apellido = apellido,
-                    Correo = correo,
-                    Telefono = telefono,
-                    Direccion = direccion,
-                    Comuna = comuna,
-                    Contrasena = contrasena
-
-                };
-                listaUsuarios.Add(usuario);
-                return "Usuario agregado exitosamente";
 
             }
             catch (Exception e)
             {
-
                 return "Error " + e.Message.ToString();
             }
+            return "asdf";
         }
 
 
@@ -53,7 +51,7 @@ namespace reciclemos_v2.Controladores
         {
             foreach (Usuario usuario in listaUsuarios)
             {
-                if(usuario.Rut == rut)
+                if (usuario.Rut == rut)
                 {
                     return usuario;
                 }
@@ -76,21 +74,21 @@ namespace reciclemos_v2.Controladores
                 usuario.Direccion = direccion;
                 usuario.Comuna = comuna;
                 usuario.Contrasena = contrasena;
-                
+
                 return "Usuario modificado exitósamente";
             }
             catch (Exception e)
-            {   
+            {
                 return "Error: " + e.Message.ToString();
             }
-            
+
         }
 
         //Método para eliminar usuario de la lista
         public static string eliminarUsuario(string rut)
         {
             Usuario usuario = buscarUsuario(rut);
-            if(usuario != null)
+            if (usuario != null)
             {
                 listaUsuarios.Remove(usuario);
 
@@ -106,7 +104,7 @@ namespace reciclemos_v2.Controladores
         //Método de autollenado de comunas
         public static void fillComunas()
         {
-           if(ComunaControlador.getAll().Count == 0)
+            if (ComunaControlador.getAll().Count == 0)
             {
                 ComunaControlador.addComunas(1, "Cerrillos");
                 ComunaControlador.addComunas(2, "Cerro Navia");
