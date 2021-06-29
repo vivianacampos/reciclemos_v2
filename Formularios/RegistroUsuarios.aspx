@@ -140,7 +140,7 @@
                     <asp:HyperLink ID="HlCondiciones" runat="server" href="../Vistas/Condiciones.html" target="_blank">Aceptar términos y condiciones</asp:HyperLink>
                 </div>
                 <div class="col-8 form-control padd text-center pt-5 pb-5">
-                    <asp:Button ID="BtnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-success" Width="300" OnClick="BtnRegistrar_Click" />
+                    <asp:Button ID="BtnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-success" Width="300" OnClick="BtnRegistrar_Click"  OnClientClick = "return confirm('¿Desea guardar los cambios?')"/>
                 </div>
                 <div class="text-center pt-5 align-content-center" style="width: 200px; height: 30px; color: #198754;">
                 <asp:Label ID="LblMensaje" runat="server" Text=""></asp:Label>   
