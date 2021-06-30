@@ -4,38 +4,40 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="../resources/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../resources/Font-awesome/css/all.min.css" rel="stylesheet" />
-    <link href="../resources/css/estilos.css"  rel="stylesheet"/>
+    <link href="../resources/css/estilos.css" rel="stylesheet" />
     <title>Formulario de Registro</title>
 </head>
 <body>
-<!--Estilos-->
+    <!--Estilos-->
     <style>
-    .padd{
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
-    border: none;
-    }
-    .colorNav {
-        background-color: #4b778d;
-    }
+        .padd {
+            padding-top: 0.8rem;
+            padding-bottom: 0.8rem;
+            border: none;
+        }
 
-    .colorFooter {
-        background-color: #8fd9a8;
-    }
+        .colorNav {
+            background-color: #4b778d;
+        }
 
-    .alignParr {
-        align-items: center;
-        font-weight: bold;
-        letter-spacing: 4px;
-    }
-</style>
+        .colorFooter {
+            background-color: #8fd9a8;
+        }
+
+        .alignParr {
+            align-items: center;
+            font-weight: bold;
+            letter-spacing: 4px;
+        }
+    </style>
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="d-flex justify-content-start">
-            <a class="navbar-brand" href="index.html"><img src="../Imagenes/reciclemos sin bordes.png" width="180" height="41" /></a>
+            <a class="navbar-brand" href="index.html">
+                <img src="../Imagenes/reciclemos sin bordes.png" width="180" height="41" /></a>
         </div>
         <div class="navbar-collapse d-flex justify-content-start">
             <ul class="navbar-nav ">
@@ -68,7 +70,7 @@
                     <a class="nav-link active" href="../Formularios/Login.aspx">Ingresar</a>
                 </li>
             </ul>
-        </div> 
+        </div>
     </nav>
 
     <div class="container pb-5">
@@ -76,82 +78,157 @@
             <h3 class="padd">Formulario de Registro</h3>
         </div>
         <form id="form2" runat="server" class="form">
-
             <div class="row justify-content-center">
-                <div class="col-8 form-control padd">
+                <div class="col-10 form-control padd">
                     <asp:Label ID="LblRut" runat="server" Text="Rut" CssClass="col-sm-6"></asp:Label>
                 </div>
-                <div class="col-sm-8 py-1">
-                    <asp:TextBox ID="TxtRut" runat="server" CssClass="form-control" placeholder="11.111.111-1"></asp:TextBox>
+                <div class="col-sm-10 py-1">
+                    <div class="row">
+                        <div class="col-9">
+                            <asp:TextBox ID="TxtRut" runat="server" CssClass="form-control" placeholder="12345678-9"></asp:TextBox>
+                        </div>
+                        <div class="col-3">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TxtRut" ErrorMessage="Rut Obligatorio" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ControlToValidate="TxtRut" runat="server" ErrorMessage="Formato de rut inválido" ValidationExpression="^\d{1,2}\d{3}\d{3}[-][0-9kK]{1}$" ForeColor="Red" Display="Dynamic"></asp:RegularExpressionValidator>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-8 form-control padd">
+                <div class="col-10 form-control padd">
                     <asp:Label ID="LblNombre" runat="server" Text="Nombre" CssClass="col-sm-6"></asp:Label>
                 </div>
-                <div class="col-sm-8 py-1">
-                    <asp:TextBox ID="TxtNombre" runat="server" CssClass="form-control" placeholder="Maria"></asp:TextBox>
+                <div class="col-sm-10 py-1">
+                    <div class="row">
+                        <div class="col-9">
+                            <asp:TextBox ID="TxtNombre" runat="server" CssClass="form-control" ></asp:TextBox>
+                        </div>
+                        <div class="col-3">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TxtNombre" ErrorMessage="Nombre Obligatorio" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-8 form-control padd">
+                <div class="col-10 form-control padd">
                     <asp:Label ID="LblApellido" runat="server" Text="Apellido" CssClass="col-sm-6"></asp:Label>
                 </div>
-                <div class="col-sm-8 py-1">
-                    <asp:TextBox ID="TxtApellido" runat="server" CssClass="form-control" placeholder="Gonzalez"></asp:TextBox>
+                <div class="col-sm-10 py-1">
+                    <div class="row">
+                        <div class="col-9">
+                            <asp:TextBox ID="TxtApellido" runat="server" CssClass="form-control" ></asp:TextBox>
+                        </div>
+                        <div class="col-3">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TxtApellido" Display="Dynamic" ErrorMessage="Apellido Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-8 form-control padd">
+                <div class="col-10 form-control padd">
                     <asp:Label ID="LblCorreo" runat="server" Text="Correo" CssClass="col-sm-6"></asp:Label>
                 </div>
-                <div class="col-sm-8 py-1">
-                    <asp:TextBox ID="TxtCorreo" runat="server" CssClass="form-control" placeholder="correo@dominio.cl"></asp:TextBox>
+                <div class="col-sm-10 py-1">
+                    <div class="row">
+                        <div class="col-9">
+                            <asp:TextBox ID="TxtCorreo" runat="server" CssClass="form-control" placeholder="correo@dominio.cl"></asp:TextBox>
+                        </div>
+                        <div class="col-3">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="TxtCorreo" ErrorMessage="Correo Obligatorio" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TxtCorreo" ErrorMessage="Formato de correo inválido" ForeColor="Red" Display="Dynamic" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-8 form-control padd">
+                <div class="col-10 form-control padd">
                     <asp:Label ID="LblTelefono" runat="server" Text="Teléfono" CssClass="col-sm-6"></asp:Label>
                 </div>
-                <div class="col-sm-8 py-1">
-                    <asp:TextBox ID="TxtTelefono" runat="server" CssClass="form-control" placeholder="+569 12345678"></asp:TextBox>
+                <div class="col-sm-10 py-1">
+                    <div class="row">
+                        <div class="col-9">
+                            <asp:TextBox ID="TxtTelefono" runat="server" CssClass="form-control" placeholder="912345678"></asp:TextBox>
+                        </div>
+                        <div class="col-3">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TxtTelefono" Display="Dynamic" ErrorMessage="Teléfono Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-8 form-control padd">
+                <div class="col-10 form-control padd">
                     <asp:Label ID="LblDireccion" runat="server" Text="Dirección" CssClass="col-sm-6"></asp:Label>
                 </div>
-                <div class="col-sm-8 py-1">
-                    <asp:TextBox ID="TxtDirección" runat="server" CssClass="form-control" placeholder="Av. Los Plátanos 99"></asp:TextBox>
+                <div class="col-sm-10 py-1">
+                    <div class="row">
+                        <div class="col-9">
+                            <asp:TextBox ID="TxtDireccion" runat="server" CssClass="form-control" ></asp:TextBox>
+                        </div>
+                        <div class="col-3">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" Display="Dynamic" ControlToValidate="TxtDireccion" ErrorMessage="Dirección Obligatoria" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-8 form-control padd">
+                <div class="col-10 form-control padd">
                     <asp:Label ID="LblComuna" runat="server" Text="Comuna" CssClass="col-sm-6"></asp:Label>
                 </div>
-                <div class="col-sm-8 py-1">
-                    <asp:DropDownList ID="DdlComunas" runat="server" CssClass="form-control" DataSourceID="SqlDataSource1" DataTextField="nombre" DataValueField="idComuna">
-                        <asp:ListItem Selected="True">San Ramon</asp:ListItem>
-                    </asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:select %>" SelectCommand="SELECT [idComuna], [nombre] FROM [comuna]"></asp:SqlDataSource>
+                <div class="col-sm-10 py-1">
+                    <div class="row">
+                        <div class="col-9">
+                            <asp:DropDownList ID="DdlComunas" runat="server" CssClass="form-control" DataSourceID="SqlDataSource1" DataTextField="nombre" DataValueField="idComuna">
+                                <asp:ListItem Selected="True">San Ramon</asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:select %>" SelectCommand="SELECT [idComuna], [nombre] FROM [comuna]"></asp:SqlDataSource>
+                        </div>
+                        <div class="col-3">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" Display="Dynamic" runat="server" ControlToValidate="DdlComunas" ErrorMessage="Comuna Obligatoria" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-8 form-control padd">
+                <div class="col-10 form-control padd">
                     <asp:Label ID="LblContrasena" runat="server" Text="Contraseña" CssClass="col-sm-6"></asp:Label>
                 </div>
-                <div class="col-sm-8 py-1">
-                    <asp:TextBox ID="TxtContrasena" runat="server" CssClass="form-control" placeholder="Letras ° Números ° mínimo 8 caracteres" type="password"></asp:TextBox>
+                <div class="col-sm-10 py-1">
+                    <div class="row">
+                        <div class="col-9">
+                            <asp:TextBox ID="TxtContrasena" runat="server" CssClass="form-control" placeholder="Letras ° Números ° mínimo 8 caracteres" TextMode="Password"></asp:TextBox>
+                        </div>
+                        <div class="col-3">
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" Display="Dynamic" ControlToValidate="TxtContrasena" ErrorMessage="Contraseña Obligatoria" ForeColor="Red"></asp:RequiredFieldValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="TxtContrasena" ErrorMessage="La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula." Display="Dynamic" ValidationExpression="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$" ForeColor="Red"></asp:RegularExpressionValidator>
+                            <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToValidate="TxtContrasena" ErrorMessage="Contraseñas no coinciden" Display="Dynamic" ControlToCompare="TxtConfirma" ForeColor="Red"></asp:CompareValidator>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-8 form-control padd">
+                <div class="col-10 form-control padd">
                     <asp:Label ID="LblConfirma" runat="server" Text="Confirme contraseña" CssClass="col-sm-6"></asp:Label>
                 </div>
-                <div class="col-sm-8 py-1">
-                    <asp:TextBox ID="TxtConfirma" runat="server" CssClass="form-control"  type="password"></asp:TextBox>
+                <div class="col-sm-10 py-1">
+                    <div class="row">
+                        <div class="col-9">
+                            <asp:TextBox ID="TxtConfirma" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+                        </div>
+                        <div class="col-3">
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-8 py-1">
-                    <asp:CheckBox ID="ChbCondiciones" runat="server"/>
-                    <asp:HyperLink ID="HlCondiciones" runat="server" href="../Vistas/Condiciones.html" target="_blank">Aceptar términos y condiciones</asp:HyperLink>
-                </div>
-                <div class="col-8 form-control padd text-center pt-5 pb-5">
-                    <asp:Button ID="BtnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-success" Width="300" OnClick="BtnRegistrar_Click"  OnClientClick = "return confirm('¿Desea guardar los cambios?')"/>
+                <div class="col-sm-10 py-1">
+                    <div class="row">
+                        <div class="col-9">
+                            <asp:CheckBox ID="ChbCondiciones" runat="server" CausesValidation="True" />
+                             <asp:HyperLink ID="HlCondiciones" runat="server" href="../Vistas/Condiciones.html" Target="_blank">Aceptar términos y condiciones</asp:HyperLink>
+                        </div>
+                        <div class="col-3">
+                            <!-- Validacion de checkbox-->
+                        </div>
+                    </div>
+                  </div>
+                <div class="col-10 form-control padd text-center pt-5 pb-5">
+                    <asp:Button ID="BtnRegistrar" runat="server" Text="Registrar" CssClass="btn btn-success" Width="300" OnClick="BtnRegistrar_Click" />
                 </div>
                 <div class="text-center pt-5 align-content-center" style="width: 200px; height: 30px; color: #198754;">
-                <asp:Label ID="LblMensaje" runat="server" Text=""></asp:Label>   
+                    <asp:Label ID="LblMensaje" runat="server" Text=""></asp:Label>
+                </div>
             </div>
-           </div>
 
         </form>
     </div>
 
     <footer class="colorFooter p-2">
-        <p class="text-center alignParr"><img src="../Imagenes/RE2.png" width="50" height="50" />  Re-Ciclemos  &copy;</p>
+        <p class="text-center alignParr">
+            <img src="../Imagenes/RE2.png" width="50" height="50" />
+            Re-Ciclemos  &copy;
+        </p>
     </footer>
 </body>
 </html>
