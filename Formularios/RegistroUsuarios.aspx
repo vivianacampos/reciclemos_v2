@@ -210,6 +210,7 @@
                         </div>
                         <div class="col-3">
                             <!-- Validacion de checkbox-->
+                            <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Se requiere aceptar condiciones de uso"  ForeColor="Red" Display="Dynamic"></asp:CustomValidator>
                         </div>
                     </div>
                   </div>

@@ -42,7 +42,7 @@ namespace reciclemos_v2.Controladores
             {
                 return "Error " + e.Message.ToString();
             }
-            return "asdf";
+            return "Usuario creado exitosamente!";
         }
 
 
