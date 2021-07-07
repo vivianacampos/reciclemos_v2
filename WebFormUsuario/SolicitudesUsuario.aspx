@@ -20,7 +20,7 @@
     </style>
     <div class="container px-5 py-2">
         <h4 class="text-center py-3">Solicitud de retiro de materiales</h4>
-
+        <asp:Label ID="LblidUsu" runat="server" Text=""></asp:Label>
         <div class="d-flex flex-wrap">
             <div class="d-flex wrap px-3 pt-4">
                 <div class="card borde" style="width: 14rem;">
@@ -178,9 +178,8 @@
             </div>
         </div>
     </div>
-
     <div class="text-center pb-5">
-        <asp:Button ID="BtnSolicitud" runat="server" Text="Solicitar Retiro" CssClass="btn btn-primary" />
+        <asp:Button ID="BtnSolicitud" runat="server" Text="Solicitar Retiro" CssClass="btn btn-primary" OnClick="BtnSolicitud_Click" />
     </div>
 
 </asp:Content>

@@ -13,28 +13,14 @@ namespace reciclemos_v2.Formularios
     public partial class MantenedorUsuarios : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-            UsuarioControlador.fillComunas();
-            
+        {            
 
             if (!IsPostBack)
             {
-                cargarComunas();
+
             }
         }
-        //Método para cargar comunas
-        private void cargarComunas()
-        {
-            DdlComunas.DataSource = from c in ComunaControlador.getAll()
-                                    select new
-                                    {
-                                        Comuna = c.Nombrecomuna,
-                                        IdComuna = c.IdComuna
-                                    };
-            DdlComunas.DataValueField = "IdComuna";
-            DdlComunas.DataTextField = "Comuna";
-            DdlComunas.DataBind();
-        }
+
 
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
@@ -64,7 +50,7 @@ namespace reciclemos_v2.Formularios
 
         protected void BtnOpciones_Click(object sender, EventArgs e)
         {
-            cargarComunas();
+            
 
             if (BtnOpciones.Text == "Opciones")
             {

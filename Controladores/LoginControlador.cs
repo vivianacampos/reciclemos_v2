@@ -20,18 +20,19 @@ namespace reciclemos_v2.Controladores
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("Select correo, contrasena, idTipoUsu, nombre, apellido From usuario Where correo = @correo and contrasena = @contrasena", con);
+                SqlCommand cmd = new SqlCommand("Select idUsuario ,correo, contrasena, idTipoUsu, nombre, apellido From usuario Where correo = @correo and contrasena = @contrasena", con);
                 cmd.Parameters.AddWithValue("correo", correo);
                 cmd.Parameters.AddWithValue("contrasena", contrasena);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
-                Usuario usu = new Usuario() { 
-                    Correo = dt.Rows[0][0].ToString(),
-                    Contrasena = dt.Rows[0][1].ToString(),
-                    Rol = int.Parse(dt.Rows[0][2].ToString()),
-                    Nombre = dt.Rows[0][3].ToString(),
-                    Apellido = dt.Rows[0][4].ToString()
+                Usuario usu = new Usuario() {
+                    IdUsuario = int.Parse(dt.Rows[0][0].ToString()),
+                    Correo = dt.Rows[0][1].ToString(),
+                    Contrasena = dt.Rows[0][2].ToString(),
+                    Rol = int.Parse(dt.Rows[0][3].ToString()),
+                    Nombre = dt.Rows[0][4].ToString(),
+                    Apellido = dt.Rows[0][5].ToString()
                 };
                 //Session[p] = usu;
                 

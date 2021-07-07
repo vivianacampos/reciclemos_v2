@@ -11,10 +11,17 @@ namespace reciclemos_v2
 {
     public partial class PaginaMaestra : System.Web.UI.MasterPage
     {
+        int idUsu;
         protected void Page_Load(object sender, EventArgs e)
         {
-            UsuarioControlador.fillComunas();
             loginControl();
+            Usuario usu = new Usuario();
+            if (Session["Usuario"] != null)
+            {
+                usu = (Usuario)Session["Usuario"];
+                idUsu = usu.IdUsuario;
+                LblUsuario.Text = "Bienvenido/a "+ usu.Nombre + " " + usu.Apellido;
+            }
         }
 
 
@@ -33,5 +40,6 @@ namespace reciclemos_v2
             Session["error"] = "Ha cerrado sesion";
             Response.Redirect("../Formularios/Login.aspx");
         }
+
     }
 }

@@ -26,6 +26,7 @@ namespace reciclemos_v2.Formularios
             Usuario usu = new Usuario();
             
             usu = login.logear(TxtCorreo.Text,TxtContrasena.Text);
+
             if (usu != null)
             {
                 if (usu.Rol == 1)
@@ -38,7 +39,6 @@ namespace reciclemos_v2.Formularios
                     Session["Usuario"] = usu;
                     Response.Redirect("../WebFormUsuario/SolicitudesUsuario.aspx");
                 }
-                
             }
             else
             {

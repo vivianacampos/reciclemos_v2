@@ -74,7 +74,8 @@
                 <a class="navbar-brand estilo2 px-5" href="LogrosUsuario.aspx">Logros</a>
                 <a class="navbar-brand estilo2 px-5" href="MensajesUsuario.aspx">Mensajes</a>
                 <a class="navbar-brand estilo2 px-5" href="MisSolicitudesUsuario.aspx">Mis Solicitudes</a>
-                <asp:ImageButton ID="ImgBtnLogout" runat="server" OnClick="ImgBtnLogout_Click" CssClass="colorIcon" Height="28px" ImageUrl="~/Imagenes/sign-out-alt-solid.svg" Width="28px" ForeColor="White" ImageAlign="AbsMiddle" />
+                <asp:Label ID="LblUsuario" runat="server" ForeColor="White"></asp:Label>
+                <asp:ImageButton ID="ImgBtnLogout" runat="server" OnClick="ImgBtnLogout_Click"  CssClass="colorIcon" Height="28px" ImageUrl="~/Imagenes/sign-out-alt-solid.svg" Width="28px" ForeColor="White" ImageAlign="AbsMiddle" />
                 
             </div>
         </nav>
