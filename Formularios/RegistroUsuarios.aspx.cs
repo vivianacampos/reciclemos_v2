@@ -21,8 +21,30 @@ namespace reciclemos_v2.Formularios
 
         protected void BtnRegistrar_Click(object sender, EventArgs e)
         {
-            UsuarioControlador usu = new UsuarioControlador();
-            LblMensaje.Text = usu.agregarUsuario(TxtRut.Text, TxtNombre.Text, TxtApellido.Text, TxtCorreo.Text, TxtTelefono.Text, TxtDireccion.Text, TxtContrasena.Text, DdlComunas.SelectedIndex,2);
+            if (ChbCondiciones.Checked)
+            {
+                UsuarioControlador usu = new UsuarioControlador();
+                LblMensaje.Text = usu.agregarUsuario(TxtRut.Text, TxtNombre.Text, TxtApellido.Text, TxtCorreo.Text, TxtTelefono.Text, TxtDireccion.Text, TxtContrasena.Text, DdlComunas.SelectedIndex, 2);
+
+                if (LblMensaje.Text == "Usuario creado exitosamente!")
+                {
+                    TxtRut.Text = "";
+                    TxtNombre.Text = "";
+                    TxtApellido.Text = "";
+                    TxtCorreo.Text = "";
+                    TxtDireccion.Text = "";
+                    TxtTelefono.Text = "";
+                    TxtContrasena.Text = "";
+                    TxtConfirma.Text = "";
+                    LblCondiciones.Text = "";
+                    DdlComunas.SelectedValue = "888";
+                };
+            }
+            else {
+                LblCondiciones.Text = "Se requiere aceptar condiciones de uso";
+            }
+
         }
+
     }
 }

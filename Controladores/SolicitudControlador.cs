@@ -7,5 +7,7 @@ namespace reciclemos_v2.Controladores
 {
     public class SolicitudControlador
     {
+        //Método para crear una solicitud
+
     }
 }

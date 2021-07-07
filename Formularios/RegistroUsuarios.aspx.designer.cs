@@ -24,6 +24,15 @@ namespace reciclemos_v2.Formularios
         protected global::System.Web.UI.HtmlControls.HtmlForm form2;
 
         /// <summary>
+        /// Control LblMensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblMensaje;
+
+        /// <summary>
         /// Control LblRut.
         /// </summary>
         /// <remarks>
@@ -222,15 +231,6 @@ namespace reciclemos_v2.Formularios
         protected global::System.Web.UI.WebControls.DropDownList DdlComunas;
 
         /// <summary>
-        /// Control SqlDataSource1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-
-        /// <summary>
         /// Control RequiredFieldValidator7.
         /// </summary>
         /// <remarks>
@@ -321,13 +321,13 @@ namespace reciclemos_v2.Formularios
         protected global::System.Web.UI.WebControls.HyperLink HlCondiciones;
 
         /// <summary>
-        /// Control CustomValidator1.
+        /// Control LblCondiciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator1;
+        protected global::System.Web.UI.WebControls.Label LblCondiciones;
 
         /// <summary>
         /// Control BtnRegistrar.
@@ -337,14 +337,5 @@ namespace reciclemos_v2.Formularios
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnRegistrar;
-
-        /// <summary>
-        /// Control LblMensaje.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblMensaje;
     }
 }

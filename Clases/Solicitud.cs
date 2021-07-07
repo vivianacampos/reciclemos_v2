@@ -9,7 +9,8 @@ namespace reciclemos_v2.Clases
 {
     public class Solicitud
     {
-        private int idSolicitud;
+        private string estado;
+        private string descripcion;
         private DateTime fecha;
         private List<Material> listaMateriales;
 
@@ -18,16 +19,17 @@ namespace reciclemos_v2.Clases
 
         }
 
-        public Solicitud(int idSolicitud, DateTime fecha, List<Material> listaMateriales)
+        public Solicitud(string estado, string descripcion, DateTime fecha, List<Material> listaMateriales)
         {
-            this.idSolicitud = idSolicitud;
+            this.estado = estado;
+            this.descripcion = descripcion;
             this.fecha = fecha;
             this.listaMateriales = listaMateriales;
         }
 
-        public int IdSolicitud { get => idSolicitud; set => idSolicitud = value; }
+        public string Estado { get => estado; set => estado = value; }
+        public string Descripcion { get => descripcion; set => descripcion = value; }
         public DateTime Fecha { get => fecha; set => fecha = value; }
         public List<Material> ListaMateriales { get => listaMateriales; set => listaMateriales = value; }
     }
-
 }

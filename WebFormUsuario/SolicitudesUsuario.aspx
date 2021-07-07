@@ -19,7 +19,7 @@
         }
     </style>
     <div class="container px-5 py-2">
-        <h4 class="text-center py-3">Formulario de retiro de materiales</h4>
+        <h4 class="text-center py-3">Solicitud de retiro de materiales</h4>
 
         <div class="d-flex flex-wrap">
             <div class="d-flex wrap px-3 pt-4">
@@ -166,8 +166,21 @@
                 </div>
             </div>
         </div>
+        <div class="py-5 px-5 d-flex">
+            <div class="text-center flex-wrap">
+                <asp:TextBox ID="TxtFecha" runat="server" TextMode="Date" CssClass="form-control" Width="250px" CausesValidation="True"></asp:TextBox>
+            </div>
+            <div class="flex-wrap pl-4">
+                <asp:DropDownList ID="DdlHorario" runat="server" CssClass="form-control" Width="100px">
+                    <asp:ListItem>AM</asp:ListItem>
+                    <asp:ListItem>PM</asp:ListItem>
+                </asp:DropDownList>
+            </div>
+        </div>
     </div>
-    <div class="text-center pt-5 pb-5">
-        <asp:Button ID="Button1" runat="server" Text="Solicitar Retiro" CssClass="btn btn-primary" />
+
+    <div class="text-center pb-5">
+        <asp:Button ID="BtnSolicitud" runat="server" Text="Solicitar Retiro" CssClass="btn btn-primary" />
     </div>
+
 </asp:Content>

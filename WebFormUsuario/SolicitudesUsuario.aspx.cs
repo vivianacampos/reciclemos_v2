@@ -11,7 +11,10 @@ namespace reciclemos_v2.WebFormMasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
 
+            }
         }
     }
 }
