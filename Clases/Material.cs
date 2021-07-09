@@ -7,20 +7,27 @@ namespace reciclemos_v2.Clases
 {
     public class Material
     {
-        private string descripcion;
+        private string nombre;
         private int cantidad;
+        private int idMat;
 
         public Material()
         {
         }
 
-        public Material(string descripcion, int cantidad)
+        public Material(string nombre, int cantidad)
         {
-            this.descripcion = descripcion;
+            this.nombre = nombre;
             this.cantidad = cantidad;
         }
 
-        public string Descripcion { get => descripcion; set => descripcion = value; }
+        public Material(string nombre, int cantidad, int idMat) : this(nombre, cantidad)
+        {
+            this.idMat = idMat;
+        }
+
+        public string Nombre { get => nombre; set => nombre = value; }
         public int Cantidad { get => cantidad; set => cantidad = value; }
+        public int IdMat { get => idMat; set => idMat = value; }
     }
 }

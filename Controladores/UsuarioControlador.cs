@@ -33,8 +33,6 @@ namespace reciclemos_v2.Controladores
                 cmd.ExecuteNonQuery();
                 con.Close();
 
-
-
             }
             catch (Exception e)
             {

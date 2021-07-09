@@ -8,7 +8,18 @@ namespace reciclemos_v2.Controladores
 {
     public class MaterialControlador
     {
-        private static List<Material> listaMateriales = new List<Material>();
+        
+        public static void AddMateriales(string nombre, int idMat)
+        {
+            Material m = new Material()
+            {
+                Nombre = nombre,
+                IdMat = idMat
+            };
+        }
+
+
+
     }
 
 

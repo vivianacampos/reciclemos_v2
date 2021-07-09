@@ -34,8 +34,7 @@ namespace reciclemos_v2.Controladores
                     Nombre = dt.Rows[0][4].ToString(),
                     Apellido = dt.Rows[0][5].ToString()
                 };
-                //Session[p] = usu;
-                
+                                
                 if (dt.Rows.Count == 1)
                 {
                     return usu;

@@ -15,15 +15,6 @@ namespace reciclemos_v2.WebFormMasterPage
     {
 
         /// <summary>
-        /// Control LblidUsu.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblidUsu;
-
-        /// <summary>
         /// Control Label5.
         /// </summary>
         /// <remarks>
@@ -33,13 +24,13 @@ namespace reciclemos_v2.WebFormMasterPage
         protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
-        /// Control TxtPet.
+        /// Control PET.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtPet;
+        protected global::System.Web.UI.WebControls.TextBox PET;
 
         /// <summary>
         /// Control Label1.
@@ -51,13 +42,13 @@ namespace reciclemos_v2.WebFormMasterPage
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control TxtPebd.
+        /// Control PEBD.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtPebd;
+        protected global::System.Web.UI.WebControls.TextBox PEBD;
 
         /// <summary>
         /// Control Label2.
@@ -69,13 +60,13 @@ namespace reciclemos_v2.WebFormMasterPage
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control TxtPead.
+        /// Control PEAD.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtPead;
+        protected global::System.Web.UI.WebControls.TextBox PEAD;
 
         /// <summary>
         /// Control Label3.
@@ -87,13 +78,13 @@ namespace reciclemos_v2.WebFormMasterPage
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control TxtPp.
+        /// Control PP.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtPp;
+        protected global::System.Web.UI.WebControls.TextBox PP;
 
         /// <summary>
         /// Control Label4.
@@ -105,13 +96,13 @@ namespace reciclemos_v2.WebFormMasterPage
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Control TxtPs.
+        /// Control PS.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtPs;
+        protected global::System.Web.UI.WebControls.TextBox PS;
 
         /// <summary>
         /// Control Label6.
@@ -123,13 +114,13 @@ namespace reciclemos_v2.WebFormMasterPage
         protected global::System.Web.UI.WebControls.Label Label6;
 
         /// <summary>
-        /// Control TxtVidrio.
+        /// Control Vidrio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtVidrio;
+        protected global::System.Web.UI.WebControls.TextBox Vidrio;
 
         /// <summary>
         /// Control Label7.
@@ -141,13 +132,13 @@ namespace reciclemos_v2.WebFormMasterPage
         protected global::System.Web.UI.WebControls.Label Label7;
 
         /// <summary>
-        /// Control TxtLata.
+        /// Control Lata.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtLata;
+        protected global::System.Web.UI.WebControls.TextBox Lata;
 
         /// <summary>
         /// Control Label8.
@@ -159,13 +150,13 @@ namespace reciclemos_v2.WebFormMasterPage
         protected global::System.Web.UI.WebControls.Label Label8;
 
         /// <summary>
-        /// Control TxtPapel.
+        /// Control Papel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtPapel;
+        protected global::System.Web.UI.WebControls.TextBox Papel;
 
         /// <summary>
         /// Control Label9.
@@ -177,13 +168,13 @@ namespace reciclemos_v2.WebFormMasterPage
         protected global::System.Web.UI.WebControls.Label Label9;
 
         /// <summary>
-        /// Control TxtAlum.
+        /// Control Aluminio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtAlum;
+        protected global::System.Web.UI.WebControls.TextBox Aluminio;
 
         /// <summary>
         /// Control Label10.
@@ -195,13 +186,13 @@ namespace reciclemos_v2.WebFormMasterPage
         protected global::System.Web.UI.WebControls.Label Label10;
 
         /// <summary>
-        /// Control TxtTetra.
+        /// Control Tetra.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtTetra;
+        protected global::System.Web.UI.WebControls.TextBox Tetra;
 
         /// <summary>
         /// Control Label11.
@@ -213,13 +204,13 @@ namespace reciclemos_v2.WebFormMasterPage
         protected global::System.Web.UI.WebControls.Label Label11;
 
         /// <summary>
-        /// Control TxtCarton.
+        /// Control Carton.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtCarton;
+        protected global::System.Web.UI.WebControls.TextBox Carton;
 
         /// <summary>
         /// Control TxtFecha.
@@ -238,6 +229,15 @@ namespace reciclemos_v2.WebFormMasterPage
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DdlHorario;
+
+        /// <summary>
+        /// Control LblPrueba.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblPrueba;
 
         /// <summary>
         /// Control BtnSolicitud.
