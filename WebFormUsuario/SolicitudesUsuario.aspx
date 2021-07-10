@@ -168,7 +168,10 @@
         </div>
         <div class="py-5 px-5 d-flex">
             <div class="text-center flex-wrap">
+                <asp:Label ID="LblPrueba" runat="server" Text=""></asp:Label>
                 <asp:TextBox ID="TxtFecha" runat="server" TextMode="Date" CssClass="form-control" Width="250px" CausesValidation="True"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Debe especificar una fecha" Display="Dynamic" ForeColor="Red" ControlToValidate="TxtFecha"></asp:RequiredFieldValidator>
+                
             </div>
             <div class="flex-wrap pl-4">
                 <asp:DropDownList ID="DdlHorario" runat="server" CssClass="form-control" Width="100px">
@@ -178,7 +181,7 @@
             </div>
         </div>
     </div>
-    <asp:Label ID="LblPrueba" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="LblFecha" runat="server" Text="" ForeColor="Green"></asp:Label>
     <div class="text-center pb-5">
         <asp:Button ID="BtnSolicitud" runat="server" Text="Solicitar Retiro" CssClass="btn btn-primary" OnClick="BtnSolicitud_Click" />
     </div>

@@ -213,6 +213,15 @@ namespace reciclemos_v2.WebFormMasterPage
         protected global::System.Web.UI.WebControls.TextBox Carton;
 
         /// <summary>
+        /// Control LblPrueba.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblPrueba;
+
+        /// <summary>
         /// Control TxtFecha.
         /// </summary>
         /// <remarks>
@@ -220,6 +229,15 @@ namespace reciclemos_v2.WebFormMasterPage
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtFecha;
+
+        /// <summary>
+        /// Control RequiredFieldValidator1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
 
         /// <summary>
         /// Control DdlHorario.
@@ -231,13 +249,13 @@ namespace reciclemos_v2.WebFormMasterPage
         protected global::System.Web.UI.WebControls.DropDownList DdlHorario;
 
         /// <summary>
-        /// Control LblPrueba.
+        /// Control LblFecha.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblPrueba;
+        protected global::System.Web.UI.WebControls.Label LblFecha;
 
         /// <summary>
         /// Control BtnSolicitud.

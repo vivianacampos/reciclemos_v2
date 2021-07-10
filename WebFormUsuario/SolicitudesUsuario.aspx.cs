@@ -18,6 +18,7 @@ namespace reciclemos_v2.WebFormMasterPage
         
         protected void Page_Load(object sender, EventArgs e)
         {
+            LblFecha.Text = DateTime.Now.Date.ToShortDateString();
             if (Session["Usuario"] != null)
             {
                 usu = (Usuario)Session["Usuario"];
@@ -36,6 +37,22 @@ namespace reciclemos_v2.WebFormMasterPage
                 listaMateriales.Add(m);
             }
         }
+        public void Limpiar()
+        {
+            PET.Text = "0";
+            PEBD.Text = "0";
+            PEAD.Text = "0";
+            PP.Text = "0";
+            PS.Text = "0";
+            Vidrio.Text = "0";
+            Lata.Text = "0";
+            Papel.Text = "0";
+            Aluminio.Text = "0";
+            Tetra.Text = "0";
+            Carton.Text = "0";
+            TxtFecha.Text = "";
+            DdlHorario.SelectedValue = "AM";
+        }
 
         protected void BtnSolicitud_Click(object sender, EventArgs e)
         {
@@ -53,8 +70,21 @@ namespace reciclemos_v2.WebFormMasterPage
 
             //Llamado al método para registrar una solicitud
             SolicitudControlador solicitud = new SolicitudControlador();
-            
-            LblPrueba.Text = solicitud.AddSolicitud(idUsu, 1, TxtFecha.Text, DdlHorario.SelectedValue, listaMateriales);
+            if (listaMateriales.Count != 0)
+            {
+
+                
+                
+                LblPrueba.Text = solicitud.AddSolicitud(idUsu, 1, TxtFecha.Text, DdlHorario.SelectedValue, listaMateriales);
+                if (LblPrueba.Text.Equals("Solicitud registrada con exito"))
+                {
+                    Limpiar();
+                }
+            }
+            else
+            {
+                LblPrueba.Text = "Debe seleccionar al menos un material";
+            }
 
         }
 
