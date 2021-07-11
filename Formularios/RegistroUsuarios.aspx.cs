@@ -26,7 +26,7 @@ namespace reciclemos_v2.Formularios
                 UsuarioControlador usu = new UsuarioControlador();
                 LblMensaje.Text = usu.agregarUsuario(TxtRut.Text, TxtNombre.Text, TxtApellido.Text, TxtCorreo.Text, TxtTelefono.Text, TxtDireccion.Text, TxtContrasena.Text, DdlComunas.SelectedIndex, 2);
 
-                if (LblMensaje.Text == "Usuario creado exitosamente!")
+                if (LblMensaje.Text == "Usuario creado exitosamente!" || LblMensaje.Text == "Usuario ya registrado")
                 {
                     TxtRut.Text = "";
                     TxtNombre.Text = "";
@@ -38,6 +38,7 @@ namespace reciclemos_v2.Formularios
                     TxtConfirma.Text = "";
                     LblCondiciones.Text = "";
                     DdlComunas.SelectedValue = "888";
+                    ChbCondiciones.Checked = false;
                 };
             }
             else {

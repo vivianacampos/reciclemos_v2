@@ -56,36 +56,54 @@ namespace reciclemos_v2.WebFormMasterPage
 
         protected void BtnSolicitud_Click(object sender, EventArgs e)
         {
-            AddMat(PET);
-            AddMat(PEBD);
-            AddMat(PEAD);
-            AddMat(PP);
-            AddMat(PS);
-            AddMat(Vidrio);
-            AddMat(Lata);
-            AddMat(Papel);
-            AddMat(Aluminio);
-            AddMat(Tetra);
-            AddMat(Carton);
-
-            //Llamado al método para registrar una solicitud
-            SolicitudControlador solicitud = new SolicitudControlador();
-            if (listaMateriales.Count != 0)
+            if (LblValidaFecha.Text.Equals(""))
             {
-
-                
-                
-                LblPrueba.Text = solicitud.AddSolicitud(idUsu, 1, TxtFecha.Text, DdlHorario.SelectedValue, listaMateriales);
-                if (LblPrueba.Text.Equals("Solicitud registrada con exito"))
-                {
-                    Limpiar();
-                }
+                LblValidaFecha.Text = "Debe especificar una fecha";
             }
             else
             {
-                LblPrueba.Text = "Debe seleccionar al menos un material";
-            }
+                AddMat(PET);
+                AddMat(PEBD);
+                AddMat(PEAD);
+                AddMat(PP);
+                AddMat(PS);
+                AddMat(Vidrio);
+                AddMat(Lata);
+                AddMat(Papel);
+                AddMat(Aluminio);
+                AddMat(Tetra);
+                AddMat(Carton);
 
+                //Llamado al método para registrar una solicitud
+                SolicitudControlador solicitud = new SolicitudControlador();
+                if (listaMateriales.Count != 0)
+                {
+                    int canti = 0;
+                    foreach (Material mate in listaMateriales)
+                    {
+                        canti += mate.Cantidad;
+                    }
+                    if (canti > 49)
+                    {
+                        LblPrueba.Text = solicitud.AddSolicitud(idUsu, 1, TxtFecha.Text, DdlHorario.SelectedValue, listaMateriales);
+                        if (LblPrueba.Text.Equals("Solicitud registrada con exito"))
+                        {
+                            LblPrueba.ForeColor = System.Drawing.Color.Green;
+                            LblValidaFecha.Text = "";
+                            Limpiar();
+                        }
+                    }
+                    else
+                    {
+                        LblPrueba.Text = "Debe ingresar una cantidad mínima de 50 materiales";
+                    }
+                }
+                else
+                {
+                    LblPrueba.Text = "Debe seleccionar al menos un material";
+                }
+            }
+            
         }
 
     }

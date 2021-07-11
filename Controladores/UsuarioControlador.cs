@@ -20,18 +20,33 @@ namespace reciclemos_v2.Controladores
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("Insert into usuario (rut, nombre, apellido, correo, telefono, direccion, contrasena, idComuna, idTipoUsu) values (@rut, @nombre, @apellido, @correo, @telefono, @direccion, @contrasena, @comuna, @rol)", con);
-                cmd.Parameters.AddWithValue("rut", rut);
-                cmd.Parameters.AddWithValue("nombre", nombre);
-                cmd.Parameters.AddWithValue("apellido", apellido);
-                cmd.Parameters.AddWithValue("correo", correo);
-                cmd.Parameters.AddWithValue("telefono", telefono);
-                cmd.Parameters.AddWithValue("direccion", direccion);
-                cmd.Parameters.AddWithValue("contrasena", contrasena);
-                cmd.Parameters.AddWithValue("comuna", comuna);
-                cmd.Parameters.AddWithValue("rol", rol);
-                cmd.ExecuteNonQuery();
-                con.Close();
+                SqlCommand cmd1 = new SqlCommand("Select * from usuario where rut = @rut", con);
+                cmd1.Parameters.AddWithValue("rut", rut);
+                cmd1.ExecuteNonQuery();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd1);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                if (dt.Rows.Count == 0)
+                {
+                    SqlCommand cmd = new SqlCommand("Insert into usuario (rut, nombre, apellido, correo, telefono, direccion, contrasena, idComuna, idTipoUsu) values (@rut, @nombre, @apellido, @correo, @telefono, @direccion, @contrasena, @comuna, @rol)", con);
+                    cmd.Parameters.AddWithValue("rut", rut);
+                    cmd.Parameters.AddWithValue("nombre", nombre);
+                    cmd.Parameters.AddWithValue("apellido", apellido);
+                    cmd.Parameters.AddWithValue("correo", correo);
+                    cmd.Parameters.AddWithValue("telefono", telefono);
+                    cmd.Parameters.AddWithValue("direccion", direccion);
+                    cmd.Parameters.AddWithValue("contrasena", contrasena);
+                    cmd.Parameters.AddWithValue("comuna", comuna);
+                    cmd.Parameters.AddWithValue("rol", rol);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                else
+                {
+                    return "Usuario ya registrado";
+                }
+
 
             }
             catch (Exception e)

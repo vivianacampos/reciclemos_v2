@@ -144,6 +144,7 @@
                         </div>
                         <div class="col-3">
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TxtTelefono" Display="Dynamic" ErrorMessage="Teléfono Obligatorio" ForeColor="Red"></asp:RequiredFieldValidator>
+
                         </div>
                     </div>
                 </div>
@@ -186,7 +187,7 @@
                         </div>
                         <div class="col-3">
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" Display="Dynamic" ControlToValidate="TxtContrasena" ErrorMessage="Contraseña Obligatoria" ForeColor="Red"></asp:RequiredFieldValidator>
-                            <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="TxtContrasena" ErrorMessage="La contraseña debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula." Display="Dynamic" ValidationExpression="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$" ForeColor="Red"></asp:RegularExpressionValidator>
+                            <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="TxtContrasena" ErrorMessage="La contraseña debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula." Display="Dynamic" ValidationExpression="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$" ForeColor="Red"></asp:RegularExpressionValidator>
                             <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToValidate="TxtContrasena" ErrorMessage="Contraseñas no coinciden" Display="Dynamic" ControlToCompare="TxtConfirma" ForeColor="Red"></asp:CompareValidator>
                         </div>
                     </div>
