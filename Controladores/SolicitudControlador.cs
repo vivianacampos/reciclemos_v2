@@ -11,6 +11,8 @@ namespace reciclemos_v2.Controladores
     public class SolicitudControlador
     {
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2T6G65H;Initial Catalog=reciclemos;Integrated Security=True");
+        List<Solicitud> listaSolicitudes = new List<Solicitud>();
+        List<Material> listaMateriales = new List<Material>();
         //Método para crear una solicitud
         public string AddSolicitud(int idUsuario, int estado, string fecha, string horario, List<Material> listaMat)
         {
@@ -43,12 +45,57 @@ namespace reciclemos_v2.Controladores
                 }
 
                 return "Solicitud registrada con exito";
-                
+
             }
             catch (Exception e)
             {
                 return "Error " + e;
 
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public List<Solicitud> FillDataTableSol(int idUsuario)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("Select sol.idSolicitud, estado, fecha, horario, material, cantidad  " +
+                    "from solicitud sol join solicitud_detalle soldet on sol.idSolicitud = soldet.idSolicitud " +
+                    "join estado e on sol.idEstado = e.idEstado join materiales m on soldet.idMat = m.idMateriales " +
+                    "where sol.idUsuario = @idUsuario", con);
+                cmd.Parameters.AddWithValue("idUsuario", idUsuario);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                if (dt.Rows.Count != 0)
+                {
+                    foreach (DataTable data in dt.Rows)
+                    {
+                        Solicitud sol = new Solicitud();
+                        sol.IdSol = int.Parse(data.Rows[0][0].ToString());
+                        sol.Estado = data.Rows[0][1].ToString();
+                        sol.Fecha = data.Rows[0][2].ToString();
+                        sol.Horario = data.Rows[0][3].ToString();
+                        Material m = new Material();
+                        m.Nombre = data.Rows[0][4].ToString();
+                        m.Cantidad = int.Parse(data.Rows[0][5].ToString());
+                        listaMateriales.Add(m);
+                        sol.ListaMateriales = listaMateriales;
+                        listaSolicitudes.Add(sol);
+                    }
+                    
+                }
+
+                sda.Fill(dt);
+                
+                return listaSolicitudes;
+            }
+            catch (Exception)
+            {
+                return null;
             }
             finally
             {
