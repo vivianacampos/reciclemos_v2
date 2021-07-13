@@ -177,13 +177,40 @@ namespace reciclemos_v2.WebFormEmpresa
         protected global::System.Web.UI.WebControls.DropDownList DdlComunas;
 
         /// <summary>
-        /// Control SqlDataSource2.
+        /// Control LblContrasena.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+        protected global::System.Web.UI.WebControls.Label LblContrasena;
+
+        /// <summary>
+        /// Control TxtContrasena.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtContrasena;
+
+        /// <summary>
+        /// Control LblTipoUsu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblTipoUsu;
+
+        /// <summary>
+        /// Control DdlTipoUsu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DdlTipoUsu;
 
         /// <summary>
         /// Control BtnOpciones.

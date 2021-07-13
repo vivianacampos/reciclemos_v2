@@ -52,7 +52,6 @@ namespace reciclemos_v2.WebFormEmpresa
             if (LblMensaje.Text == "Usuario encontrado exitosamente")
             {
                 BtnModificar.Visible = true;
-                BtnEliminar.Visible = true;
                 LblMensaje.Text = "";
             }
         }

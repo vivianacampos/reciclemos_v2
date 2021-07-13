@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using reciclemos_v2.Controladores;
 
 namespace reciclemos_v2.Formularios
 {
@@ -12,6 +13,19 @@ namespace reciclemos_v2.Formularios
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void BtnEnviar_Click(object sender, EventArgs e)
+        {
+            ProspectoControlador prospecto = new ProspectoControlador();
+            LblMensaje.Text = prospecto.AddProspecto(TxtNom.Text, TxtCorr.Text, TxtTel.Text, TxtArea.Text);
+            if (LblMensaje.Text == "Mensaje enviado exitosamente")
+            {
+                TxtNom.Text = "";
+                TxtCorr.Text = "";
+                TxtTel.Text = "";
+                TxtArea.Text = "";
+            }
         }
     }
 }

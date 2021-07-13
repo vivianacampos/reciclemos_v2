@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using reciclemos_v2.Clases;
-using reciclemos_v2.Controladores;
-using reciclemos_v2.Modelo;
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
+
 
 
 namespace reciclemos_v2.Controladores

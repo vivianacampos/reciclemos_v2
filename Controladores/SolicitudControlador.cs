@@ -86,11 +86,11 @@ namespace reciclemos_v2.Controladores
                         sol.ListaMateriales = listaMateriales;
                         listaSolicitudes.Add(sol);
                     }
-                    
+
                 }
 
                 sda.Fill(dt);
-                
+
                 return listaSolicitudes;
             }
             catch (Exception)
