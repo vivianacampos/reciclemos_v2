@@ -40,7 +40,6 @@ namespace reciclemos_v2.Controladores
                     cmd.Parameters.AddWithValue("comuna", comuna);
                     cmd.Parameters.AddWithValue("rol", rol);
                     cmd.ExecuteNonQuery();
-                    con.Close();
                 }
                 else
                 {
@@ -53,63 +52,99 @@ namespace reciclemos_v2.Controladores
             {
                 return "Error " + e.Message.ToString();
             }
+            finally
+            {
+                con.Close();
+            }
             return "Usuario creado exitosamente!";
         }
 
 
         //Método para buscar un usuario
-        public static Usuario buscarUsuario(string rut)
-        {
-            foreach (Usuario usuario in listaUsuarios)
-            {
-                if (usuario.Rut == rut)
-                {
-                    return usuario;
-                }
-            }
-            return null;
-        }
-
-        //Método para modificar un usuario
-        public static string modificarUsuario(string rut, string nombre, string apellido, string correo, string telefono, string direccion, string comuna, string contrasena)
+        public Usuario buscarUsuario(string rut)
         {
             try
             {
-                Usuario usuario = buscarUsuario(rut);
-
-                usuario.Rut = rut;
-                usuario.Nombre = nombre;
-                usuario.Apellido = apellido;
-                usuario.Correo = correo;
-                usuario.Telefono = telefono;
-                usuario.Direccion = direccion;
-                usuario.Comuna = comuna;
-                usuario.Contrasena = contrasena;
-
-                return "Usuario modificado exitósamente";
+                con.Open();
+                SqlCommand cmd = new SqlCommand("Select rut, nombre, apellido, correo, telefono, direccion, idComuna, contrasena, idTipoUsu from usuario where rut = @rut", con);
+                cmd.Parameters.AddWithValue("rut", rut);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                Usuario usu = new Usuario()
+                {
+                    Rut = dt.Rows[0][0].ToString(),
+                    Nombre = dt.Rows[0][1].ToString(),
+                    Apellido = dt.Rows[0][2].ToString(),
+                    Correo = dt.Rows[0][3].ToString(),
+                    Telefono = dt.Rows[0][4].ToString(),
+                    Direccion = dt.Rows[0][5].ToString(),
+                    IdComuna = int.Parse(dt.Rows[0][6].ToString()),
+                    Contrasena = dt.Rows[0][7].ToString(),
+                    Rol = int.Parse(dt.Rows[0][8].ToString())
+                };
+                if (dt.Rows.Count == 1)
+                {
+                    return usu;
+                }
+                else
+                {
+                    return null;
+                }
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                return "Error: " + e.Message.ToString();
+                return null;
             }
+            finally
+            {
+                con.Close();
+            }   
 
         }
+
+        //Método para modificar un usuario
+        //public static string modificarUsuario(string rut, string nombre, string apellido, string correo, string telefono, string direccion, string comuna, string contrasena)
+        //{
+            //try
+            //{
+            //    Usuario usuario = buscarUsuario(rut);
+
+            //    usuario.Rut = rut;
+            //    usuario.Nombre = nombre;
+            //    usuario.Apellido = apellido;
+            //    usuario.Correo = correo;
+            //    usuario.Telefono = telefono;
+            //    usuario.Direccion = direccion;
+            //    usuario.Comuna = comuna;
+            //    usuario.Contrasena = contrasena;
+
+            //    return "Usuario modificado exitósamente";
+            //}
+            //catch (Exception e)
+            //{
+            //    return "Error: " + e.Message.ToString();
+            //}
+        //    return "";
+
+        //}
 
         //Método para eliminar usuario de la lista
-        public static string eliminarUsuario(string rut)
-        {
-            Usuario usuario = buscarUsuario(rut);
-            if (usuario != null)
-            {
-                listaUsuarios.Remove(usuario);
+        //public static string eliminarUsuario(string rut)
+        //{
+        //    Usuario usuario = buscarUsuario(rut);
+        //    if (usuario != null)
+        //    {
+        //        listaUsuarios.Remove(usuario);
 
-                return "Usuario eliminado exitosamente";
-            }
-            else
-            {
-                return "No se pudo eliminar a usuario";
-            }
-        }
+        //        return "Usuario eliminado exitosamente";
+        //    }
+        //    else
+        //    {
+        //        return "No se pudo eliminar a usuario";
+        //    }
+        //}
 
 
        

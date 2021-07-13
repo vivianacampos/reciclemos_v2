@@ -67,7 +67,7 @@ namespace reciclemos_v2.Controladores
                     "join estado e on sol.idEstado = e.idEstado join materiales m on soldet.idMat = m.idMateriales " +
                     "where sol.idUsuario = @idUsuario", con);
                 cmd.Parameters.AddWithValue("idUsuario", idUsuario);
-                cmd.ExecuteNonQuery();
+                //cmd.ExecuteNonQuery();
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 if (dt.Rows.Count != 0)

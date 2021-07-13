@@ -17,6 +17,7 @@ namespace reciclemos_v2.Clases
         private string contrasena;
         private string direccion;
         private string comuna;
+        private int idComuna;
         private int rol;
        
 
@@ -53,6 +54,20 @@ namespace reciclemos_v2.Clases
             this.rol = rol;
         }
 
+        public Usuario(string rut, string nombre, string apellido, string telefono, string correo, string contrasena, string direccion, string comuna,int idComuna ,int rol)
+        {
+            this.rut = rut;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.telefono = telefono;
+            this.correo = correo;
+            this.contrasena = contrasena;
+            this.direccion = direccion;
+            this.comuna = comuna;
+            this.idComuna = idComuna;
+            this.rol = rol;
+        }
+
         public static List<Usuario> ListaUsuario { get => listaUsuario; set => listaUsuario = value; }
         public string Rut { get => rut; set => rut = value; }
         public string Nombre { get => nombre; set => nombre = value; }
@@ -64,5 +79,6 @@ namespace reciclemos_v2.Clases
         public string Comuna { get => comuna; set => comuna = value; }
         public int Rol { get => rol; set => rol = value; }
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
+        public int IdComuna { get => idComuna; set => idComuna = value; }
     }
 }

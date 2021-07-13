@@ -14,7 +14,7 @@ namespace reciclemos_v2
         int idUsu;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //loginControl();
+            loginControl();
             Usuario usu = new Usuario();
             if (Session["Usuario"] != null)
             {

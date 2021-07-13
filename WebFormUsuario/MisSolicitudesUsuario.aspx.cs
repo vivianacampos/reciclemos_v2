@@ -36,23 +36,20 @@ namespace reciclemos_v2.WebFormMasterPage
         }
         public void cargarGrid(int idUsu)
         {
-            DataTable dt = new DataTable();
-            dt.Columns.AddRange(new DataColumn[]
-            {
-                new DataColumn("Id Solicitud", typeof(string)),
-                new DataColumn("Estado", typeof(string)),
-                new DataColumn("Fecha", typeof(string)),
-                new DataColumn("Horario", typeof(string)),
-                new DataColumn("Materiales", typeof(string))
-            });
-
-            //listaSolicitudes = usuario.FillDataTableSol(idUsu);
-            
+            GdvSolicitudes.DataSource = from s in usuario.FillDataTableSol(idUsu)
+                                        select new {
+                                            Codigo = s.IdSol,
+                                            Estado = s.Estado,
+                                            Fecha = s.Fecha,
+                                            Horario = s.Horario,
+                                            Material = s.ListaMateriales.ToString()
+                                        };
+            GdvSolicitudes.DataBind();
         }
 
         protected void BtnFiltrar_Click(object sender, EventArgs e)
         {
-            Label1.Text = usuario.FillDataTableSol(idUsu);
+
             
         }
     }

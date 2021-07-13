@@ -122,7 +122,6 @@
     <Content Include="bin\roslyn\vbc.exe" />
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
     <Content Include="Formularios\ContactoProspecto.aspx" />
-    <Content Include="Formularios\MantenedorUsuarios.aspx" />
     <Content Include="Formularios\RegistroUsuarios.aspx" />
     <Content Include="Imagenes\concurso.png" />
     <Content Include="Imagenes\educacionambiental.jpg" />
@@ -2052,13 +2051,6 @@
     </Compile>
     <Compile Include="Formularios\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\MantenedorUsuarios.aspx.cs">
-      <DependentUpon>MantenedorUsuarios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Formularios\MantenedorUsuarios.aspx.designer.cs">
-      <DependentUpon>MantenedorUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formularios\RegistroUsuarios.aspx.cs">
       <DependentUpon>RegistroUsuarios.aspx</DependentUpon>
