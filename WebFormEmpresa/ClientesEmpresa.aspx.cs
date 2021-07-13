@@ -37,9 +37,7 @@ namespace reciclemos_v2.WebFormEmpresa
                 TxtCorreo.Text = u.Correo;
                 TxtTelefono.Text = u.Telefono;
                 TxtDireccion.Text = u.Direccion;
-                TxtContrasena.Text = u.Contrasena;
                 DdlComunas.SelectedValue = u.IdComuna.ToString();
-                DdlTipoUsu.SelectedValue = u.Rol.ToString();
                 LblMensaje.Text = "Usuario encontrado exitosamente";
             }
             else
@@ -63,18 +61,21 @@ namespace reciclemos_v2.WebFormEmpresa
         {
             if(BtnModificar.Text == "Modificar")
             {
-                TxtRut.Enabled = true;
-                TxtNombre.Enabled = true;
-                TxtApellido.Enabled = true;
-                TxtCorreo.Enabled = true;
                 TxtDireccion.Enabled = true;
                 TxtTelefono.Enabled = true;
-                TxtContrasena.Enabled = true;
                 DdlComunas.Enabled = true;
                 BtnModificar.Text = "Guardar";
             }else if (BtnModificar.Text == "Guardar")
             {
-
+                LblMensaje.Text = usuario.modificarUsuario(TxtRut.Text, TxtTelefono.Text,TxtDireccion.Text, DdlComunas.SelectedIndex);
+            }
+            if(LblMensaje.Text == "Usuario modificado exitosamente")
+            {
+                BtnModificar.Text = "Modificar";
+                TxtDireccion.Enabled = false;
+                TxtTelefono.Enabled = false;
+                DdlComunas.Enabled = false;
+                TxtBusqueda.Text = "";
             }
 
         }

@@ -71,29 +71,14 @@
                         </asp:DropDownList>
                         <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:select %>" SelectCommand="SELECT [idComuna], [nombre] FROM [comuna]"></asp:SqlDataSource>
                     </div>
-                    <div class="col-4 form-control bor">
-                        <asp:Label ID="LblContrasena" runat="server" Text="Contraseña"></asp:Label>
-                    </div>
-                    <div class="col-sm-5 py-1">
-                        <asp:TextBox ID="TxtContrasena" runat="server" CssClass="form-control" Enabled="False"></asp:TextBox>
-                    </div>
-                    <div class="col-4 form-control bor">
-                        <asp:Label ID="LblTipoUsu" runat="server" Text="Rol Usuario"></asp:Label>
-                    </div>
-                    <div class="col-sm-5 py-1">
-                        <asp:DropDownList ID="DdlTipoUsu" runat="server" CssClass="form-control" Enabled="False" DataSourceID="SqlDataSource1" DataTextField="Tipo" DataValueField="idTipoUsu">
-                        </asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:select %>" SelectCommand="SELECT [idTipoUsu], [Tipo] FROM [tipo_usuario]"></asp:SqlDataSource>
-                    </div>
+                  
                     <div class="col-4 py-1 pt-3" style="text-align: end;">
                         <asp:Button ID="BtnOpciones" runat="server" Text="Opciones" CssClass="btn btn-success" Width="150px" OnClick="BtnOpciones_Click" />
                     </div>
                     <div class="col-4 py-1 pt-3" style="text-align: center;">
                         <asp:Button ID="BtnModificar" runat="server" Text="Modificar" CssClass="btn btn-warning" Width="150px" Visible="false" OnClick="BtnModificar_Click"  />
                     </div>
-                    <div class="col-4 py-1 pt-3" style="text-align: start;">
-                        <asp:Button ID="BtnEliminar" runat="server" Text="Eliminar" CssClass="btn btn-danger" Width="150px" Visible="false"  />
-                    </div>
+
                 </div>
             </div>
         </asp:Panel>
