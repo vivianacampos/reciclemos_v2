@@ -105,30 +105,23 @@ namespace reciclemos_v2.Controladores
         }
 
         //Método para modificar un usuario
-        //public static string modificarUsuario(string rut, string nombre, string apellido, string correo, string telefono, string direccion, string comuna, string contrasena)
-        //{
-            //try
-            //{
-            //    Usuario usuario = buscarUsuario(rut);
+        public string modificarUsuario(string rut, string nombre, string apellido, string correo, string telefono, string direccion, string comuna, string contrasena)
+        {
+            try
+            {
+                con.Open();
 
-            //    usuario.Rut = rut;
-            //    usuario.Nombre = nombre;
-            //    usuario.Apellido = apellido;
-            //    usuario.Correo = correo;
-            //    usuario.Telefono = telefono;
-            //    usuario.Direccion = direccion;
-            //    usuario.Comuna = comuna;
-            //    usuario.Contrasena = contrasena;
+                SqlCommand cmd = new SqlCommand("Update rut, nombre, apellido, correo, telefono, direccion, idComuna, contrasena, idTipoUsu from usuario where rut = @rut", con);
+                cmd.Parameters.AddWithValue("rut", rut);
 
-            //    return "Usuario modificado exitósamente";
-            //}
-            //catch (Exception e)
-            //{
-            //    return "Error: " + e.Message.ToString();
-            //}
-        //    return "";
+                return "Usuario modificado exitósamente";
+            }
+            catch (Exception e)
+            {
+                return "Error: " + e.Message.ToString();
+            }
 
-        //}
+        }
 
         //Método para eliminar usuario de la lista
         //public static string eliminarUsuario(string rut)
@@ -147,7 +140,7 @@ namespace reciclemos_v2.Controladores
         //}
 
 
-       
+
 
     }
 

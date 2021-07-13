@@ -38,7 +38,8 @@ namespace reciclemos_v2.WebFormEmpresa
                 TxtTelefono.Text = u.Telefono;
                 TxtDireccion.Text = u.Direccion;
                 TxtContrasena.Text = u.Contrasena;
-                //DdlComunas.SelectedIndex = u.IdComuna;
+                DdlComunas.SelectedValue = u.IdComuna.ToString();
+                DdlTipoUsu.SelectedValue = u.Rol.ToString();
                 LblMensaje.Text = "Usuario encontrado exitosamente";
             }
             else
@@ -46,6 +47,36 @@ namespace reciclemos_v2.WebFormEmpresa
                 LblMensaje.ForeColor = System.Drawing.Color.Red;
                 LblMensaje.Text = "Usuario no encontrado";
             }
+        }
+
+        protected void BtnOpciones_Click(object sender, EventArgs e)
+        {
+            if (LblMensaje.Text == "Usuario encontrado exitosamente")
+            {
+                BtnModificar.Visible = true;
+                BtnEliminar.Visible = true;
+                LblMensaje.Text = "";
+            }
+        }
+
+        protected void BtnModificar_Click(object sender, EventArgs e)
+        {
+            if(BtnModificar.Text == "Modificar")
+            {
+                TxtRut.Enabled = true;
+                TxtNombre.Enabled = true;
+                TxtApellido.Enabled = true;
+                TxtCorreo.Enabled = true;
+                TxtDireccion.Enabled = true;
+                TxtTelefono.Enabled = true;
+                TxtContrasena.Enabled = true;
+                DdlComunas.Enabled = true;
+                BtnModificar.Text = "Guardar";
+            }else if (BtnModificar.Text == "Guardar")
+            {
+
+            }
+
         }
     }
 }
