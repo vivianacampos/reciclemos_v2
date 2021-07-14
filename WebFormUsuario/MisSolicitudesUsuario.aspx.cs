@@ -8,6 +8,7 @@ using System.Drawing;
 using reciclemos_v2.Controladores;
 using reciclemos_v2.Clases;
 using System.Data;
+using System.Data.SqlClient;
 
 
 namespace reciclemos_v2.WebFormMasterPage
@@ -36,20 +37,41 @@ namespace reciclemos_v2.WebFormMasterPage
         }
         public void cargarGrid(int idUsu)
         {
-            GdvSolicitudes.DataSource = from s in usuario.FillDataTableSol(idUsu)
-                                        select new {
-                                            Codigo = s.IdSol,
-                                            Estado = s.Estado,
-                                            Fecha = s.Fecha,
-                                            Horario = s.Horario,
-                                            Material = s.ListaMateriales.ToString()
-                                        };
+            GdvSolicitudes.DataSource = usuario.FillDataTableSol(idUsu);
             GdvSolicitudes.DataBind();
         }
 
+
         protected void BtnFiltrar_Click(object sender, EventArgs e)
         {
+            DataTable data = new DataTable();
+            foreach (DataRow row in GdvSolicitudes.Rows)
+            {
+                row["Estado"].ToString();
+            }
 
+
+            if (DdlFiltrarSol.SelectedValue == "Pendiente")
+            {
+
+            }
+            else if (DdlFiltrarSol.SelectedValue == "En Retiro")
+            {
+
+            }
+            else if (DdlFiltrarSol.SelectedValue == "Finalizado")
+            {
+
+            }
+            else if (DdlFiltrarSol.SelectedValue == "Todas")
+            {
+                cargarGrid(idUsu);
+            }
+
+        }
+
+        protected void BtnEliminar_Click(object sender, EventArgs e)
+        {
             
         }
     }

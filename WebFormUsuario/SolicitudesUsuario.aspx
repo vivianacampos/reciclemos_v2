@@ -182,7 +182,7 @@
             </div>
         </div>
     </div>
-    <asp:Label ID="LblFecha" runat="server" Text="" ForeColor="Green"></asp:Label>
+
     <div class="text-center pb-5">
         <asp:Button ID="BtnSolicitud" runat="server" Text="Solicitar Retiro" CssClass="btn btn-primary" OnClick="BtnSolicitud_Click" />
     </div>

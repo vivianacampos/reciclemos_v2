@@ -170,10 +170,12 @@
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="WebFormEmpresa\ClientesEmpresa.aspx" />
     <Content Include="WebFormEmpresa\MensajesEmpresa.aspx" />
+    <Content Include="WebFormEmpresa\ProspectosEmpresa.aspx" />
     <Content Include="WebFormEmpresa\ReportesEmpresa.aspx" />
     <Content Include="WebFormEmpresa\SolicitudesEmpresa.aspx" />
     <Content Include="WebFormUsuario\LogrosUsuario.aspx" />
     <Content Include="WebFormUsuario\MensajesUsuario.aspx" />
+    <Content Include="WebFormUsuario\MiCuentaUsuario.aspx" />
     <Content Include="WebFormUsuario\MisSolicitudesUsuario.aspx" />
     <Content Include="WebFormUsuario\ReportesUsuario.aspx" />
     <Content Include="WebFormUsuario\SolicitudesUsuario.aspx" />
@@ -2081,6 +2083,13 @@
     <Compile Include="WebFormEmpresa\MensajesEmpresa.aspx.designer.cs">
       <DependentUpon>MensajesEmpresa.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebFormEmpresa\ProspectosEmpresa.aspx.cs">
+      <DependentUpon>ProspectosEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormEmpresa\ProspectosEmpresa.aspx.designer.cs">
+      <DependentUpon>ProspectosEmpresa.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebFormEmpresa\PaginaMaestraEmpresa.Master.cs">
       <DependentUpon>PaginaMaestraEmpresa.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2101,6 +2110,13 @@
     </Compile>
     <Compile Include="WebFormEmpresa\SolicitudesEmpresa.aspx.designer.cs">
       <DependentUpon>SolicitudesEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormUsuario\MiCuentaUsuario.aspx.cs">
+      <DependentUpon>MiCuentaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormUsuario\MiCuentaUsuario.aspx.designer.cs">
+      <DependentUpon>MiCuentaUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormUsuario\PaginaMaestraUsuario.Master.cs">
       <DependentUpon>PaginaMaestraUsuario.Master</DependentUpon>

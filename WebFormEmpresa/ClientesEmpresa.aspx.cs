@@ -58,15 +58,15 @@ namespace reciclemos_v2.WebFormEmpresa
 
         protected void BtnModificar_Click(object sender, EventArgs e)
         {
-            if(BtnModificar.Text == "Modificar")
+            if (BtnModificar.Text == "Modificar")
             {
                 TxtDireccion.Enabled = true;
                 TxtTelefono.Enabled = true;
                 DdlComunas.Enabled = true;
                 BtnModificar.Text = "Guardar";
-            }else if (BtnModificar.Text == "Guardar")
+            } else if (BtnModificar.Text == "Guardar")
             {
-                LblMensaje.Text = usuario.modificarUsuario(TxtRut.Text, TxtTelefono.Text,TxtDireccion.Text, DdlComunas.SelectedIndex);
+                LblMensaje.Text = usuario.modificarUsuario(TxtRut.Text, TxtTelefono.Text, TxtDireccion.Text, int.Parse(DdlComunas.SelectedValue));
             }
             if(LblMensaje.Text == "Usuario modificado exitosamente")
             {

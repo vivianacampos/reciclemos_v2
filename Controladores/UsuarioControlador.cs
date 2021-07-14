@@ -5,6 +5,8 @@ using System.Web;
 using reciclemos_v2.Clases;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace reciclemos_v2.Controladores
 {
@@ -18,6 +20,7 @@ namespace reciclemos_v2.Controladores
         {
             try
             {
+                //string pass = GetMD5(contrasena);
                 con.Open();
                 SqlCommand cmd1 = new SqlCommand("Select * from usuario where rut = @rut", con);
                 cmd1.Parameters.AddWithValue("rut", rut);
@@ -59,7 +62,7 @@ namespace reciclemos_v2.Controladores
         }
 
 
-        //Método para buscar un usuario
+        //Método para buscar un usuario por Rut
         public Usuario buscarUsuario(string rut)
         {
             try
@@ -83,6 +86,50 @@ namespace reciclemos_v2.Controladores
                     Contrasena = dt.Rows[0][7].ToString(),
                     Rol = int.Parse(dt.Rows[0][8].ToString())
                 };
+                if (dt.Rows.Count == 1)
+                {
+                    return usu;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
+
+        //Buscar usuario por id
+        public Usuario buscarUsuarioId(int id)
+        {
+            
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("Select rut, nombre, apellido, correo, telefono, direccion, idComuna, contrasena from usuario where idUsuario = @id", con);
+                cmd.Parameters.AddWithValue("id", id);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                Usuario usu = new Usuario()
+                {
+                    Rut = dt.Rows[0][0].ToString(),
+                    Nombre = dt.Rows[0][1].ToString(),
+                    Apellido = dt.Rows[0][2].ToString(),
+                    Correo = dt.Rows[0][3].ToString(),
+                    Telefono = dt.Rows[0][4].ToString(),
+                    Direccion = dt.Rows[0][5].ToString(),
+                    IdComuna = int.Parse(dt.Rows[0][6].ToString()),
+                    Contrasena = dt.Rows[0][7].ToString()
+            };
                 if (dt.Rows.Count == 1)
                 {
                     return usu;
@@ -128,6 +175,47 @@ namespace reciclemos_v2.Controladores
             }
 
         }
+
+        public string modAllUser(int id, string rut, string nombre, string apellido, string correo , string telefono, string direccion, string contrasena)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("Update usuario set rut = @rut, nombre = @nombre, apellido = @apellido, correo = @correo, telefono = @telefono, direccion = @direccion, contrasena = @contrasena where idUsuario = @id", con);
+                cmd.Parameters.AddWithValue("rut", rut);
+                cmd.Parameters.AddWithValue("nombre", nombre);
+                cmd.Parameters.AddWithValue("apellido", apellido);
+                cmd.Parameters.AddWithValue("correo", correo);
+                cmd.Parameters.AddWithValue("telefono", telefono);
+                cmd.Parameters.AddWithValue("direccion", direccion);
+                cmd.Parameters.AddWithValue("contrasena", contrasena);
+                cmd.Parameters.AddWithValue("id", id);
+                cmd.ExecuteNonQuery();
+     
+                return "Usuario modificado exitosamente";
+
+            }
+            catch (Exception e)
+            {
+                return "Error "+ e;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
+        //public  string GetMD5(string contrasena)
+        //{
+        //    MD5 md5 = MD5CryptoServiceProvider.Create();
+        //    ASCIIEncoding codificar = new ASCIIEncoding();
+        //    byte[] stream = null;
+        //    StringBuilder sb = new StringBuilder();
+        //    stream = md5.ComputeHash(codificar.GetBytes(contrasena));
+        //    for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
+        //    return sb.ToString();
+        //}
+
 
     }
 

@@ -18,7 +18,7 @@ namespace reciclemos_v2.WebFormMasterPage
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            LblFecha.Text = DateTime.Now.Date.ToShortDateString();
+            //LblFecha.Text = DateTime.Now.Date.ToShortDateString();
             if (Session["Usuario"] != null)
             {
                 usu = (Usuario)Session["Usuario"];

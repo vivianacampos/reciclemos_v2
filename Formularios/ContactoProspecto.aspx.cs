@@ -17,8 +17,9 @@ namespace reciclemos_v2.Formularios
 
         protected void BtnEnviar_Click(object sender, EventArgs e)
         {
+            int idEstado = 1;
             ProspectoControlador prospecto = new ProspectoControlador();
-            LblMensaje.Text = prospecto.AddProspecto(TxtNom.Text, TxtCorr.Text, TxtTel.Text, TxtArea.Text);
+            LblMensaje.Text = prospecto.AddProspecto(TxtNom.Text, TxtCorr.Text, TxtTel.Text, TxtArea.Text, idEstado);
             if (LblMensaje.Text == "Mensaje enviado exitosamente")
             {
                 TxtNom.Text = "";

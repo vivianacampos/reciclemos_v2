@@ -11,16 +11,17 @@ namespace reciclemos_v2.Controladores
     {
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2T6G65H;Initial Catalog=reciclemos;Integrated Security=True");
         //Método que inserta los mensajes de los prospectos
-        public string AddProspecto(string nombre, string correo, string telefono, string mensaje)
+        public string AddProspecto(string nombre, string correo, string telefono, string mensaje, int idEstado)
         {
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("Insert into prospecto values (@nombre, @correo, @telefono, @mensaje)", con);
+                SqlCommand cmd = new SqlCommand("Insert into prospecto values (@nombre, @correo, @telefono, @mensaje, @idEstado)", con);
                 cmd.Parameters.AddWithValue("nombre", nombre);
                 cmd.Parameters.AddWithValue("correo", correo);
                 cmd.Parameters.AddWithValue("telefono", telefono);
                 cmd.Parameters.AddWithValue("mensaje", mensaje);
+                cmd.Parameters.AddWithValue("idEstado", idEstado);
                 cmd.ExecuteNonQuery();
                 return "Mensaje enviado exitosamente";
             }
@@ -39,7 +40,7 @@ namespace reciclemos_v2.Controladores
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("Select * from prospecto", con);
+                SqlCommand cmd = new SqlCommand("select idProspecto, nombre, correo, telefono, mensaje, estado from prospecto p join estado e on p.idEstado = e.idEstado", con);
                 cmd.ExecuteNonQuery();
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

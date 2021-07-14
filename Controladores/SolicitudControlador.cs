@@ -57,7 +57,7 @@ namespace reciclemos_v2.Controladores
                 con.Close();
             }
         }
-        public List<Solicitud> FillDataTableSol(int idUsuario)
+        public DataTable FillDataTableSol(int idUsuario)
         {
             try
             {
@@ -91,7 +91,7 @@ namespace reciclemos_v2.Controladores
 
                 sda.Fill(dt);
 
-                return listaSolicitudes;
+                return dt;
             }
             catch (Exception)
             {

@@ -5,6 +5,8 @@ using System.Web;
 using reciclemos_v2.Clases;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
+using System.Text;
 
 
 
@@ -12,11 +14,13 @@ namespace reciclemos_v2.Controladores
 {
     public class LoginControlador
     {
+        
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-2T6G65H;Initial Catalog=reciclemos;Integrated Security=True");
         public Usuario logear(string correo, string contrasena)
         {
             try
             {
+                //string pass = GetMD5(contrasena);
                 con.Open();
                 SqlCommand cmd = new SqlCommand("Select idUsuario ,correo, contrasena, idTipoUsu, nombre, apellido From usuario Where correo = @correo and contrasena = @contrasena", con);
                 cmd.Parameters.AddWithValue("correo", correo);
@@ -53,6 +57,17 @@ namespace reciclemos_v2.Controladores
             }
             return null;
         }
+
+        //public string GetMD5(string contrasena)
+        //{
+        //    MD5 md5 = MD5CryptoServiceProvider.Create();
+        //    ASCIIEncoding codificar = new ASCIIEncoding();
+        //    byte[] stream = null;
+        //    StringBuilder sb = new StringBuilder();
+        //    stream = md5.ComputeHash(codificar.GetBytes(contrasena));
+        //    for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
+        //    return sb.ToString();
+        //}
 
     }
 

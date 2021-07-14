@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using reciclemos_v2.Modelo;
 using reciclemos_v2.Clases;
 using reciclemos_v2.Controladores;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace reciclemos_v2.Formularios
 {
@@ -24,7 +26,8 @@ namespace reciclemos_v2.Formularios
             if (ChbCondiciones.Checked)
             {
                 UsuarioControlador usu = new UsuarioControlador();
-                LblMensaje.Text = usu.agregarUsuario(TxtRut.Text, TxtNombre.Text, TxtApellido.Text, TxtCorreo.Text, TxtTelefono.Text, TxtDireccion.Text, TxtContrasena.Text, DdlComunas.SelectedIndex, 2);
+                
+                LblMensaje.Text = usu.agregarUsuario(TxtRut.Text, TxtNombre.Text, TxtApellido.Text, TxtCorreo.Text, TxtTelefono.Text, TxtDireccion.Text, TxtContrasena.Text, int.Parse(DdlComunas.SelectedValue), 2);
 
                 if (LblMensaje.Text == "Usuario creado exitosamente!" || LblMensaje.Text == "Usuario ya registrado")
                 {
