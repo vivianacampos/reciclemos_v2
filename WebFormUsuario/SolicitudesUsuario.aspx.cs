@@ -92,6 +92,7 @@ namespace reciclemos_v2.WebFormMasterPage
                             LblValidaFecha.Text = "";
                             Limpiar();
                         }
+                        LblPrueba.Text = "";
                     }
                     else
                     {

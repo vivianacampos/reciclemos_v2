@@ -102,5 +102,77 @@ namespace reciclemos_v2.Controladores
                 con.Close();
             }
         }
+
+        public DataTable FillDTPend(int idUsuario, int idEstado)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("Select sol.idSolicitud, estado, fecha, horario, material, cantidad  " +
+                    "from solicitud sol join solicitud_detalle soldet on sol.idSolicitud = soldet.idSolicitud " +
+                    "join estado e on sol.idEstado = e.idEstado join materiales m on soldet.idMat = m.idMateriales " +
+                    "where sol.idUsuario = @idUsuario and sol.idEstado = @idEstado", con);
+                cmd.Parameters.AddWithValue("idUsuario", idUsuario);
+                cmd.Parameters.AddWithValue("idEstado", idEstado);
+                //cmd.ExecuteNonQuery();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                if (dt.Rows.Count != 0)
+                {
+                    foreach (DataTable data in dt.Rows)
+                    {
+                        Solicitud sol = new Solicitud();
+                        sol.IdSol = int.Parse(data.Rows[0][0].ToString());
+                        sol.Estado = data.Rows[0][1].ToString();
+                        sol.Fecha = data.Rows[0][2].ToString();
+                        sol.Horario = data.Rows[0][3].ToString();
+                        Material m = new Material();
+                        m.Nombre = data.Rows[0][4].ToString();
+                        m.Cantidad = int.Parse(data.Rows[0][5].ToString());
+                        listaMateriales.Add(m);
+                        sol.ListaMateriales = listaMateriales;
+                        listaSolicitudes.Add(sol);
+                    }
+
+                }
+
+                sda.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+
+        }
+        public DataTable FillDTAll()
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("select sol.idSolicitud, nombre, apellido, direccion, telefono, fecha, horario, cantidad, material, estado from solicitud sol join usuario u on sol.idUsuario = u.idUsuario join solicitud_detalle solDet on sol.idSolicitud = solDet.idSolicitud join materiales m on solDet.idMat = m.idMateriales join estado e on sol.idEstado = e.idEstado", con);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
     }
 }

@@ -249,15 +249,6 @@ namespace reciclemos_v2.WebFormMasterPage
         protected global::System.Web.UI.WebControls.DropDownList DdlHorario;
 
         /// <summary>
-        /// Control LblFecha.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblFecha;
-
-        /// <summary>
         /// Control BtnSolicitud.
         /// </summary>
         /// <remarks>

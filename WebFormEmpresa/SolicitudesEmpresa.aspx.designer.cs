@@ -13,5 +13,32 @@ namespace reciclemos_v2.WebFormEmpresa
 
     public partial class SolicitudesEmpresa
     {
+
+        /// <summary>
+        /// Control DdlFiltrarSol.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DdlFiltrarSol;
+
+        /// <summary>
+        /// Control BtnFiltrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnFiltrar;
+
+        /// <summary>
+        /// Control GdvSolicitudes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GdvSolicitudes;
     }
 }
