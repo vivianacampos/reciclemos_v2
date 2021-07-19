@@ -45,25 +45,6 @@ namespace reciclemos_v2.WebFormMasterPage
         protected void BtnFiltrar_Click(object sender, EventArgs e)
         {
             
-            if (DdlFiltrarSol.SelectedValue == "Pendiente")
-            {
-                GdvSolicitudes.DataSource = usuario.FillDTPend(idUsu, 1);
-                GdvSolicitudes.DataBind();
-            }
-            else if (DdlFiltrarSol.SelectedValue == "En Retiro")
-            {
-                GdvSolicitudes.DataSource = usuario.FillDTPend(idUsu, 10);
-                GdvSolicitudes.DataBind();
-            }
-            else if (DdlFiltrarSol.SelectedValue == "Finalizado")
-            {
-                GdvSolicitudes.DataSource = usuario.FillDTPend(idUsu, 9);
-                GdvSolicitudes.DataBind();
-            }
-            else if (DdlFiltrarSol.SelectedValue == "Todas")
-            {
-                cargarGrid(idUsu);
-            }
 
         }
 

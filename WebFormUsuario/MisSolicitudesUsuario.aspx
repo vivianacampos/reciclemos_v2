@@ -14,7 +14,7 @@
                 <asp:ListItem Value="9">Finalizado</asp:ListItem>
             </asp:DropDownList>
             <div class="pl-3">
-                <asp:Button ID="BtnFiltrar" runat="server" Text="Filtrar" Width="100" CssClass="btn btn-primary flex-wrap" OnClick="BtnFiltrar_Click" />
+                <asp:Button ID="BtnFiltrar" runat="server" Text="Filtrar" Width="100" CssClass="btn btn-primary flex-wrap"  />
             </div>
         </div>
         <div class="pt-3 text-center">

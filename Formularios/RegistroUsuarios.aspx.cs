@@ -29,7 +29,7 @@ namespace reciclemos_v2.Formularios
                 
                 LblMensaje.Text = usu.agregarUsuario(TxtRut.Text, TxtNombre.Text, TxtApellido.Text, TxtCorreo.Text, TxtTelefono.Text, TxtDireccion.Text, TxtContrasena.Text, int.Parse(DdlComunas.SelectedValue), 2);
 
-                if (LblMensaje.Text == "Usuario creado exitosamente!" || LblMensaje.Text == "Usuario ya registrado")
+                if (LblMensaje.Text == "Usuario creado exitosamente!" || LblMensaje.Text == "Usuario o correo ya registrado")
                 {
                     TxtRut.Text = "";
                     TxtNombre.Text = "";

@@ -13,11 +13,42 @@ namespace reciclemos_v2.WebFormEmpresa
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            SolicitudControlador usu = new SolicitudControlador();
-            GdvSolicitudes.DataSource = usu.FillDTAll();
-            GdvSolicitudes.DataBind();
+            if (!IsPostBack)
+            {
+                SolicitudControlador usu = new SolicitudControlador();
+                GdvSolicitudes.DataSource = usu.FillDTAll();
+                GdvSolicitudes.DataBind();
+            }
+            
+        }
 
+        protected void BtnFiltrar_Click(object sender, EventArgs e)
+        {
+            SolicitudControlador usuCon = new SolicitudControlador();
+            int idEstado = 0;
+            if (DdlFiltrarSol.SelectedValue.Equals("1"))
+            {
+                idEstado = 1;
+                GdvSolicitudes.DataSource = usuCon.FillDTEmpresa(idEstado);
+                GdvSolicitudes.DataBind();
 
+            } else if(DdlFiltrarSol.SelectedValue.Equals("10"))
+            {
+                idEstado = 10;
+                GdvSolicitudes.DataSource = usuCon.FillDTEmpresa(idEstado);
+                GdvSolicitudes.DataBind();
+            }
+            else if (DdlFiltrarSol.SelectedValue.Equals("9"))
+            {
+                idEstado = 9;
+                GdvSolicitudes.DataSource = usuCon.FillDTEmpresa(idEstado);
+                GdvSolicitudes.DataBind();
+            } else if (DdlFiltrarSol.SelectedValue.Equals("Todas"))
+            {
+                idEstado = 1;
+                GdvSolicitudes.DataSource = usuCon.FillDTAll();
+                GdvSolicitudes.DataBind();
+            }
         }
     }
 }

@@ -103,18 +103,18 @@ namespace reciclemos_v2.Controladores
             }
         }
 
-        public DataTable FillDTPend(int idUsuario, int idEstado)
+        public DataTable FillDTEmpresa( int idEstado)
         {
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("Select sol.idSolicitud, estado, fecha, horario, material, cantidad  " +
-                    "from solicitud sol join solicitud_detalle soldet on sol.idSolicitud = soldet.idSolicitud " +
-                    "join estado e on sol.idEstado = e.idEstado join materiales m on soldet.idMat = m.idMateriales " +
-                    "where sol.idUsuario = @idUsuario and sol.idEstado = @idEstado", con);
-                cmd.Parameters.AddWithValue("idUsuario", idUsuario);
+                SqlCommand cmd = new SqlCommand("select sol.idSolicitud, e.estado, u.nombre, u.apellido, u.telefono, u.direccion, m.material, solDet.cantidad, solDet.fecha, solDet.horario "
+                    + " from solicitud sol join estado e on sol.idEstado = e.idEstado "
+                    + " join solicitud_detalle solDet on solDet.IdSolicitud = sol.IdSolicitud "
+                    + " join usuario u on sol.idUsuario = u.idUsuario " + 
+                    " join materiales m on solDet.idMat = m.idMateriales where e.idEstado = @idEstado", con);
                 cmd.Parameters.AddWithValue("idEstado", idEstado);
-                //cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 if (dt.Rows.Count != 0)

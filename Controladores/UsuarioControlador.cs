@@ -29,6 +29,13 @@ namespace reciclemos_v2.Controladores
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
 
+                SqlCommand cmd3 = new SqlCommand("Select * from usuario where correo = @correo", con);
+                cmd3.Parameters.AddWithValue("correo", correo);
+                cmd3.ExecuteNonQuery();
+                SqlDataAdapter sda1 = new SqlDataAdapter(cmd3);
+                
+                sda1.Fill(dt);
+
                 if (dt.Rows.Count == 0)
                 {
                     SqlCommand cmd = new SqlCommand("Insert into usuario (rut, nombre, apellido, correo, telefono, direccion, contrasena, idComuna, idTipoUsu) values (@rut, @nombre, @apellido, @correo, @telefono, @direccion, @contrasena, @comuna, @rol)", con);
@@ -45,9 +52,8 @@ namespace reciclemos_v2.Controladores
                 }
                 else
                 {
-                    return "Usuario ya registrado";
+                    return "Usuario o correo ya registrado";
                 }
-
 
             }
             catch (Exception e)
