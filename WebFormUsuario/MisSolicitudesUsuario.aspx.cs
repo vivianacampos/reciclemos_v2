@@ -44,7 +44,29 @@ namespace reciclemos_v2.WebFormMasterPage
 
         protected void BtnFiltrar_Click(object sender, EventArgs e)
         {
-            
+            int idEstado = 0;
+            SolicitudControlador solCon = new SolicitudControlador();
+            if (DdlFiltrarSol.SelectedValue.Equals("1"))
+            {
+                idEstado = 1;
+                GdvSolicitudes.DataSource = solCon.FillDTUsuario(idUsu, idEstado);
+                GdvSolicitudes.DataBind();
+            }
+            else if (DdlFiltrarSol.SelectedValue.Equals("10"))
+            {
+                idEstado = 10;
+                GdvSolicitudes.DataSource = solCon.FillDTUsuario(idUsu, idEstado);
+                GdvSolicitudes.DataBind();
+            }
+            else if (DdlFiltrarSol.SelectedValue.Equals("9"))
+            {
+                idEstado = 9;
+                GdvSolicitudes.DataSource = solCon.FillDTUsuario(idUsu, idEstado);
+                GdvSolicitudes.DataBind();
+            } else
+            {
+                cargarGrid(idUsu);
+            }
 
         }
 

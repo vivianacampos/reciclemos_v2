@@ -14,7 +14,7 @@
                 <asp:ListItem Value="9">Finalizado</asp:ListItem>
             </asp:DropDownList>
             <div class="pl-3">
-                <asp:Button ID="BtnFiltrar" runat="server" Text="Filtrar" Width="100" CssClass="btn btn-primary flex-wrap"  />
+                <asp:Button ID="BtnFiltrar" runat="server" Text="Filtrar" Width="100" CssClass="btn btn-primary flex-wrap"  OnClick="BtnFiltrar_Click"/>
             </div>
         </div>
         <div class="pt-3 text-center">
@@ -27,10 +27,14 @@
                     </asp:TemplateField>
                     <asp:BoundField DataField="idSolicitud" HeaderText="Id" />
                     <asp:BoundField DataField="estado" HeaderText="Estado" />
-                    <asp:BoundField DataField="fecha" HeaderText="Fecha" />
-                    <asp:BoundField DataField="horario" HeaderText="Horario" />
+                    <asp:BoundField DataField="nombre" HeaderText="Nombre" />
+                    <asp:BoundField DataField="apellido" HeaderText="Apellido" />
+                    <asp:BoundField DataField="telefono" HeaderText="Teléfono" />
+                    <asp:BoundField DataField="direccion" HeaderText="Dirección" />
                     <asp:BoundField DataField="material" HeaderText="Material" />
                     <asp:BoundField DataField="cantidad" HeaderText="Cantidad" />
+                    <asp:BoundField DataField="fecha" HeaderText="Fecha" />
+                    <asp:BoundField DataField="horario" HeaderText="Horario" />
                 </Columns>
                 <HeaderStyle CssClass="table-primary" ForeColor="Gray"/>
             </asp:GridView>
