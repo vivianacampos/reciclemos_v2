@@ -12,6 +12,7 @@
     </style>
     <div class="container pt-5">
         <h4>Mi Cuenta</h4>
+
         <div class="row">
             <div class="col-4 form-control bor">
                 <asp:Label ID="LblRut" runat="server" Text="Rut" CssClass="bor"></asp:Label>

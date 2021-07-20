@@ -18,7 +18,7 @@ namespace reciclemos_v2.WebFormMasterPage
         SolicitudControlador usuario = new SolicitudControlador();
         int idUsu = 0;
         List<Solicitud> listaSolicitudes = new List<Solicitud>();
-        
+        SolicitudControlador solCon = new SolicitudControlador();
         protected void Page_Load(object sender, EventArgs e)
         {
             Usuario usu = new Usuario();
@@ -37,15 +37,17 @@ namespace reciclemos_v2.WebFormMasterPage
         }
         public void cargarGrid(int idUsu)
         {
+
             GdvSolicitudes.DataSource = usuario.FillDataTableSol(idUsu);
             GdvSolicitudes.DataBind();
+
         }
 
 
         protected void BtnFiltrar_Click(object sender, EventArgs e)
         {
             int idEstado = 0;
-            SolicitudControlador solCon = new SolicitudControlador();
+            
             if (DdlFiltrarSol.SelectedValue.Equals("1"))
             {
                 idEstado = 1;
@@ -72,7 +74,21 @@ namespace reciclemos_v2.WebFormMasterPage
 
         protected void BtnEliminar_Click(object sender, EventArgs e)
         {
+            //GridViewRow row = GdvSolicitudes.Rows[0];
+            //int i = GdvSolicitudes.DataKeys[row.RowIndex].Value;
+            //foreach (DataTable fila in GdvSolicitudes.Rows)
+            //{
+            //    if (fila.Chequed)
+            //    {
+
+            //    }
+            //}
+        }
+
+        protected void GdvSolicitudes_SelectedIndexChanged(object sender, EventArgs e)
+        {
             
+
         }
     }
 }

@@ -193,5 +193,26 @@ namespace reciclemos_v2.Controladores
 
 
         }
+
+        public string DeleteRow(int idSolicitud)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("delete solicitud_detalle where idSolicitud = @idSolicitud;", con);
+                cmd.Parameters.AddWithValue("idSolicitud", idSolicitud);
+                cmd.ExecuteNonQuery();
+                return "Solicitud eliminada exitosamente";
+            }
+            catch (Exception e)
+            {
+                return "Error " + e;
+                
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
 }

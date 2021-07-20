@@ -5,8 +5,7 @@ using System.Web;
 using reciclemos_v2.Clases;
 using System.Data;
 using System.Data.SqlClient;
-using System.Security.Cryptography;
-using System.Text;
+
 
 namespace reciclemos_v2.Controladores
 {
@@ -20,7 +19,6 @@ namespace reciclemos_v2.Controladores
         {
             try
             {
-                //string pass = GetMD5(contrasena);
                 con.Open();
                 SqlCommand cmd1 = new SqlCommand("Select * from usuario where rut = @rut", con);
                 cmd1.Parameters.AddWithValue("rut", rut);
@@ -80,6 +78,7 @@ namespace reciclemos_v2.Controladores
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
+                
                 Usuario usu = new Usuario()
                 {
                     Rut = dt.Rows[0][0].ToString(),
@@ -182,7 +181,7 @@ namespace reciclemos_v2.Controladores
 
         }
 
-        public string modAllUser(int id, string rut, string nombre, string apellido, string correo , string telefono, string direccion, string contrasena)
+        public string updateUsu(int id, string rut, string nombre, string apellido, string correo , string telefono, string direccion, string contrasena)
         {
             try
             {
@@ -211,17 +210,6 @@ namespace reciclemos_v2.Controladores
             }
 
         }
-        //public  string GetMD5(string contrasena)
-        //{
-        //    MD5 md5 = MD5CryptoServiceProvider.Create();
-        //    ASCIIEncoding codificar = new ASCIIEncoding();
-        //    byte[] stream = null;
-        //    StringBuilder sb = new StringBuilder();
-        //    stream = md5.ComputeHash(codificar.GetBytes(contrasena));
-        //    for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
-        //    return sb.ToString();
-        //}
-
 
     }
 

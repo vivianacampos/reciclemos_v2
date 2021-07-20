@@ -3416,6 +3416,7 @@
     <Compile Include="Clases\Solicitud.cs" />
     <Compile Include="Clases\TipoUsuario.cs" />
     <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Controladores\CifradoControlador.cs" />
     <Compile Include="Controladores\LoginControlador.cs" />
     <Compile Include="Controladores\LogrosControlador.cs" />
     <Compile Include="Controladores\MaterialControlador.cs" />

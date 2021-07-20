@@ -61,7 +61,7 @@ namespace reciclemos_v2.WebFormUsuario
         protected void BtnGuardar_Click(object sender, EventArgs e)
         {
             UsuarioControlador usua = new UsuarioControlador();
-            LblMensaje.Text = usua.modAllUser(idUsu, TxtRut.Text, TxtNombre.Text, TxtApellido.Text, TxtCorreo.Text, TxtTelefono.Text, TxtDireccion.Text, TxtContrasena.Text);
+            LblMensaje.Text = usua.updateUsu(idUsu, TxtRut.Text, TxtNombre.Text, TxtApellido.Text, TxtCorreo.Text, TxtTelefono.Text, TxtDireccion.Text, TxtContrasena.Text);
             
             LblMensaje.ForeColor = System.Drawing.Color.Green;
             TxtRut.Enabled = false;
